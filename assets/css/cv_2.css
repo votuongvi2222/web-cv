@@ -100,7 +100,7 @@ div#preview {
   height: 100%;
 }
 .post_editor-container {
-  min-height: 4.5rem;
+  /* min-height: 4.5rem; */
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   border-radius: 0.2rem;
@@ -540,7 +540,7 @@ span.upload_post-label {
 }
 .addition__box {
   color: rgba(215, 49, 61, 0.75);
-  margin: 5px;
+  margin: 9px 0;
 }
 .addition__box:hover * {
   font-weight: 600;
@@ -548,4 +548,55 @@ span.upload_post-label {
 
 .cropper__container {
     display: none;
+}
+.section__box--expand p {
+    width: 100% !important;
+    margin-right: 0;
+    float: none;
+    font-size: 14px;
+    line-height: 1.6em;
+}
+.section__box--expand p label{
+    width: 100%;
+    margin: 0 !important;
+    color: #2f3239;
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.section__box--expand p label span{
+    margin-left: 3px;
+    color: #f00;
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 5px;
+}
+.section__box--expand p input{
+    padding: 10px 12px;
+    outline: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0;
+    width: 100%;
+    display: block;
+    color: #2f3239;
+    border: 1px solid #dedede;
+    -moz-transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+    -webkit-transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+    -o-transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+    transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+    background: #fff;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.section__box--expand p span.infocenter-qform-desc {
+    width: 100%;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 5px;
+    color: #848991;
 }

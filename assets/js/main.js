@@ -90,8 +90,11 @@ $(document).ready(function () {
   $('body').on('DOMSubtreeModified', '#post_content_editor-textarea', function(){
     // console.log('changed');
     var textboxContent = $.trim($('#post_content_editor-textarea').text());
-    if(textboxContent != '')
+    // console.log(textboxContent)
+    if(textboxContent != ''){
       $('#upload_post-tab').removeClass('empty');
+      console.log('not empty');
+    }
     else
       $('#upload_post-tab').addClass('empty');
   })

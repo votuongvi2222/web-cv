@@ -56,7 +56,7 @@
                             <div class="cv__opening--right">
                                 <div class="cv__box cv--fullname">
                                     <div class="cv__textbox" spellcheck="false" contenteditable="true"
-                                        aria-placeholder="Họ tên" data-max-length="100">Võ Tường Vi</div>
+                                        aria-placeholder="Họ tên" data-max-length="50">Võ Tường Vi</div>
                                 </div>
                                 <div class="cv__box cv--position ">
                                     <div class="cv__textbox" spellcheck="false" contenteditable="true"
@@ -95,11 +95,12 @@
                     <span style="cursor: pointer;"><i class="fas fa-plus"></i>Add new section</span>
                 </div>
                 <div class="section__box--expand">
+                    
                     <div class="post_editor-container">
                         <div class="post_editor-btn" id="post_editor-btn" role="button" style="">
                             <div class="avatar-container">
                                 <div class="img-box plus__icon">
-                                    
+                                    <i class="fas fa-expand"></i>
                                 </div>
                             </div>
                             <div class="post_instruction-btn">Write something ...</div>
@@ -107,6 +108,14 @@
                         <div class="post_editor-expand" id="post_editor-expand" style="display: none;">
                             <div class="editor-body">
                                 <div class="editor-body-container">
+                                    <p>
+                                        <label for="" class="required">
+                                            Title
+                                            <span>*</span>
+                                        </label>
+                                        <input name="title" type="text" id="" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type your section's title.</span>
+                                    </p>
                                     <div class="editor-textarea-box">
                                         <div class="editor_title-textarea" id="editor_title-textarea">Write something ...</div>
                                         <div class="post_content_editor-textarea" id="post_content_editor-textarea" role="textbox" aria-multiline="true" contenteditable="true"></div>
