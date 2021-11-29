@@ -118,6 +118,7 @@ $(document).ready(function () {
 
   $('#file').click(() => {
     $('.avatar__box--left').removeClass('hide');
+    
     var avatarW = $('.avatar__box--left').outerWidth();
     var cvHeaderW = $('.cv__header').outerWidth();
     console.log('avaw: ' + avatarW);
