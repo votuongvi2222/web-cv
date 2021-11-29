@@ -64,7 +64,8 @@ div#preview {
   border-top-right-radius: 0.2rem;
 }
 .cv__textbox {
-  border: 1px dashed rgba(63, 63, 63, 0); /* color: rgba(11, 72, 117, 0.95); */
+  border: 1.2px dashed rgba(63, 63, 63, 0);
+  /* color: rgba(11, 72, 117, 0.95); */
   display: inline-block;
   word-break: break-word;
   /* text-align: justify; */
@@ -72,7 +73,7 @@ div#preview {
 }
 .cv__textbox:hover,
 .cv__textbox:focus {
-  border: 1px dashed rgba(63, 63, 63, 0.2);
+  border: 1.3px dashed rgba(63, 63, 63, 0.5);
   outline: none;
 }
 .cv--fullname {
@@ -151,6 +152,9 @@ div#preview {
   height: 100%;
   background-color: rgb(255, 255, 255);
   overflow: hidden;
+}
+#personal__section--block{
+  display: block!important;
 }
 .editor-body {
   flex: 1 1 auto;
@@ -546,11 +550,11 @@ span.upload_post-label {
 }
 
 .addition__box {
-  color: rgba(11, 71, 117, 0.65);
+  font-weight: 500;
+  color: rgba(11, 71, 117, 0.9);
   margin: 9px 0;
 }
 .addition__box:hover * {
-  font-weight: 600;
   color: rgba(11, 71, 117, 0.95);
   
 }
@@ -609,4 +613,24 @@ span.upload_post-label {
     font-weight: normal;
     margin-top: 5px;
     color: #848991;
+}
+#custom__scrollbar {
+    overflow-y: scroll;
+    height: 297mm;
+}
+#custom__scrollbar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+#custom__scrollbar::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+#custom__scrollbar::-webkit-scrollbar-thumb
+{
+	background-color: rgba(11, 72, 117, .75);
+	border: 2px solid rgb(237, 237, 237);
 }

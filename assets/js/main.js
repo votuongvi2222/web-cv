@@ -73,40 +73,47 @@ $(document).ready(function () {
     $(this).toggleClass('focused');
   })
   // editor 
-  $('#post_editor-expand').hide();
+  $('.post_editor-expand').hide();
 
-  $('#post_content_editor-textarea').focus(function(){
-    $('#editor_title-textarea').addClass('focused');
-    $('.content_editor_focus-line').addClass('focused');
+  $('.post_content_editor-textarea').focus(function(){
+    console.log('focus')
+    $(this).prev().addClass('focused');
+    $(this).next().next().addClass('focused');
   
   })
-  $('#post_content_editor-textarea').blur(function(){
-    var textboxContent = $.trim($('#post_content_editor-textarea').text());
-    if(textboxContent == '')
-      $('#editor_title-textarea').removeClass('focused');
-      $('.content_editor_focus-line').removeClass('focused');
+  $('.post_content_editor-textarea').blur(function(){
+    console.log('blur')
+
+    var textboxContent = $.trim($(this).text());
+    if(textboxContent == '') {
+      $(this).prev().removeClass('focused');
+      $(this).next().next().removeClass('focused');
+    }
 
   })
-  $('body').on('DOMSubtreeModified', '#post_content_editor-textarea', function(){
+
+  $('body').on('DOMSubtreeModified', '.post_content_editor-textarea', function(){
     // console.log('changed');
-    var textboxContent = $.trim($('#post_content_editor-textarea').text());
-    // console.log(textboxContent)
+    var textboxContent = $.trim($(this).text());
+    console.log(textboxContent)
+
     if(textboxContent != ''){
-      $('#upload_post-tab').removeClass('empty');
-      console.log('not empty');
+      $(this).parents('.post_editor-expand').find('.upload_post-tab').removeClass('empty');
+      console.log('not empty text');
     }
     else
-      $('#upload_post-tab').addClass('empty');
+      $(this).parents('.post_editor-expand').find('.upload_post-tab').addClass('empty');
   })
-  $('#cancel_post-tab').click(function(){
-    $('#post_editor-expand').hide();
-    $('#post_editor-btn').show();
-    $('#post_content_editor-textarea').innerText = '';
+
+  $('.cancel_post-tab').click(function(){
+    $(this).parents('.post_editor-expand').hide();
+    $(this).parents('.post_editor-expand').prev('.post_editor-btn').show();
+    // $('#post_content_editor-textarea').innerText = '';
   })
-  $('#post_editor-btn').click(function(){
-    $('#post_editor-expand').show();
-    $('#post_editor-btn').hide();
-    $('#post_content_editor-textarea').focus();
+  $('.post_editor-btn').click(function(){
+    $(this).next().show();
+    $(this).hide();
+    $(this).children('.post_content_editor-textarea').focus();
   })
 
   $('#file').click(() => {

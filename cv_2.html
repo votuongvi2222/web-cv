@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </div>
-            <div class="editor__sidebar-right col-3">
+            <div class="editor__sidebar-right col-3" id="custom__scrollbar">
                 <div class="cv__uploader--image">
                     <div class="addition__box">
                         <input type="file"  accept="image/gif, image/jpeg, image/png" name="image" id="file" onchange="loadFile(event)" style="display: none;">
@@ -87,19 +87,64 @@
                         <i class="fas fa-times"></i>
                     </div>
                 </div>
-                <div class="addition__box">
-                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Personal Information</span>
+                <div class="addition__box" id="personal__addition">
+                    <span style="cursor: pointer;">Personal Information</span>
                 </div>
-                <div class="addition__box">
-                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Profile</span>
+                <div class="section__box--expand personal__section">
+                    <div class="post_editor-container">
+                        <div class="post_editor-expand" id="personal__section--block">
+                            <div class="editor-body">
+                                <div class="editor-body-container">
+                                    <p>
+                                        <label>
+                                            Contact Email
+                                        </label>
+                                        <input name="email" type="email" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type your section's title.</span>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            Phone Number
+                                        </label>
+                                        <input name="phone_number" type="tel" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type your phone number.</span>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            Address
+                                        </label>
+                                        <input name="address" type="text" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type your address.</span>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            My Website
+                                        </label>
+                                        <input name="website" type="text" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type your website.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="editor-footer">
+                                <div class="post_action-nav">
+                                    <div class="upload_post-tab empty" role="button">
+                                        <div class="hiden_upload_post-btn"></div>
+                                        <span class="upload_post-btn">
+                                            <span class="upload_post-label">Update</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="addition__box">
-                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Timeline</span>
+                <div class="addition__box" id="skill__addition">
+                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Skills</span>
                 </div>
-                <div class="section__box--expand">
+                <div class="section__box--expand skill__section">
                     
                     <div class="post_editor-container">
-                        <div class="post_editor-btn" id="post_editor-btn" role="button" style="">
+                        <div class="post_editor-btn" role="button">
                             <div class="avatar-container">
                                 <div class="img-box plus__icon">
                                     <i class="far fa-trash-alt"></i>
@@ -107,33 +152,126 @@
                             </div>
                             <div class="post_instruction-btn">Write something ...</div>
                         </div>
-                        <div class="post_editor-expand" id="post_editor-expand" style="display: none;">
+                        <div class="post_editor-expand" style="display: none;">
                             <div class="editor-body">
                                 <div class="editor-body-container">
                                     <p>
-                                        <label for="" class="required">
-                                            Title
+                                        <label class="required">
+                                            Skill
                                             <span>*</span>
                                         </label>
-                                        <input name="title" type="text" class="the-title" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type your section's title.</span>
+                                        <input name="skill_name" type="text" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type your skill.</span>
                                     </p>
                                     <p>
                                         <label class="required">
-                                            From
+                                            Level
                                             <span>*</span>
                                         </label>
-                                        <input name="from_time" type="date" class="the-title" required="" value="">
+                                        <input name="skill_level" type="number" class="the-title" required="" value="" min="1" max="10">
+                                        <span class="infocenter-qform-desc">Please rate your skill.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="editor-footer">
+                                <div class="post_action-nav">
+                                    <div class="cancel_post-tab" role="button">
+                                        <div class="hiden_cancel_post-btn"></div>
+                                        <span class="cancel_post-btn">
+                                            <span class="post_cancel-label">Close</span>
+                                        </span>
+                                    </div>
+                                    <div class="upload_post-tab empty" role="button">
+                                        <div class="hiden_upload_post-btn"></div>
+                                        <span class="upload_post-btn">
+                                            <span class="upload_post-label">Add</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="addition__box" id="language__addition">
+                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Languages</span>
+                </div>
+                <div class="section__box--expand language__section">
+                    
+                    <div class="post_editor-container">
+                        <div class="post_editor-btn" role="button">
+                            <div class="avatar-container">
+                                <div class="img-box plus__icon">
+                                    <i class="far fa-trash-alt"></i>
+                                </div>
+                            </div>
+                            <div class="post_instruction-btn">Write something ...</div>
+                        </div>
+                        <div class="post_editor-expand" style="display: none;">
+                            <div class="editor-body">
+                                <div class="editor-body-container">
+                                    <p>
                                         <label class="required">
-                                            To
+                                            Language
                                             <span>*</span>
                                         </label>
-                                        <input name="to_time" type="date" class="the-title" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type your duration time.</span>
+                                        <input name="language_name" type="text" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type the language you know.</span>
+                                    </p>
+                                    <p>
+                                        <label class="required">
+                                            Level
+                                            <span>*</span>
+                                        </label>
+                                        <input name="language_level" type="number" class="the-title" required="" value="" min="1" max="10">
+                                        <span class="infocenter-qform-desc">Please rate your language skill.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="editor-footer">
+                                <div class="post_action-nav">
+                                    <div class="cancel_post-tab" role="button">
+                                        <div class="hiden_cancel_post-btn"></div>
+                                        <span class="cancel_post-btn">
+                                            <span class="post_cancel-label">Close</span>
+                                        </span>
+                                    </div>
+                                    <div class="upload_post-tab empty" role="button">
+                                        <div class="hiden_upload_post-btn"></div>
+                                        <span class="upload_post-btn">
+                                            <span class="upload_post-label">Add</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="addition__box" id="profile__addition">
+                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Profile</span>
+                </div>
+                <div class="section__box--expand profile__section">
+                    
+                    <div class="post_editor-container">
+                        <div class="post_editor-btn" role="button">
+                            <div class="avatar-container">
+                                <div class="img-box plus__icon">
+                                    <i class="far fa-trash-alt"></i>
+                                </div>
+                            </div>
+                            <div class="post_instruction-btn">Write something ...</div>
+                        </div>
+                        <div class="post_editor-expand" style="display: none;">
+                            <div class="editor-body">
+                                <div class="editor-body-container">
+                                    <p>
+                                        <label class="required">
+                                            Description
+                                            <span>*</span>
+                                        </label>
                                     </p>
                                     <div class="editor-textarea-box">
-                                        <div class="editor_title-textarea" id="editor_title-textarea">Write details here ...</div>
-                                        <div class="post_content_editor-textarea" id="post_content_editor-textarea" role="textbox" aria-multiline="true" contenteditable="true"></div>
+                                        <div class="editor_title-textarea">Write details here ...</div>
+                                        <div class="post_content_editor-textarea" role="textbox" aria-multiline="true" contenteditable="true"></div>
                                         <div class="content_editor_unfocus-line"></div>
                                         <div class="content_editor_focus-line"></div>
                                     </div>
@@ -183,13 +321,13 @@
                             </div>
                             <div class="editor-footer">
                                 <div class="post_action-nav">
-                                    <div class="cancel_post-tab" id="cancel_post-tab" role="button">
+                                    <div class="cancel_post-tab" role="button">
                                         <div class="hiden_cancel_post-btn"></div>
                                         <span class="cancel_post-btn">
-                                            <span class="post_cancel-label">Cancel</span>
+                                            <span class="post_cancel-label">Close</span>
                                         </span>
                                     </div>
-                                    <div class="upload_post-tab empty" id="upload_post-tab" role="button">
+                                    <div class="upload_post-tab empty" role="button">
                                         <div class="hiden_upload_post-btn"></div>
                                         <span class="upload_post-btn">
                                             <span class="upload_post-label">Add</span>
@@ -200,7 +338,390 @@
                         </div>
                     </div>
                 </div>
+                <div class="addition__box" id="timeline__addition">
+                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Timeline</span>
+                </div>
+                <div class="section__box--expand timeline__section">
                     
+                    <div class="post_editor-container">
+                        <div class="post_editor-btn" role="button" >
+                            <div class="avatar-container">
+                                <div class="img-box plus__icon">
+                                    <i class="far fa-trash-alt"></i>
+                                </div>
+                            </div>
+                            <div class="post_instruction-btn">Write something ...</div>
+                        </div>
+                        <div class="post_editor-expand" style="display: none;">
+                            <div class="editor-body">
+                                <div class="editor-body-container">
+                                    <p>
+                                        <label for="" class="required">
+                                            Title
+                                            <span>*</span>
+                                        </label>
+                                        <input name="ex_title" type="text" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type your section's title.</span>
+                                    </p>
+                                    <p>
+                                        <label class="required">
+                                            From
+                                            <span>*</span>
+                                        </label>
+                                        <input name="ex_from_time" type="date" class="the-title" required="" value="">
+                                        <label class="required">
+                                            To
+                                            <span>*</span>
+                                        </label>
+                                        <input name="ex_to_time" type="date" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type duration time.</span>
+                                    </p>
+                                    <p>
+                                        <label class="required">
+                                            Location
+                                            <span>*</span>
+                                        </label>
+                                        <input name="ex_location" type="text" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type location.</span>
+                                    </p>
+                                    <div class="editor-textarea-box">
+                                        <div class="editor_title-textarea">Write details here ...</div>
+                                        <div class="post_content_editor-textarea" role="textbox" aria-multiline="true" contenteditable="true"></div>
+                                        <div class="content_editor_unfocus-line"></div>
+                                        <div class="content_editor_focus-line"></div>
+                                    </div>
+                                    <div class="editor-toolbar" role="toolbar">
+                                        <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
+                                            <div class="hidden_bold-label hidden-toolbar-label"></div>
+                                            <span class="text_bold-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
+                                            <div class="hidden_italic-label hidden-toolbar-label"></div>
+                                            <span class="text_italic-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
+                                            <div class="hidden_underline-label hidden-toolbar-label"></div>
+                                            <span class="text_underline-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
+                                            <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
+                                            <span class="text_bulleted_list-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
+                                            <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
+                                            <span class="text_remove_formatting-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="editor-footer">
+                                <div class="post_action-nav">
+                                    <div class="cancel_post-tab" role="button">
+                                        <div class="hiden_cancel_post-btn"></div>
+                                        <span class="cancel_post-btn">
+                                            <span class="post_cancel-label">Close</span>
+                                        </span>
+                                    </div>
+                                    <div class="upload_post-tab empty" role="button">
+                                        <div class="hiden_upload_post-btn"></div>
+                                        <span class="upload_post-btn">
+                                            <span class="upload_post-label">Add</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="addition__box" id="education__addition">
+                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Education</span>
+                </div>
+                <div class="section__box--expand education__section">
+                    <div class="post_editor-container">
+                        <div class="post_editor-btn" role="button" >
+                            <div class="avatar-container">
+                                <div class="img-box plus__icon">
+                                    <i class="far fa-trash-alt"></i>
+                                </div>
+                            </div>
+                            <div class="post_instruction-btn">Write something ...</div>
+                        </div>
+                        <div class="post_editor-expand" style="display: none;">
+                            <div class="editor-body">
+                                <div class="editor-body-container">
+                                    <p>
+                                        <label for="" class="required">
+                                            School Name
+                                            <span>*</span>
+                                        </label>
+                                        <input name="edu_title" type="text" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type your school/university name.</span>
+                                    </p>
+                                    <p>
+                                        <label class="required">
+                                            From
+                                            <span>*</span>
+                                        </label>
+                                        <input name="edu_from_time" type="date" class="the-title" required="" value="">
+                                        <label class="required">
+                                            To
+                                            <span>*</span>
+                                        </label>
+                                        <input name="edu_to_time" type="date" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type duration time.</span>
+                                    </p>
+                                    <p>
+                                        <label class="required">
+                                            Location
+                                            <span>*</span>
+                                        </label>
+                                        <input name="edu_location" type="text" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type location.</span>
+                                    </p>
+                                    <div class="editor-textarea-box">
+                                        <div class="editor_title-textarea">Write details here ...</div>
+                                        <div class="post_content_editor-textarea" role="textbox" aria-multiline="true" contenteditable="true"></div>
+                                        <div class="content_editor_unfocus-line"></div>
+                                        <div class="content_editor_focus-line"></div>
+                                    </div>
+                                    <div class="editor-toolbar" role="toolbar">
+                                        <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
+                                            <div class="hidden_bold-label hidden-toolbar-label"></div>
+                                            <span class="text_bold-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
+                                            <div class="hidden_italic-label hidden-toolbar-label"></div>
+                                            <span class="text_italic-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
+                                            <div class="hidden_underline-label hidden-toolbar-label"></div>
+                                            <span class="text_underline-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
+                                            <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
+                                            <span class="text_bulleted_list-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
+                                            <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
+                                            <span class="text_remove_formatting-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="editor-footer">
+                                <div class="post_action-nav">
+                                    <div class="cancel_post-tab" role="button">
+                                        <div class="hiden_cancel_post-btn"></div>
+                                        <span class="cancel_post-btn">
+                                            <span class="post_cancel-label">Close</span>
+                                        </span>
+                                    </div>
+                                    <div class="upload_post-tab empty" role="button">
+                                        <div class="hiden_upload_post-btn"></div>
+                                        <span class="upload_post-btn">
+                                            <span class="upload_post-label">Add</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="addition__box" id="hobby__addition">
+                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Hobbies And Interests</span>
+                </div>
+                <div class="section__box--expand hobby__section">
+                    
+                    <div class="post_editor-container">
+                        <div class="post_editor-btn" role="button">
+                            <div class="avatar-container">
+                                <div class="img-box plus__icon">
+                                    <i class="far fa-trash-alt"></i>
+                                </div>
+                            </div>
+                            <div class="post_instruction-btn">Write something ...</div>
+                        </div>
+                        <div class="post_editor-expand" style="display: none;">
+                            <div class="editor-body">
+                                <div class="editor-body-container">
+                                    <p>
+                                        <label class="required">
+                                            Hobby
+                                            <span>*</span>
+                                        </label>
+                                        <input name="hobby" type="text" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type your hobby.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="editor-footer">
+                                <div class="post_action-nav">
+                                    <div class="cancel_post-tab" role="button">
+                                        <div class="hiden_cancel_post-btn"></div>
+                                        <span class="cancel_post-btn">
+                                            <span class="post_cancel-label">Close</span>
+                                        </span>
+                                    </div>
+                                    <div class="upload_post-tab empty" role="button">
+                                        <div class="hiden_upload_post-btn"></div>
+                                        <span class="upload_post-btn">
+                                            <span class="upload_post-label">Add</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="addition__box" id="award__addition">
+                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Awards</span>
+                </div>
+                <div class="section__box--expand award__section">
+                    <div class="post_editor-container">
+                        <div class="post_editor-btn" role="button" >
+                            <div class="avatar-container">
+                                <div class="img-box plus__icon">
+                                    <i class="far fa-trash-alt"></i>
+                                </div>
+                            </div>
+                            <div class="post_instruction-btn">Write something ...</div>
+                        </div>
+                        <div class="post_editor-expand" style="display: none;">
+                            <div class="editor-body">
+                                <div class="editor-body-container">
+                                    <p>
+                                        <label for="" class="required">
+                                            Award Name
+                                            <span>*</span>
+                                        </label>
+                                        <input name="award_title" type="text" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type your award.</span>
+                                    </p>
+                                    <p>
+                                        <label class="required">
+                                            Year
+                                            <span>*</span>
+                                        </label>
+                                        <input name="award_year" type="text" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type the year when you get this award.</span>
+                                    </p>
+                                    <p>
+                                        <label class="required">
+                                            Place
+                                            <span>*</span>
+                                        </label>
+                                        <input name="award_place" type="text" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type the place you gain.</span>
+                                    </p>
+                                    <div class="editor-textarea-box">
+                                        <div class="editor_title-textarea">Write details here ...</div>
+                                        <div class="post_content_editor-textarea" role="textbox" aria-multiline="true" contenteditable="true"></div>
+                                        <div class="content_editor_unfocus-line"></div>
+                                        <div class="content_editor_focus-line"></div>
+                                    </div>
+                                    <div class="editor-toolbar" role="toolbar">
+                                        <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
+                                            <div class="hidden_bold-label hidden-toolbar-label"></div>
+                                            <span class="text_bold-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
+                                            <div class="hidden_italic-label hidden-toolbar-label"></div>
+                                            <span class="text_italic-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
+                                            <div class="hidden_underline-label hidden-toolbar-label"></div>
+                                            <span class="text_underline-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
+                                            <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
+                                            <span class="text_bulleted_list-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
+                                            <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
+                                            <span class="text_remove_formatting-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="editor-footer">
+                                <div class="post_action-nav">
+                                    <div class="cancel_post-tab" role="button">
+                                        <div class="hiden_cancel_post-btn"></div>
+                                        <span class="cancel_post-btn">
+                                            <span class="post_cancel-label">Close</span>
+                                        </span>
+                                    </div>
+                                    <div class="upload_post-tab empty" role="button">
+                                        <div class="hiden_upload_post-btn"></div>
+                                        <span class="upload_post-btn">
+                                            <span class="upload_post-label">Add</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
