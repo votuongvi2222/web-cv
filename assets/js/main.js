@@ -116,9 +116,9 @@ $(document).ready(function () {
     $(this).children('.post_content_editor-textarea').focus();
   })
 
-  $('#file').click(() => {
+  $('#file').change(() => {
     $('.avatar__box--left').removeClass('hide');
-    
+
     var avatarW = $('.avatar__box--left').outerWidth();
     var cvHeaderW = $('.cv__header').outerWidth();
     console.log('avaw: ' + avatarW);
