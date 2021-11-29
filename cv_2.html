@@ -83,16 +83,18 @@
                 <div class="cropper__container" id="cropper__container">
                     <img src="#" id="image--cropped" alt=""
                     srcset="">
-                    <div class="upload_post-tab remove__tab" id="upload_post-tab" role="button">
-                        <div class="hiden_upload_post-btn"></div>
-                        <span class="upload_post-btn">
-                            <span class="upload_post-label" id="remove__btn">Remove</span>
-                        </span>
+                    <div class="remove__tab" id="remove__btn" role="button">
+                        <i class="fas fa-times"></i>
                     </div>
                 </div>
-
                 <div class="addition__box">
-                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Add new section</span>
+                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Personal Information</span>
+                </div>
+                <div class="addition__box">
+                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Profile</span>
+                </div>
+                <div class="addition__box">
+                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Timeline</span>
                 </div>
                 <div class="section__box--expand">
                     
@@ -100,7 +102,7 @@
                         <div class="post_editor-btn" id="post_editor-btn" role="button" style="">
                             <div class="avatar-container">
                                 <div class="img-box plus__icon">
-                                    <i class="fas fa-expand"></i>
+                                    <i class="far fa-trash-alt"></i>
                                 </div>
                             </div>
                             <div class="post_instruction-btn">Write something ...</div>
@@ -113,11 +115,24 @@
                                             Title
                                             <span>*</span>
                                         </label>
-                                        <input name="title" type="text" id="" class="the-title" required="" value="">
+                                        <input name="title" type="text" class="the-title" required="" value="">
                                         <span class="infocenter-qform-desc">Please type your section's title.</span>
                                     </p>
+                                    <p>
+                                        <label class="required">
+                                            From
+                                            <span>*</span>
+                                        </label>
+                                        <input name="from_time" type="date" class="the-title" required="" value="">
+                                        <label class="required">
+                                            To
+                                            <span>*</span>
+                                        </label>
+                                        <input name="to_time" type="date" class="the-title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type your duration time.</span>
+                                    </p>
                                     <div class="editor-textarea-box">
-                                        <div class="editor_title-textarea" id="editor_title-textarea">Write something ...</div>
+                                        <div class="editor_title-textarea" id="editor_title-textarea">Write details here ...</div>
                                         <div class="post_content_editor-textarea" id="post_content_editor-textarea" role="textbox" aria-multiline="true" contenteditable="true"></div>
                                         <div class="content_editor_unfocus-line"></div>
                                         <div class="content_editor_focus-line"></div>
@@ -177,7 +192,7 @@
                                     <div class="upload_post-tab empty" id="upload_post-tab" role="button">
                                         <div class="hiden_upload_post-btn"></div>
                                         <span class="upload_post-btn">
-                                            <span class="upload_post-label">Post</span>
+                                            <span class="upload_post-label">Add</span>
                                         </span>
                                     </div>
                                 </div>

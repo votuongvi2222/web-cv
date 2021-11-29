@@ -106,6 +106,7 @@ div#preview {
   border-radius: 0.2rem;
   overflow: hidden;
   margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
 .post_editor-btn {
   height: 100%;
@@ -494,10 +495,19 @@ span.post_cancel-label {
 .upload_post-tab:not(.empty):hover {
   background-color: rgb(11, 72, 117);
 }
-.upload_post-tab.remove__tab{
+.remove__tab{
   /* float: right; */
-  margin-top: 10px;
-  background-color: rgba(216, 50, 60, .75);
+  position: absolute;
+  top: 5px;
+  cursor:pointer;
+  right: 10px;
+}
+.remove__tab i{
+  font-size: 25px;
+  color: rgba(216, 50, 60, .7);
+}
+.remove__tab i:hover{
+  color: rgba(216, 50, 60, 1);
 }
 .upload_post-tab.remove__tab:hover{
   background-color: rgba(216, 50, 60, .95)!important;
@@ -533,21 +543,21 @@ span.upload_post-label {
 }
 .addition__box i {
   padding-right: 10px;
-  color: rgba(11, 71, 117, 0.25);
 }
-.addition__box i:hover {
-  color: rgba(11, 71, 117, 0.95);
-}
+
 .addition__box {
-  color: rgba(215, 49, 61, 0.75);
+  color: rgba(11, 71, 117, 0.65);
   margin: 9px 0;
 }
 .addition__box:hover * {
   font-weight: 600;
+  color: rgba(11, 71, 117, 0.95);
+  
 }
 
 .cropper__container {
     display: none;
+    position: relative;
 }
 .section__box--expand p {
     width: 100% !important;
