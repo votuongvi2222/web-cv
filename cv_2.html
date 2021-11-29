@@ -30,8 +30,8 @@
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/cv_2.css">
-
-
+    <!-- MATERIAL FONT -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Extended" rel="stylesheet" nonce="">
     <!-- GG FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +46,7 @@
                 <div class="cv">
                     <div class="cv__container">
                         <div class="cv__header">
-                            <div class="avatar__box--left">
+                            <div class="avatar__box--left hide">
                                 <div class="avatar__uploader dx-viewport">
                                     <div class="demo-container preview" id="preview">
 
@@ -62,16 +62,6 @@
                                     <div class="cv__textbox" spellcheck="false" contenteditable="true"
                                         data-max-length="100">Fontend Developer</div>
                                 </div>
-                                <div class="cv__box cv__icon--quote">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                                <div class="cv__box cv--quote ">
-                                    <div class="cv__textbox" spellcheck="false" contenteditable="true"
-                                        data-max-length="500">Áp dụng những kinh nghiệm về kỹ năng bán hàng và sự hiểu
-                                        biết về thị trường để trở thành một nhân viên bán hàng chuyên nghiệp, mang đến
-                                        nhiều giá trị cho khách hàng. Từ đó giúp Công ty tăng số lượng khách hàng và mở
-                                        rộng tập khách hàng.</div>
-                                </div>
                             </div>
                         </div>
                         <div class="cv__body">
@@ -83,13 +73,110 @@
             </div>
             <div class="editor__sidebar-right col-3">
                 <div class="cv__uploader--image">
-                    <input type="file"  accept="image/gif, image/jpeg, image/png" name="image" id="file" onchange="loadFile(event)" style="display: none;">
-                    <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+                    <div class="addition__box">
+                        <input type="file"  accept="image/gif, image/jpeg, image/png" name="image" id="file" onchange="loadFile(event)" style="display: none;">
+                        
+                        <label for="file" style="cursor: pointer;"><i class="fas fa-upload"></i>Upload Image</label>
+                    </div>
+                    
                 </div>
-                <div class="cropper__container">
+                <div class="cropper__container" id="cropper__container">
                     <img src="#" id="image--cropped" alt=""
                     srcset="">
+                    <div class="upload_post-tab remove__tab" id="upload_post-tab" role="button">
+                        <div class="hiden_upload_post-btn"></div>
+                        <span class="upload_post-btn">
+                            <span class="upload_post-label" id="remove__btn">Remove</span>
+                        </span>
+                    </div>
                 </div>
+
+                <div class="addition__box">
+                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Add new section</span>
+                </div>
+                <div class="section__box--expand">
+                    <div class="post_editor-container">
+                        <div class="post_editor-btn" id="post_editor-btn" role="button" style="">
+                            <div class="avatar-container">
+                                <div class="img-box plus__icon">
+                                    
+                                </div>
+                            </div>
+                            <div class="post_instruction-btn">Write something ...</div>
+                        </div>
+                        <div class="post_editor-expand" id="post_editor-expand" style="display: none;">
+                            <div class="editor-body">
+                                <div class="editor-body-container">
+                                    <div class="editor-textarea-box">
+                                        <div class="editor_title-textarea" id="editor_title-textarea">Write something ...</div>
+                                        <div class="post_content_editor-textarea" id="post_content_editor-textarea" role="textbox" aria-multiline="true" contenteditable="true"></div>
+                                        <div class="content_editor_unfocus-line"></div>
+                                        <div class="content_editor_focus-line"></div>
+                                    </div>
+                                    <div class="editor-toolbar" role="toolbar">
+                                        <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
+                                            <div class="hidden_bold-label hidden-toolbar-label"></div>
+                                            <span class="text_bold-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
+                                            <div class="hidden_italic-label hidden-toolbar-label"></div>
+                                            <span class="text_italic-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
+                                            <div class="hidden_underline-label hidden-toolbar-label"></div>
+                                            <span class="text_underline-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
+                                            <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
+                                            <span class="text_bulleted_list-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
+                                            <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
+                                            <span class="text_remove_formatting-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="editor-footer">
+                                <div class="post_action-nav">
+                                    <div class="cancel_post-tab" id="cancel_post-tab" role="button">
+                                        <div class="hiden_cancel_post-btn"></div>
+                                        <span class="cancel_post-btn">
+                                            <span class="post_cancel-label">Cancel</span>
+                                        </span>
+                                    </div>
+                                    <div class="upload_post-tab empty" id="upload_post-tab" role="button">
+                                        <div class="hiden_upload_post-btn"></div>
+                                        <span class="upload_post-btn">
+                                            <span class="upload_post-label">Post</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
             </div>
         </div>
     </div>
