@@ -135,6 +135,22 @@ div#preview {
   aspect-ratio: auto 40 / 40;
   width: 40px;
 }
+input.button.download__btn {
+    /* float: right; */
+    text-transform: uppercase;
+    background-color: rgba(11,72,117,.85) !important;
+    /* border-color: #222; */
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 14px 25px;
+    border-radius: 0.2rem;
+    font-family: "Merriweather", serif;
+    font-weight: 100;
+    color: #fff;
+    width: 100%;
+    outline: none;
+    border: none;
+}
 .post_instruction-btn {
   align-items: center;
   color: rgba(0, 0, 0, 0.55);
