@@ -56,7 +56,7 @@
                             </div>
                             <div class="cv__opening--right">
                                 <div class="cv__box cv--fullname">
-                                    <div class="cv__textbox" spellcheck="false" contenteditable="true" aria-placeholder="Họ tên" data-max-length="50">Le ciel de vivi</div>
+                                    <div id="cv__fullname" class="cv__textbox" spellcheck="false" contenteditable="true" aria-placeholder="Họ tên" data-max-length="50">Le ciel de vivi</div>
                                 </div>
                                 <div class="cv__box cv--position ">
                                     <div class="cv__textbox" spellcheck="false" contenteditable="true"
@@ -218,7 +218,7 @@
                 <div class="cv__uploader--image">
                     <div class="addition__box">
                         <input type="file"  accept="image/gif, image/jpeg, image/png" name="image" id="file" onchange="loadFile(event)" style="display: none;">
-                        
+                        <!-- <img id="hidden_avatar" src="" alt="" srcset="" style="display: none;"> -->
                         <label for="file" style="cursor: pointer;"><i class="fas fa-upload"></i>Upload Image</label>
                     </div>
                     
@@ -878,4 +878,5 @@
 <script src="https://unpkg.com/maxlength-contenteditable@1.0.1/dist/maxlength-contenteditable.js"></script>
 <script>
     maxlengthContentEditableModule.maxlengthContentEditable();
+
 </script>
