@@ -698,7 +698,7 @@
                 </div>
             </div>
             <div class="cv__layout--right col-8">
-                <div class="cv" id="cv">
+                <div class="cv" id="cv--pdf">
                     <div class="cv__container">
                         <div class="cv__header">
                             <div class="avatar__box--left hide">
@@ -885,16 +885,23 @@
         function generatePDF() {
             console.log('generate')
             var opt = {
-                margin: 0,
+                margin: [0, -2.2],
                 // pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
                 filename:'myCV.pdf',
                 image: { type: 'jpeg', quality: 1 },
-                html2canvas:{ scale: 6, useCORS: true},
-                jsPDF: {format: 'a4', orientation: 'portrait' },
+                html2canvas:{letterRendering: true,  scale: 6, useCORS: true},
+                jsPDF: {unit: 'mm', format: [210, 297], orientation: 'portrait' },
                 pageBreak: {mode: ['avoid-all', 'css']}
             };
-            var element = document.getElementById('cv');
-            html2pdf(element, opt)
+
+            var element = document.getElementsByClassName('cv')[0];
+            html2pdf().from(element).set(opt).toPdf().get('pdf').then(function (pdf) {
+                var totalPages = pdf.internal.getNumberOfPages();
+                console.log('num: '+totalPages);
+                // return pdf.
+            }).save();
+
+            
         }
     </script>
 </body>
