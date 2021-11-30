@@ -1,10 +1,10 @@
 img { display: block; max-width: 100%; }
-.main__body { margin-top: 20px; margin-bottom: 20px; }
+.main__body {margin-top: 20px;margin-bottom: 20px;/* height: 297mm; */}
 .preview { overflow: hidden; }
-.cv__layout--left { width: 210mm; height: 297mm; font-family: system-ui; font-size: 14px; float: left; }
-.cv { margin-top: -30px; height: 100%; width: 100%; box-shadow: rgba(60, 64, 67, 0.31) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; border-radius: 0.2rem; }
-.cv__container { width: 100%; height: 100%; }
-.cv__header { width: 100%; margin-bottom: 30px; }
+.cv__layout--right {/* width: 210mm; *//* height: 297mm; *//* font-family: system-ui; *//* font-size: 14px; *//* float: left; */display: flex;align-items: center;justify-content: center;}
+.cv {margin: 0;padding: 0;width: 210mm;height: 297mm;font-family: system-ui;font-size: 14px;/* float: left; *//* margin-top: -30px; */box-shadow: rgba(60, 64, 67, 0.31) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;border-radius: 0.2rem;background: rgba(255,255,255,1);}
+.cv__container {/* width: 100%; *//* height: 100%; */}
+.cv__header {width: 100%;/* margin-bottom: 30px; */}
 .avatar__box--left { float: left; margin-right: 4px; width: 160px; height: 160px; }
 .avatar__uploader { width: 100% !important; height: 100% !important; }
 .avatar__box--left.hide { display: none; }
@@ -22,7 +22,7 @@ div#preview { border-top-left-radius: 0.2rem; width: 100%; height: 100%; }
 }
 
 .cv--fullname .cv__textbox {
-    font-size: 45px;
+    font-size: 40px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -42,7 +42,7 @@ div#preview { border-top-left-radius: 0.2rem; width: 100%; height: 100%; }
 .award__detail .cv__textbox { padding: 0px 10px 0px 0px; text-transform: capitalize; }
 .cv__item__content .cv__textbox { font-size: 13px; font-weight: 450; }
 .cv__box.cv--position .cv__textbox {font-weight: 400;font-size: 16px;text-transform: uppercase;letter-spacing: 2px;}
-.section__title--uppercase {text-transform: uppercase;font-weight: 700;font-size: 25px;}
+.section__title--uppercase {text-transform: uppercase;font-weight: 700;font-size: 22px;}
 .cv__aboutme--right {
     margin-top: 30px;
     margin-right: 35px;
@@ -119,7 +119,7 @@ span.upload_post-label { display: inline-block; margin: 0px; }
 .section__box--expand p label span { margin-left: 3px; color: rgb(255, 0, 0); font-size: 12px; font-weight: normal; margin-top: 5px; }
 .section__box--expand p input { padding: 10px 12px; outline: none; font-size: 13px; font-weight: 600; margin: 0px; width: 100%; display: block; color: rgb(47, 50, 57); border: 1px solid rgb(222, 222, 222); transition: border 0.25s linear 0s, color 0.25s linear 0s, background-color 0.25s linear 0s; background: rgb(255, 255, 255); border-radius: 2px; }
 .section__box--expand p span.infocenter-qform-desc { width: 100%; display: inline-block; font-size: 12px; font-weight: normal; margin-top: 5px; color: rgb(132, 137, 145); }
-#custom__scrollbar { overflow-y: scroll; height: 297mm; }
+#custom__scrollbar {overflow-y: scroll;height: 297mm;}
 #custom__scrollbar::-webkit-scrollbar-track { box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 1px inset; background-color: rgb(245, 245, 245); }
 #custom__scrollbar::-webkit-scrollbar { width: 8px; background-color: rgb(245, 245, 245); }
 #custom__scrollbar::-webkit-scrollbar-thumb { background-color: rgba(11, 72, 117, 0.75); border: 2px solid rgb(237, 237, 237); }
