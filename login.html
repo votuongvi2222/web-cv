@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
 </body>
 </html>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -21,8 +22,9 @@
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
         localStorage.setItem('uid', profile.getId());
         localStorage.setItem('name', profile.getName());
-        localStorage.setItem('avatar', profile.getImageUrl());
+        localStorage.setItem('avatar', profile.getImageUrl().replace('=s96-c', ''));
         localStorage.setItem('email', profile.getEmail());
-        window.location.replace("http://localhost:5500/cv_2.html");
+        // window.location.replace("http://localhost:5500/cv_2.html");
     }
+
 </script>

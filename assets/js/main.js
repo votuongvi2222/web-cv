@@ -4,7 +4,8 @@ var ggID = localStorage.getItem('uid'),
     ggAvatar = localStorage.getItem('avatar'),
     ggEmail = localStorage.getItem('email'),
     ggName = localStorage.getItem('name');
-
+var cvName = document.getElementById('cv__fullname');
+var emailInput = document.getElementsByName('email')[0];
 var image = document.getElementById('image--cropped');  
 image.src = ggAvatar;
 var options = {
@@ -20,20 +21,28 @@ var options = {
     console.log(event.detail.scaleY);
   }
 }
-var cropper = new Cropper(image, options);
+var cropper;
 var uploadedImageURL;
 
 $(document).ready(function () {
-  $('#cropper__container').show();
-  $('#cropper__container').height(200);
+  if(localStorage.getItem('uid')){
+    $('#cropper__container').show();
+    $('#cropper__container').height(200);
+    cvName.innerText = ggName;
+    emailInput.value = ggEmail;
+    image.src = ggAvatar;
+    cropper = new Cropper(image, options)
+    $('.avatar__box--left').removeClass('hide');
 
-  $('.avatar__box--left').removeClass('hide');
+    var avatarW = $('.avatar__box--left').outerWidth();
+    var cvHeaderW = $('.cv__header').outerWidth();
+    console.log('avaw: ' + avatarW);
+    console.log('cvh: ' + cvHeaderW);
+    $('.cv__opening--right').width(cvHeaderW - avatarW - 4);
+  }
 
-  var avatarW = $('.avatar__box--left').outerWidth();
-  var cvHeaderW = $('.cv__header').outerWidth();
-  console.log('avaw: ' + avatarW);
-  console.log('cvh: ' + cvHeaderW);
-  $('.cv__opening--right').width(cvHeaderW - avatarW - 4);
+
+  
   // toolbar
   $('.toolbar-btn').click(function(){
     $(this).toggleClass('focused');
@@ -104,14 +113,10 @@ $(document).ready(function () {
 });
 var inputImage = document.getElementById('file');
 var loadFile = function(event) {
-  // $('.cropper-container').width(0);
-  // $('.cropper-container').height(0);
+
   $('#cropper__container').show();
   $('#cropper__container').height(200);
 
-  // var image = document.getElementById('image--cropped');
-  // var review = document.getElementById('preview')
-  // console.log('changed')
 	image.src = URL.createObjectURL(event.target.files[0]) ;
   if (cropper) {
     cropper.destroy();
@@ -119,11 +124,7 @@ var loadFile = function(event) {
 
   cropper = new Cropper(image, options);
   inputImage.value = null;
-  // var cropperCanva = $('.cropper-canvas img')[0];
-  // cropperCanva.src = URL.createObjectURL(event.target.files[0]);
-  // $.each($("img"), function() {
-  //   $(this).attr("src", URL.createObjectURL(event.target.files[0])) ;
-  // });
+
 };
 
 $(document).ready(function(){
@@ -162,7 +163,6 @@ $(document).ready(function(){
   });
   console.log(sample_name_content);
 });
-
 
 
 
