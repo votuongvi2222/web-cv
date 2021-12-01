@@ -1,5 +1,11 @@
 // import Cropper from 'cropperjs';
 // GG SIGN IN
+// header -> cv -> header color -> not
+var colorChoices = {
+  'yellow': ['rgba(255, 238, 85,.95)', 'rgba(255,255,255,1)', 'rgba(0, 0, 0, 1)', 'rgba(63, 63, 63, .2)'],
+  'gray': ['rgba(193, 193, 193, .95)', 'rgba(255,255,255,1)', 'rgba(0, 0, 0, 1)', 'rgba(63, 63, 63, .2)'],
+  'blue': ['rgba(115, 146, 172, .7)', 'rgba(229, 222, 222, .6)', 'rgba(229, 222, 222, .6)', 'rgba(169, 169, 169, 1)']
+}
 var ggID = localStorage.getItem('uid') || null,
     ggAvatar = localStorage.getItem('avatar') || null,
     ggEmail = localStorage.getItem('email') || null,
@@ -150,8 +156,25 @@ $(document).ready(function () {
     console.log('cvh: ' + cvHeaderW);
     $('.cv__opening--right').width(cvHeaderW);
   })
-
+  // $('.color__choice').click((this)=>{
+  //   console.log('choose')
+  //   var choice = $(this).attr("color");
+  //   console.log(choice)
+  //   $('.cv__opening--right').css({'background-color': colorChoices[choice]+'!important'});
+  // })
 });
+var updateColor = function(choiceElement) {
+  console.log('choise')
+  var choice = $(choiceElement).data("color");
+  console.log(colorChoices[choice])
+
+  $('.cv__opening--right').css({'background-color': colorChoices[choice][0]});
+  $('.cv').css({'background-color': colorChoices[choice][1]});
+  $('.cv__opening--right .cv__textbox').css({'color': colorChoices[choice][2]});
+  $('div.not').css({'background-color': colorChoices[choice][3]});
+  $('i.not').css({'color-color': colorChoices[choice][3]});
+
+}
 var inputImage = document.getElementById('file');
 var loadFile = function(event) {
 
