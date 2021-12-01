@@ -1,11 +1,35 @@
 // import Cropper from 'cropperjs';
 // GG SIGN IN
-var ggID = localStorage.getItem('uid'),
-    ggAvatar = localStorage.getItem('avatar'),
-    ggEmail = localStorage.getItem('email'),
-    ggName = localStorage.getItem('name');
-var cvName = document.getElementById('cv__fullname');
-var emailInput = document.getElementsByName('email')[0];
+var ggID = localStorage.getItem('uid') || null,
+    ggAvatar = localStorage.getItem('avatar') || null,
+    ggEmail = localStorage.getItem('email') || null,
+    ggName = localStorage.getItem('name') || null;
+// cv_box dom
+var cvFullName = document.getElementById('cv__fullname') || null,
+    cvWantedPosition = document.getElementById('cv__wanted__position') || null,
+    cvPhoneNumber = document.getElementById('cv__phone__number') || null,
+    cvEmail = document.getElementById('cv__email') || null,
+    cvAddress = document.getElementById('cv__address') || null,
+    cvWebsites = document.getElementsByClassName('cv__websites') || [],
+    cvSkillItems = document.getElementById('cv__skill__items') || null,
+    cvLanguageItems = document.getElementById('cv__language__items') || null,
+    cvAwardItems = document.getElementById('cv__award__items') || null,
+    cvProfileDesc = document.getElementById('cv__profile__desc') || null;
+
+var inFullName = document.getElementById('full_name') || null,
+    inWantedPosition = document.getElementById('wanted_job_position') || null,
+    inEmail = document.getElementById('email') || null,
+    inPhoneNumber = document.getElementById('phone_number') || null,
+    inAddress = document.getElementById('address') || null,
+    inWebsites = document.getElementById('websites') || null,
+    inSkillSections = document.getElementsByClassName('skill__section') || [],
+    inLanguageSections = document.getElementsByClassName('language__section') || [],
+    inAwardSections = document.getElementsByClassName('award__section') || [],
+    inProfileDesc = document.getElementById('profile_desc') || null,
+    inExperienceSections = document.getElementsByClassName('timeline__section') || [],
+    inEductionSections = document.getElementsByClassName('education__section') || [],
+    inHobbies = document.getElementsByName('hobby_title') || [];
+
 var image = document.getElementById('image--cropped');  
 image.src = ggAvatar;
 var options = {
@@ -24,12 +48,15 @@ var options = {
 var cropper;
 var uploadedImageURL;
 
+var defaultFullNameBoxH = 63;
+
 $(document).ready(function () {
   if(localStorage.getItem('uid')){
     $('#cropper__container').show();
     $('#cropper__container').height(200);
-    cvName.innerText = ggName;
-    emailInput.value = ggEmail;
+
+    cvFullName.innerText = inFullName.value = ggName;
+    cvEmail.innerText = inEmail.value = ggEmail;
     image.src = ggAvatar;
     cropper = new Cropper(image, options)
     $('.avatar__box--left').removeClass('hide');
@@ -40,9 +67,23 @@ $(document).ready(function () {
     console.log('cvh: ' + cvHeaderW);
     $('.cv__opening--right').width(cvHeaderW - avatarW - 4);
   }
-
-
-  
+  if($('#cv__fullname').outerHeight() > defaultFullNameBoxH) {
+    $('.cv--fullname').css({'margin-top': '22px', 'line-height': '40px'})
+  } else {
+    $('.cv--fullname').css({'margin-top': '40px', 'line-height' : '50px'})
+  }
+  $('#cv__fullname').on('DOMSubtreeModified', function(){
+    if($(this).outerHeight() > defaultFullNameBoxH) {
+      // if($(this).outerHeight() > 100) {
+      //   $(this).prop("contenteditable" , false);
+      // }
+      $('.cv--fullname').css({'margin-top': '22px', 'line-height': '40px'})
+    } else {
+      $('.cv--fullname').css({'margin-top': '40px', 'line-height' : '50px'})
+    }
+    console.log('over: ' + $(this).outerHeight())
+  });
+  $(".cv__textbox").keypress(function(e){ return e.which != 13; });
   // toolbar
   $('.toolbar-btn').click(function(){
     $(this).toggleClass('focused');
