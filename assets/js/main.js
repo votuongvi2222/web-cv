@@ -1,10 +1,12 @@
 // import Cropper from 'cropperjs';
 // GG SIGN IN
-// header -> cv -> header color -> not
+// header -> cv -> header fullname --> header position -> not -> yes -> line -> section text -> icon
 var colorChoices = {
-  'yellow': ['rgba(255, 238, 85,.95)', 'rgba(255,255,255,1)', 'rgba(0, 0, 0, 1)', 'rgba(63, 63, 63, .2)'],
-  'gray': ['rgba(193, 193, 193, .95)', 'rgba(255,255,255,1)', 'rgba(0, 0, 0, 1)', 'rgba(63, 63, 63, .2)'],
-  'blue': ['rgba(115, 146, 172, .7)', 'rgba(229, 222, 222, .6)', 'rgba(229, 222, 222, .6)', 'rgba(169, 169, 169, 1)']
+  'yellow': ['rgba(255, 238, 85,.95)', 'rgba(255,255,255,1)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(63, 63, 63, .2)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)'],
+  'black': ['rgba(193, 193, 193, .95)', 'rgba(0,0,0,1)', 'rgb(211, 211, 211)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(63, 63, 63, 0.8)', 'rgba(193, 193, 193, 0.95)', 'rgba(193, 193, 193, 0.35)', 'rgba(255, 255, 255, 0.9)', 'rgba(193, 193, 193, 0.95)'],
+  'blue': ['rgba(115, 146, 172, .7)', 'rgba(229, 222, 222, .6)','rgba(0, 0, 0, 1)', 'rgba(255,255,255,.8)', 'rgba(229, 222, 222, .6)', 'rgba(169, 169, 169, 0.3)', 'rgba(115, 146, 172, 0.7)', 'rgba(255, 255, 255, .8)', 'rgba(115, 146, 172, 0.7)', 'rgba(0,0,0,1)'],
+  'gray': ['rgba(193, 193, 193, .95)', 'rgba(255,255,255,1)', 'rgba(0, 0, 0, 1)','rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(63, 63, 63, .2)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)'],
+
 }
 var ggID = localStorage.getItem('uid') || null,
     ggAvatar = localStorage.getItem('avatar') || null,
@@ -74,18 +76,18 @@ $(document).ready(function () {
     $('.cv__opening--right').width(cvHeaderW - avatarW - 4);
   }
   if($('#cv__fullname').outerHeight() > defaultFullNameBoxH) {
-    $('.cv--fullname').css({'margin-top': '22px', 'line-height': '40px'})
+    $('.cv--fullname').css({'margin-top': '22px'})
   } else {
-    $('.cv--fullname').css({'margin-top': '40px', 'line-height' : '50px'})
+    $('.cv--fullname').css({'margin-top': '40px'})
   }
   $('#cv__fullname').on('DOMSubtreeModified', function(){
     if($(this).outerHeight() > defaultFullNameBoxH) {
       // if($(this).outerHeight() > 100) {
       //   $(this).prop("contenteditable" , false);
       // }
-      $('.cv--fullname').css({'margin-top': '22px', 'line-height': '40px'})
+      $('.cv--fullname').css({'margin-top': '22px'})
     } else {
-      $('.cv--fullname').css({'margin-top': '40px', 'line-height' : '50px'})
+      $('.cv--fullname').css({'margin-top': '40px'})
     }
     console.log('over: ' + $(this).outerHeight())
   });
@@ -163,16 +165,23 @@ $(document).ready(function () {
   //   $('.cv__opening--right').css({'background-color': colorChoices[choice]+'!important'});
   // })
 });
+// header bg -> cv bg -> cv text -> header fullname --> header position -> not -> yes -> line -> section text -> icon
 var updateColor = function(choiceElement) {
   console.log('choise')
   var choice = $(choiceElement).data("color");
   console.log(colorChoices[choice])
 
   $('.cv__opening--right').css({'background-color': colorChoices[choice][0]});
-  $('.cv').css({'background-color': colorChoices[choice][1]});
-  $('.cv__opening--right .cv__textbox').css({'color': colorChoices[choice][2]});
-  $('div.not').css({'background-color': colorChoices[choice][3]});
-  $('i.not').css({'color-color': colorChoices[choice][3]});
+  $('.cv').css({'background-color': colorChoices[choice][1], 'color': colorChoices[choice][2]});
+  $('#cv__fullname').css({'color': colorChoices[choice][3]});
+  $('#cv__wanted__position').css({'color': colorChoices[choice][4]});
+  $('div.not').css({'background-color': colorChoices[choice][5]});
+  $('i.not').css({'color': colorChoices[choice][5]});
+  $('div.yes').css({'background-color': colorChoices[choice][6]});
+  $('i.yes').css({'color': colorChoices[choice][6]});
+  $('.cv__section__title--underline').css({'border-color': colorChoices[choice][7]});
+  $('.section__title--uppercase').css({'color': colorChoices[choice][8]});
+  $('.cv__personal__items i').css({'color': colorChoices[choice][9]});
 
 }
 var inputImage = document.getElementById('file');
