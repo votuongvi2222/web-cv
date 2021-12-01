@@ -13,7 +13,7 @@ span.page__total { }
 .color__chooser i.yellow { color: rgb(255, 238, 85); }
 .color__chooser i.blue { color: rgb(115, 146, 172); }
 .color__chooser i.gray { color: rgb(193, 193, 193); }
-.cv__layout--right { display: flex; align-items: center; justify-content: center; margin-top: 30px; position: relative; }
+.cv__layout--right.col-md-8 {display: flex;align-items: center;justify-content: center;margin-top: 30px;position: relative;zoom: .4;}
 .cv { margin: 0px; padding: 0px; width: 210mm; height: 297mm; font-family: system-ui; font-size: 14px; box-shadow: rgba(60, 64, 67, 0.31) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; border-radius: 0.2rem; background: rgb(255, 255, 255); }
 .cv__container { }
 .cv__header { width: 100%; }
@@ -132,11 +132,21 @@ span.upload_post-label { display: inline-block; margin: 0px; }
 .section__box--expand p label span { margin-left: 3px; color: rgb(255, 0, 0); font-size: 12px; font-weight: normal; margin-top: 5px; }
 .section__box--expand p input { padding: 10px 12px; outline: none; font-size: 13px; margin: 0px; width: 100%; display: block; color: rgb(47, 50, 57); border: 1px solid rgb(222, 222, 222); transition: border 0.25s linear 0s, color 0.25s linear 0s, background-color 0.25s linear 0s; background: rgb(255, 255, 255); border-radius: 2px; }
 .section__box--expand p span.infocenter-qform-desc { width: 100%; display: inline-block; font-size: 12px; font-weight: normal; margin-top: 5px; color: rgb(132, 137, 145); }
-#custom__scrollbar { overflow-y: scroll; height: 305mm; }
-#custom__scrollbar::-webkit-scrollbar-track { box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 1px inset; background-color: rgb(245, 245, 245); }
-#custom__scrollbar::-webkit-scrollbar { width: 8px; background-color: rgb(245, 245, 245); }
-#custom__scrollbar::-webkit-scrollbar-thumb { background-color: rgba(11, 72, 117, 0.75); border: 2px solid rgb(237, 237, 237); }
 .w3-display-left { left: -6% !important; top: 30% !important; }
 .w3-display-right { right: -6% !important; top: 30% !important; }
 button.w3-button { background-color: rgba(11, 72, 117, 0.95) !important; outline: none !important; }
 button.w3-button:hover { background-color: rgba(63, 63, 63, 0.35) !important; }
+
+@media (min-width: 768px) {
+    .cv__layout--right.col-md-8{
+        zoom: unset;
+    }
+    #custom__scrollbar {
+        overflow-y: scroll;
+        height: 305mm;
+    }
+    #custom__scrollbar::-webkit-scrollbar-track { box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 1px inset; background-color: rgb(245, 245, 245); }
+    #custom__scrollbar::-webkit-scrollbar { width: 8px; background-color: rgb(245, 245, 245); }
+    #custom__scrollbar::-webkit-scrollbar-thumb { background-color: rgba(11, 72, 117, 0.75); border: 2px solid rgb(237, 237, 237); }
+
+}
