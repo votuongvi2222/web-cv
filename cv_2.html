@@ -43,20 +43,21 @@
 </head>
 
 <body>
-    <!-- <div class="navigation--top"></div> -->
     <div class="container-fluid main__body">
         <div class="row">
+            <!-- =========================== EDITOR SIDEBAR ============================ -->
             <div class="editor__sidebar--left col-md-4" id="custom__scrollbar">
+                <!-- =========================== DOWNLOAD PDF <html2pdf> ============================ -->
                 <input id="export" onclick="generatePDF()" type="submit" name="download" value="Download Your CV" class="button download__btn">
                 <div id="hidden_export"></div>
+                <!-- =========================== IMAGE UPLOADER ============================ -->
                 <div class="cv__uploader--image">
                     <div class="addition__box">
                         <input type="file"  accept="image/gif, image/jpeg, image/png" name="image" id="file" onchange="loadFile(event)" style="display: none;">
-                        <!-- <img id="hidden_avatar" src="" alt="" srcset="" style="display: none;"> -->
                         <label for="file" style="cursor: pointer;"><i class="fas fa-upload"></i>Upload Image</label>
                     </div>
-                    
                 </div>
+                <!-- =========================== IMAGE CROPPER <cropper.js> ============================ -->
                 <div class="cropper__container" id="cropper__container">
                     <img src="#" id="image--cropped" alt=""
                     srcset="">
@@ -64,6 +65,7 @@
                         <i class="fas fa-times w3-badge"></i>
                     </div>
                 </div>
+                <!-- =========================== PERSONAL CONTACT INFO EDITOR ============================ -->
                 <div class="addition__box" id="personal__addition">
                     <span style="cursor: pointer;">Personal Information</span>
                 </div>
@@ -114,6 +116,13 @@
                                         <input id="websites" name="websites" type="text" class="the-title websites" required="" value="">
                                         <span class="infocenter-qform-desc">Please type your website. (Use comma ',' to seperate your websites)</span>
                                     </p>
+                                    <p>
+                                        <label>
+                                            Socials
+                                        </label>
+                                        <input id="socials" name="socials" type="text" class="the-title socials" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type your socials. (Use comma ',' to seperate your socials)</span>
+                                    </p>
                                 </div>
                             </div>
                             <div class="editor-footer">
@@ -129,6 +138,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- =========================== SKILL EDITOR ============================ -->
                 <div class="addition__box" id="skill__addition">
                     <span style="cursor: pointer;"><i class="fas fa-plus"></i>Skills</span>
                 </div>
@@ -229,6 +239,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- =========================== LANGUAGE EDITOR ============================ -->
                 <div class="addition__box" id="language__addition">
                     <span style="cursor: pointer;"><i class="fas fa-plus"></i>Languages</span>
                 </div>
@@ -330,6 +341,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- =========================== PROFILE/ABOUT ME EDITOR ============================ -->
                 <div class="addition__box" id="profile__addition">
                     <span style="cursor: pointer;"><i class="fas fa-plus"></i>Profile</span>
                 </div>
@@ -421,6 +433,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- =========================== EXPERIENCE/HISTORY EDITOR ============================ -->
                 <div class="addition__box" id="timeline__addition">
                     <span style="cursor: pointer;"><i class="fas fa-plus"></i>Experiences</span>
                 </div>
@@ -451,12 +464,12 @@
                                             From
                                             <span>*</span>
                                         </label>
-                                        <input name="experience_date_from" type="date" class="the-title experience_date_from" required="" value="">
+                                        <input name="experience_date_from" type="month"  class="the-title experience_date_from" required="" value="">
                                         <label class="required">
                                             To
                                             <span>*</span>
                                         </label>
-                                        <input name="experience_date_to" type="date" class="the-title experience_date_to" required="" value="">
+                                        <input name="experience_date_to" type="month"  class="the-title experience_date_to" required="" value="">
                                         <span class="infocenter-qform-desc">Please type duration time.</span>
                                     </p>
                                     <p>
@@ -542,6 +555,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- =========================== EDUCATION EDITOR ============================ -->
                 <div class="addition__box" id="education__addition">
                     <span style="cursor: pointer;"><i class="fas fa-plus"></i>Education</span>
                 </div>
@@ -571,12 +585,12 @@
                                             From
                                             <span>*</span>
                                         </label>
-                                        <input name="education_date_from" type="date" class="the-title education_date_from" required="" value="">
+                                        <input name="education_date_from" type="month"  class="the-title education_date_from" required="" value="">
                                         <label class="required">
                                             To
                                             <span>*</span>
                                         </label>
-                                        <input name="education_date_to" type="date" class="the-title education_date_to" required="" value="">
+                                        <input name="education_date_to" type="month"  class="the-title education_date_to" required="" value="">
                                         <span class="infocenter-qform-desc">Please type duration time.</span>
                                     </p>
                                     <p>
@@ -655,11 +669,11 @@
                         </div>
                     </div>
                 </div>
+                <!-- =========================== HOBBIES EDITOR ============================ -->
                 <div class="addition__box" id="hobby__addition">
                     <span style="cursor: pointer;"><i class="fas fa-plus"></i>Hobbies And Interests</span>
                 </div>
-                <div class="section__box--expand hobby__section">
-                    
+                <div class="section__box--expand hobby__section">      
                     <div class="post_editor-container">
                         <div class="post_editor-btn" role="button">
                             <div class="icon-container">
@@ -701,6 +715,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- =========================== AWARDS EDITOR ============================ -->
                 <div class="addition__box" id="award__addition">
                     <span style="cursor: pointer;"><i class="fas fa-plus"></i>Awards</span>
                 </div>
@@ -808,23 +823,247 @@
                         </div>
                     </div>
                 </div>
+                <!-- =========================== CERTIFICATES EDITOR ============================ -->
+                <div class="addition__box" id="certificate__addition">
+                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Certificates</span>
+                </div>
+                <div class="section__box--expand certificate__section">
+                    <div class="post_editor-container">
+                        <div class="post_editor-btn" role="button" >
+                            <div class="icon-container">
+                                <div class="remove__icon">
+                                    <i class="far fa-trash-alt w3-badge"></i>
+                                </div>
+                            </div>
+                            <div class="post_instruction-btn">Write something ...</div>
+                        </div>
+                        <div class="post_editor-expand" style="display: none;">
+                            <div class="editor-body">
+                                <div class="editor-body-container">
+                                    <p>
+                                        <label for="" class="required">
+                                            Certificate Title
+                                            <span>*</span>
+                                        </label>
+                                        <input name="certificate_title" type="text" class="the-title certificate_title" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type your certificate.</span>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            Year
+                                        </label>
+                                        <input name="certificate_year" type="text" class="the-title certificate_year" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type the year when you get this certificate.</span>
+                                    </p>
+                                    <div class="editor-textarea-box">
+                                        <div class="editor_title-textarea">Write details here ...</div>
+                                        <div class="post_content_editor-textarea certificate_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
+                                        <div class="content_editor_unfocus-line"></div>
+                                        <div class="content_editor_focus-line"></div>
+                                    </div>
+                                    <div class="editor-toolbar" role="toolbar">
+                                        <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
+                                            <div class="hidden_bold-label hidden-toolbar-label"></div>
+                                            <span class="text_bold-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
+                                            <div class="hidden_italic-label hidden-toolbar-label"></div>
+                                            <span class="text_italic-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
+                                            <div class="hidden_underline-label hidden-toolbar-label"></div>
+                                            <span class="text_underline-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
+                                            <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
+                                            <span class="text_bulleted_list-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
+                                            <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
+                                            <span class="text_remove_formatting-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="editor-footer">
+                                <div class="post_action-nav">
+                                    <div class="cancel_post-tab" role="button">
+                                        <div class="hiden_cancel_post-btn"></div>
+                                        <span class="cancel_post-btn">
+                                            <span class="post_cancel-label">Close</span>
+                                        </span>
+                                    </div>
+                                    <div class="upload_post-tab empty" role="button">
+                                        <div class="hiden_upload_post-btn"></div>
+                                        <span class="upload_post-btn">
+                                            <span class="upload_post-label">Add</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- =========================== REFERENCES EDITOR ============================ -->
+                <div class="addition__box" id="reference__addition">
+                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>References</span>
+                </div>
+                <div class="section__box--expand reference__section">
+                    <div class="post_editor-container">
+                        <div class="post_editor-btn" role="button" >
+                            <div class="icon-container">
+                                <div class="remove__icon">
+                                    <i class="far fa-trash-alt w3-badge"></i>
+                                </div>
+                            </div>
+                            <div class="post_instruction-btn">Write something ...</div>
+                        </div>
+                        <div class="post_editor-expand" style="display: none;">
+                            <div class="editor-body">
+                                <div class="editor-body-container">
+                                    <p>
+                                        <label for="" class="required">
+                                            Reference Called Name
+                                            <span>*</span>
+                                        </label>
+                                        <input name="reference_called_name" type="text" class="the-title reference_called_name" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type your reference.</span>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            Reference Job Position
+                                        </label>
+                                        <input name="reference_job_position" type="text" class="the-title reference_job_postion" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type the job position of that reference.</span>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            Reference Email
+                                        </label>
+                                        <input name="reference_email" type="text" class="the-title reference_email" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type the reference's email.</span>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            Reference Phone Number
+                                        </label>
+                                        <input name="reference_phone_number" type="text" class="the-title reference_phone_number" required="" value="">
+                                        <span class="infocenter-qform-desc">Please type the reference's phone number.</span>
+                                    </p>
+                                    <div class="editor-textarea-box">
+                                        <div class="editor_title-textarea">Write details here ...</div>
+                                        <div class="post_content_editor-textarea reference_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
+                                        <div class="content_editor_unfocus-line"></div>
+                                        <div class="content_editor_focus-line"></div>
+                                    </div>
+                                    <div class="editor-toolbar" role="toolbar">
+                                        <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
+                                            <div class="hidden_bold-label hidden-toolbar-label"></div>
+                                            <span class="text_bold-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
+                                            <div class="hidden_italic-label hidden-toolbar-label"></div>
+                                            <span class="text_italic-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
+                                            <div class="hidden_underline-label hidden-toolbar-label"></div>
+                                            <span class="text_underline-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
+                                            <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
+                                            <span class="text_bulleted_list-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
+                                            <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
+                                            <span class="text_remove_formatting-label text-toolbar-label">
+                                                <span class="toolbar-btn-icon">
+                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="editor-footer">
+                                <div class="post_action-nav">
+                                    <div class="cancel_post-tab" role="button">
+                                        <div class="hiden_cancel_post-btn"></div>
+                                        <span class="cancel_post-btn">
+                                            <span class="post_cancel-label">Close</span>
+                                        </span>
+                                    </div>
+                                    <div class="upload_post-tab empty" role="button">
+                                        <div class="hiden_upload_post-btn"></div>
+                                        <span class="upload_post-btn">
+                                            <span class="upload_post-label">Add</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- =========================== CV VIEW CONTAINER ============================ -->
             <div class="cv__layout--right col-md-8">
+                <!-- =========================== PAGE COUNTER ============================ -->
                 <div class="page__counter">
                     <input type="text" class="page__index" value="1" readonly>
                     <span class="divider">/</span>
                     <span class="page__total">2</span>
                 </div>
+                <!-- =========================== THEME OPTIONS ============================ -->
                 <div class="color__chooser">
                     <i class="fas fa-circle yellow color__choice" data-color="yellow" onclick="updateColor(this)"></i>
                     <i class="fas fa-circle blue color__choice" data-color="blue" onclick="updateColor(this)"></i>
                     <i class="fas fa-circle gray color__choice" data-color="gray" onclick="updateColor(this)"></i>
                     <i class="fas fa-circle black color__choice" data-color="black" onclick="updateColor(this)"></i>
                 </div>
-                <div class="w3-content w3-display-container">
-                    
+                <div class="underline__chooser" onclick="setUnderline(this)">
+                    <span>Underline</span> 
+                </div>
+                <!-- =========================== CV SLIDE SHOW ============================ -->
+                <div class="w3-content w3-display-container">   
+                    <!-- =========================== CV CONTAINER ============================ -->
                     <div class="cv">
                         <div class="cv__container">
+                            <!-- =========================== CV HEADER ============================ -->
                             <div class="cv__header">
                                 <div class="avatar__box--left hide">
                                     <div class="avatar__uploader">
@@ -843,9 +1082,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- =========================== CV BODY ============================ -->
                             <div class="cv__body">
                                 <div class="row">
                                     <div class="col-4 cv__aboutme--left">
+                                        <!-- =============== CV PERSONAL CONTACT INFO SECTION ============= -->
                                         <div class="cv__section__box cv__personal__box">
                                             <div class="cv__section__title--underline">
                                                 <span class="section__title--uppercase">
@@ -887,10 +1128,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- =============== CV SKILL SECTION ============= -->
                                         <div class="cv__section__box cv__skill__box">
                                             <div class="cv__section__title--underline">
                                                 <span class="section__title--uppercase">
-                                                    Skills
+                                                    Skill
                                                 </span>
                                             </div>
                                             <div class="cv__section__content cv__skill__items" id="cv__skill__items">
@@ -922,8 +1164,8 @@
                                                         <div class="breakline col yes"></div>
                                                         <div class="breakline col yes"></div>
                                                         <div class="breakline col yes"></div>
-                                                        <div class="breakline col yes"></div>
-                                                        <div class="breakline not col"></div>
+                                                        <div class="breakline col not"></div>
+                                                        <div class="breakline col not"></div>
                                                     </div>
                                                     <div class="cv__skill__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="150">Có thể sử dụng thành thạo Html cho mọi dự án, hiểu biết sâu về DOM và biết cách tổ chức HTML rõ ràng.</div>
                                                 </div>
@@ -990,52 +1232,18 @@
                                                         <div class="breakline col yes"></div>
                                                         <div class="breakline col yes"></div>
                                                         <div class="breakline col yes"></div>
-                                                        <div class="breakline not col"></div>
-                                                    </div>
-                                                    <!-- <div class="cv__skill__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="100">Có thể sử dụng thành thạo Html cho mọi dự án, hiểu biết sâu về DOM và biết cách tổ chức HTML rõ ràng.</div> -->
-
-                                                </div>
-                                                <div class="cv__item">
-                                                    <div class="cv__skill__title process__label cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="30">PHP</div>
-                                                    <!-- <div class="process__container">
-                                                        <div class="process__bar" style="width: 70%;">
-                                                            <div class="process__percent__box">
-                                                                <div class="process__percent cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="3">70</div>
-                                                                %
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="star__container">
-                                                        <i class="fas fa-star yes"></i>
-                                                        <i class="fas fa-star yes"></i>
-                                                        <i class="fas fa-star yes"></i>
-                                                        <i class="fas fa-star yes"></i>
-                                                        <i class="fas fa-star yes"></i>
-                                                    </div>
-                                                    <div class="dot__container">
-                                                        <i class="fas fa-circle yes"></i>
-                                                        <i class="fas fa-circle yes"></i>
-                                                        <i class="fas fa-circle yes"></i>
-                                                        <i class="fas fa-circle yes"></i>
-                                                        <i class="fas fa-circle yes"></i>
-                                                    </div> -->
-                                                    <div class="breakline__container row">
                                                         <div class="breakline col yes"></div>
-                                                        <div class="breakline col yes"></div>
-                                                        <div class="breakline col yes"></div>
-                                                        <div class="breakline col yes"></div>
-                                                        <div class="breakline not col"></div>
                                                     </div>
                                                     <!-- <div class="cv__skill__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="100">Có thể sử dụng thành thạo Html cho mọi dự án, hiểu biết sâu về DOM và biết cách tổ chức HTML rõ ràng.</div> -->
 
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <!-- =============== CV LANGUAGE SECTION ============= -->
                                         <div class="cv__section__box cv__language__box">
                                             <div class="cv__section__title--underline">
                                                 <span class="section__title--uppercase">
-                                                    Languages
+                                                    Language
                                                 </span>
                                             </div>
                                             <div class="cv__section__content cv__language__items" id="cv__language__items">
@@ -1075,21 +1283,21 @@
                                                 </div>
                                                 <div class="cv__item">
                                                     <div class="cv__language__title process__label cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="30">French</div>
-                                                    <div class="process__container not">
+                                                    <!-- <div class="process__container not">
                                                         <div class="process__bar yes" style="width: 50%;">
                                                             <div class="process__percent__box">
                                                                 <div class="cv__language__level process__percent cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="3">50</div>
                                                                 %
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <!-- <div class="star__container">
-                                                        <i class="fas fa-star yes"></i>
-                                                        <i class="fas fa-star yes"></i>
-                                                        <i class="fas fa-star yes"></i>
-                                                        <i class="fas fa-star yes"></i>
-                                                        <i class="fas fa-star yes"></i>
                                                     </div> -->
+                                                    <div class="star__container">
+                                                        <i class="fas fa-star yes"></i>
+                                                        <i class="fas fa-star yes"></i>
+                                                        <i class="fas fa-star yes"></i>
+                                                        <i class="fas fa-star not"></i>
+                                                        <i class="fas fa-star not"></i>
+                                                    </div>
                                                     <!-- <div class="dot__container">
                                                         <i class="fas fa-circle yes"></i>
                                                         <i class="fas fa-circle yes"></i>
@@ -1109,30 +1317,62 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- =============== CV AWARD SECTION ============= -->
                                         <div class="cv__section__box cv__award__box">
                                             <div class="cv__section__title--underline">
                                                 <span class="section__title--uppercase">
-                                                    Awards
+                                                    Award
                                                 </span>
                                             </div>
                                             <div class="cv__section__content cv__award__items" id="cv__award__items">
                                                 <div class="cv__item">
                                                     <div class="award__title">
-                                                        <div class="cv__award__title cv__textbox" spellcheck="false" contenteditable="true" data-max-length="100">Web Developer of the year</div>
+                                                        <div class="cv__award__title cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">Web Developer of the year</div>
                                                     </div>
-                                                    <div class="award__detail">
+                                                    <div class="award__detail item__detail">
                                                         <div class="cv__award__place cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="30">Place top 1</div> 
                                                         <span>/</span> 
-                                                        <div class="cv__award__year cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="4">2017</div>
+                                                        <div class="cv__award__year cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="4">2017</div>
                                                     </div>
                                                     <div class="cv__award__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="100">Xếp hạng từ 50 quốc gia với 20000 nhân viên.</div>
                                                 </div>
                                             </div>
                                             
                                         </div>
+                                        <!-- =============== CV HOBBY SECTION ============= -->
+                                        <div class="cv__section__box cv__hobby__box">
+                                            <div class="cv__section__title--underline">
+                                                <span class="section__title--uppercase">
+                                                    Hobbie
+                                                </span>
+                                            </div>
+                                            <div class="cv__lists cv__hobby__lists">
+                                                <ul class="cv__list cv__hobby__list">
+                                                    <li class="cv__item cv__list__item cv__hobby__item">
+                                                        <span class="list__bullet"></span>
+                                                        <div class="cv__hobby cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="15">MUSIC</div>                                                        
+                                                    </li>
+                                                    <li class="cv__item cv__list__item cv__hobby__item">
+                                                        <span class="list__bullet"></span>
+                                                        <div class="cv__hobby cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="15">MOVIE</div>                                                        
+                                                    </li>
+                                                </ul>
+                                                <ul class="cv__list cv__hobby__list">
+                                                    <li class="cv__item cv__list__item cv__hobby__item">
+                                                        <span class="list__bullet"></span>
+                                                        <div class="cv__hobby cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="15">GYM</div>                                                        
+                                                    </li>
+                                                    <li class="cv__item cv__list__item cv__hobby__item">
+                                                        <span class="list__bullet"></span>
+                                                        <div class="cv__hobby cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="15">READING</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col"></div>
                                     <div class="col-7 cv__aboutme--right">
+                                        <!-- =============== CV ABOUT ME SECTION ============= -->
                                         <div class="cv__section__box cv__profile__box">
                                             <div class="cv__section__title--underline">
                                                 <span class="section__title--uppercase">
@@ -1143,33 +1383,212 @@
                                                 <div id="cv__profile__desc" class="cv__profile__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="350">Áp dụng những kinh nghiệm về kỹ năng bán hàng và sự hiểu biết về thị trường để trở thành một nhân viên bán hàng chuyên nghiệp, mang đến nhiều giá trị cho khách hàng. Từ đó giúp Công ty tăng số lượng khách hàng và mở rộng tập khách hàng.</div>
                                             </div>
                                         </div>
+                                        <!-- =============== CV EDUCATION TIME LINE SECTION ============= -->
                                         <div class="cv__section__box cv__education__box">
                                             <div class="cv__section__title--underline">
                                                 <span class="section__title--uppercase">
                                                     Education
                                                 </span>
                                             </div>
+                                            <div class="cv__section__content cv__education__items" id="cv__education__items">
+                                                <div class="cv__item cv__timeline">
+                                                    <div class="education__timeline timeline">
+                                                        <span class="timeline__circle"></span>
+                                                        <span class="timeline__line"></span>
+                                                    </div>
+                                                    <div class="education__content">
+                                                        <div class="education__school">
+                                                            <div class="cv__education__school cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">Ton duc thang university</div>
+                                                        </div>
+                                                        <div class="education__school__details">
+                                                            <div class="cv__education__from cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">2/2013</div> 
+                                                            <span>-</span> 
+                                                            <div class="cv__education__to cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">9/2017</div>
+                                                            <!-- <span class="divider"></span> -->
+                                                            <div class="cv__education__location cv__location cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="30">TP Ho Chi Minh</div>
+                                                        </div>
+                                                        <div class="cv__education__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="100">Tốt nghiệp thủ khoa đầu ra niên khóa 2013-2019.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="cv__item cv__timeline">
+                                                    <div class="education__timeline timeline">
+                                                        <span class="timeline__circle"></span>
+                                                        <span class="timeline__line"></span>
+                                                    </div>
+                                                    <div class="education__content">
+                                                        <div class="education__school">
+                                                            <div class="cv__education__school cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">Ton duc thang university</div>
+                                                        </div>
+                                                        <div class="education__school__details">
+                                                            <div class="cv__education__from cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">2/2013</div> 
+                                                            <span>-</span> 
+                                                            <div class="cv__education__to cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">9/2017</div>
+                                                            <!-- <span class="divider"></span> -->
+                                                            <div class="cv__education__location cv__location cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="30">TP Ho Chi Minh</div>
+                                                        </div>
+                                                        <div class="cv__education__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="100">Tốt nghiệp thủ khoa đầu ra niên khóa 2013-2019.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="cv__item cv__timeline">
+                                                    <div class="education__timeline timeline">
+                                                        <span class="timeline__circle"></span>
+                                                    </div>
+                                                    <div class="education__content">
+                                                        <div class="education__school">
+                                                            <div class="cv__education__school cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">Ton duc thang university</div>
+                                                        </div>
+                                                        <div class="education__school__details">
+                                                            <div class="cv__education__from cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">2/2013</div> 
+                                                            <span>-</span> 
+                                                            <div class="cv__education__to cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">9/2017</div>
+                                                            <!-- <span class="divider"></span> -->
+                                                            <div class="cv__education__location cv__location cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="30">TP Ho Chi Minh</div>
+                                                        </div>
+                                                        <div class="cv__education__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="100">Tốt nghiệp thủ khoa đầu ra niên khóa 2013-2019.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- =============== CV EXPERIENCE TIME LINE SECTION ============= -->
+                                        <div class="cv__section__box cv__experience__box">
+                                            <div class="cv__section__title--underline">
+                                                <span class="section__title--uppercase">
+                                                    Experience
+                                                </span>
+                                            </div>
+                                            <div class="cv__section__content cv__experience__items" id="cv__experience__items">
+                                                <div class="cv__item cv__timeline">
+                                                    <div class="experience__timeline timeline">
+                                                        <span class="timeline__circle"></span>
+                                                        <span class="timeline__line"></span>
+                                                    </div>
+                                                    <div class="experience__content">
+                                                        <div class="experience__company">
+                                                            <div class="cv__experience__job__position cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">mobile engineering</div>
+                                                            <span class="divider">|</span>
+                                                            <div class="cv__experience__company cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">fpt software</div>
+                                                        </div>
+                                                        <div class="experience__company__details">
+                                                            <div class="cv__experience__from cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">2/2013</div> 
+                                                            <span>-</span> 
+                                                            <div class="cv__experience__to cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">9/2017</div>
+                                                            <!-- <span class="divider"></span> -->
+                                                            <div class="cv__experience__location cv__location cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="30">Hà Nội</div>
+                                                        </div>
+                                                        <div class="cv__experience__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="100">Được vinh danh nhân viên xuất sắc 2 năm liền.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="cv__item cv__timeline">
+                                                    <div class="experience__timeline timeline">
+                                                        <span class="timeline__circle"></span>
+                                                    </div>
+                                                    <div class="experience__content">
+                                                        <div class="experience__company">
+                                                            <div class="cv__experience__job__position cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">mobile engineering</div>
+                                                            <span class="divider">|</span>
+                                                            <div class="cv__experience__company cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">fpt software</div>
+                                                        </div>
+                                                        <div class="experience__company__details">
+                                                            <div class="cv__experience__from cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">2/2013</div> 
+                                                            <span>-</span> 
+                                                            <div class="cv__experience__to cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">9/2017</div>
+                                                            <!-- <span class="divider"></span> -->
+                                                            <div class="cv__experience__location cv__location cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="30">Hà Nội</div>
+                                                        </div>
+                                                        <div class="cv__experience__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="100">Được vinh danh nhân viên xuất sắc 2 năm liền.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- =============== CV CERTIFICATE SECTION ============= -->
+                                        <div class="cv__section__box cv__certificate__box">
+                                            <div class="cv__section__title--underline">
+                                                <span class="section__title--uppercase">
+                                                    Certificate
+                                                </span>
+                                            </div>
+                                            <div class="cv__section__content cv__certificate__items" id="cv__certificate__items">
+                                                <div class="cv__item">
+                                                    <div class="certificate__title">
+                                                        <div class="cv__certificate__title cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">
+                                                            Certified cloud security professional (CCSP)
+                                                            <div class="cv__certificate__year cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="4">2021</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cv__item">
+                                                    <div class="certificate__title">
+                                                        <div class="cv__certificate__title cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">
+                                                            Oracle database and MySQL administration certifications
+                                                            <div class="cv__certificate__year cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="4">2019</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="certificate__detail item__detail">
+                                                        <!-- <div class="cv__certificate__desc cv__textbox" spellcheck="false" contenteditable="true" data-max-length="50">Đạt điểm tuyệt đối.</div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
                                             
                                         </div>
-                                        
+                                        <!-- =============== CV REFERENCE SECTION ============= -->
+                                        <div class="cv__section__box cv__reference__box">
+                                            <div class="cv__section__title--underline">
+                                                <span class="section__title--uppercase">
+                                                    Reference
+                                                </span>
+                                            </div>
+                                            <div class="cv__col__boxes">
+                                                <div class="cv__col__box">
+                                                    <div class="cv__item cv__reference">
+                                                        <div class="cv__reference__header">
+                                                            <div class="cv__reference__job__position cv__textbox" spellcheck="false" contenteditable="true" data-max-length="30">Team leader</div>
+                                                        </div>
+                                                        <div class="cv__reference__body">
+                                                            <div class="cv__reference__called__name cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="30">Mr Tuan Anh</div>
+                                                        </div>
+                                                        <div class="cv__reference__form">
+                                                            <span class="cv__label">Phone:</span>
+                                                            <div id="cv__reference__phone__number" class="cv__textbox" spellcheck="false" contenteditable="true" data-max-length="15"">+84 17 004 354</div>
+                                                        </div>
+                                                        <div class="cv__reference__form">
+                                                            <span class="cv__label">Email:</span>
+                                                            <div id="cv__reference__email" class=" cv__textbox" spellcheck="false" contenteditable="true" data-max-length="50">tuananh@gmail.com</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cv__col__box">
+                                                    <div class="cv__item cv__reference">
+                                                        <div class="cv__reference__header">
+                                                            <div class="cv__reference__job__position cv__textbox" spellcheck="false" contenteditable="true" data-max-length="30">Tech manager</div>
+                                                        </div>
+                                                        <div class="cv__reference__body">
+                                                            <div class="cv__reference__called__name cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="30">Mr Johnson</div>
+                                                        </div>
+                                                        <div class="cv__reference__form">
+                                                            <span class="cv__label">Phone:</span>
+                                                            <div id="cv__reference__phone__number" class="cv__textbox" spellcheck="false" contenteditable="true" data-max-length="15"">+84 17 004 354</div>
+                                                        </div>
+                                                        <div class="cv__reference__form">
+                                                            <span class="cv__label">Email:</span>
+                                                            <div id="cv__reference__email" class=" cv__textbox" spellcheck="false" contenteditable="true" data-max-length="50">johnson@gmail.com</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="cv__footer">
                             </div>
                         </div>
                     </div>
                     <div class="cv">
-                        
                     </div>
                     <div class="cv">
-                        
                     </div>
                     <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
                     <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
                 </div>
             </div>
-
         </div>
     </div>
     <!-- <div class="info__footer"></div> -->
