@@ -43,7 +43,7 @@
 </head>
 
 <body>
-    <div class="navigation--top"></div>
+    <!-- <div class="navigation--top"></div> -->
     <div class="container-fluid main__body">
         <div class="row">
             <div class="editor__sidebar--left col-md-4" id="custom__scrollbar">
@@ -61,7 +61,7 @@
                     <img src="#" id="image--cropped" alt=""
                     srcset="">
                     <div class="remove__tab" id="remove__btn" role="button">
-                        <i class="fas fa-times"></i>
+                        <i class="fas fa-times w3-badge"></i>
                     </div>
                 </div>
                 <div class="addition__box" id="personal__addition">
@@ -811,8 +811,8 @@
             </div>
             <div class="cv__layout--right col-md-8">
                 <div class="page__counter">
-                    <span class="page__index">1</span>
-                    /
+                    <input type="text" class="page__index" value="1" readonly>
+                    <span class="divider">/</span>
                     <span class="page__total">2</span>
                 </div>
                 <div class="color__chooser">
@@ -1162,6 +1162,9 @@
                     <div class="cv">
                         
                     </div>
+                    <div class="cv">
+                        
+                    </div>
                     <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
                     <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
                 </div>
@@ -1169,7 +1172,7 @@
 
         </div>
     </div>
-    <div class="info__footer"></div>
+    <!-- <div class="info__footer"></div> -->
 
 
     <!-- JS -->
@@ -1192,7 +1195,7 @@
                 image: { type: 'jpeg', quality: 1 },
                 html2canvas:{letterRendering: true,  scale: 6, useCORS: true},
                 jsPDF: {unit: 'mm', format: [210, 297], orientation: 'portrait' },
-                pageBreak: {mode: ['avoid-all', 'css']}
+                // pageBreak: {mode: ['avoid-all'], before: '.cv__language__box'}
             };
 
             var pages = document.getElementsByClassName('cv');
@@ -1224,14 +1227,16 @@
         }
 
         function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("cv");
-        if (n > x.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = x.length}
+            var i;
+            var x = document.getElementsByClassName("cv");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
             for (i = 0; i < x.length; i++) {
                 x[i].style.display = "none";  
             }
             x[slideIndex-1].style.display = "block";  
+            $('.page__index').val(slideIndex);
+            $('.page__total').text(x.length)
         }
     </script>
 </body>

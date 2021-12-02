@@ -1,19 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@800&family=Anton&family=Montserrat:wght@100;400&family=Noto+Serif&family=Roboto&family=Allerta+Stencil&family=Lobster&effect=shadow-multiple&family=Prompt&display=swap&family=Alfa+Slab+One");
 @font-face { font-family: diot; src: url("./../../didot/Didot-HTF-B11-Bold-Ital.ttf"); }
 img { display: block; max-width: 100%; }
-.main__body { margin-top: 20px; margin-bottom: 20px; }
+.main__body { }
 .preview { overflow: hidden; }
-.page__counter { position: absolute; top: -32px; color: rgba(11, 72, 117, 0.95); }
-span.page__index { color: rgba(11, 71, 117, 0.55); }
+.page__counter { position: absolute; top: -3%; left: 10%; color: rgba(11, 72, 117, 0.95); }
+input.page__index { outline: none; border: none; width: 24px; color: rgb(255, 255, 255); font-size: 16px; background-color: rgba(11, 72, 117, 0.3); padding: 0px 4px; text-align: center; }
 span.page__total { }
 .page__counter span { font-weight: 600; }
-.color__chooser { position: absolute; top: -32px; right: 150px; }
+.color__chooser { position: absolute; top: -3%; right: 10%; }
 .color__chooser i { cursor: pointer; padding: 0px 3px; }
 .color__chooser i:hover { font-size: larger; }
 .color__chooser i.yellow { color: rgb(255, 238, 85); }
 .color__chooser i.blue { color: rgb(115, 146, 172); }
 .color__chooser i.gray { color: rgb(193, 193, 193); }
-.cv__layout--right.col-md-8 {display: flex;align-items: center;justify-content: center;margin-top: 30px;position: relative;zoom: .4;}
+.cv__layout--right.col-md-8 { display: flex; align-items: center; justify-content: center; margin-top: 44px; margin-bottom: 30px; position: relative; zoom: 0.4; }
 .cv { margin: 0px; padding: 0px; width: 210mm; height: 297mm; font-family: system-ui; font-size: 14px; box-shadow: rgba(60, 64, 67, 0.31) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; border-radius: 0.2rem; background: rgb(255, 255, 255); }
 .cv__container { }
 .cv__header { width: 100%; }
@@ -36,10 +36,8 @@ div#preview { border-top-left-radius: 0.2rem; width: 100%; height: 100%; }
 .cv__aboutme--left .cv__personal__items .cv__textbox { max-width: 195px; overflow: hidden; }
 .cv__section__box { margin-bottom: 25px; }
 .cv__section__title--underline { border-bottom: 2px solid; padding: 8px 0px; }
-.cv__item { padding-top: 8px; }
-.cv__item__icon {
-    padding-top: 1px;
-}
+.cv__item {padding-top: 5px;}
+.cv__item__icon { padding-top: 1px; }
 .process__container { width: 100%; height: 6px; background: lightgray; border-radius: 0.5rem; }
 .process__bar { background: black; height: 100%; border-radius: 0.5rem; position: relative; }
 .process__percent__box { position: absolute; top: -18px; right: -7px; font-size: 10px; color: rgb(122, 122, 123); }
@@ -65,7 +63,7 @@ div#preview { border-top-left-radius: 0.2rem; width: 100%; height: 100%; }
 .cv__desc.cv__textbox { font-size: 13px; text-align: justify; }
 .cv__aboutme--right .cv__desc { max-width: 431px; overflow: hidden; }
 .cv__aboutme--left .cv__desc { max-width: 225px; overflow: hidden; }
-.post_editor-container { box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; border-radius: 0.2rem; overflow: hidden; margin-bottom: 1.5rem; margin-top: 1.5rem; }
+.post_editor-container { box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; border-radius: 0.2rem; overflow: hidden; margin-bottom: 1.5rem; margin-top: 1.5rem; background-color: rgb(255, 255, 255); }
 .post_editor-btn { height: 100%; position: relative; z-index: 0; cursor: pointer; -webkit-box-flex: 1; flex-grow: 1; align-items: center; display: flex; flex-direction: row; }
 .icon-container { padding: 0.3rem; }
 .icon-container:hover .remove__icon i { background-color: rgba(216, 50, 60, 0.15) !important; }
@@ -73,7 +71,7 @@ div#preview { border-top-left-radius: 0.2rem; width: 100%; height: 100%; }
 .remove__icon i { visibility: hidden; animation-delay: 2s; color: rgba(11, 72, 117, 0.5); background-color: rgba(216, 50, 60, 0) !important; padding: 16px !important; }
 .section__box--expand:hover .remove__icon i { visibility: visible; }
 .icon-container:hover .remove__icon i { color: rgba(216, 50, 60, 0.9); }
-input.button.download__btn { text-transform: uppercase; font-size: 10px; letter-spacing: 1px; padding: 14px 25px; border-radius: 0.2rem; font-family: Merriweather, serif; font-weight: 100; color: rgb(255, 255, 255); width: 100%; outline: none; border: none; background-color: rgba(11, 72, 117, 0.85) !important; }
+input.button.download__btn { margin-top: 10px; text-transform: uppercase; font-size: 10px; letter-spacing: 1px; padding: 14px 25px; border-radius: 0.2rem; font-family: Merriweather, serif; font-weight: 100; color: rgb(255, 255, 255); width: 100%; outline: none; border: none; background-color: rgba(11, 72, 117, 0.85) !important; }
 .post_instruction-btn { align-items: center; color: rgba(0, 0, 0, 0.55); display: flex; flex: 1 1 auto; height: 100%; justify-content: flex-start; }
 .post_instruction-btn:hover { color: rgba(11, 72, 117, 0.95); }
 .post_editor-expand { display: flex; flex-direction: column; height: 100%; background-color: rgb(255, 255, 255); overflow: hidden; }
@@ -117,8 +115,8 @@ span.post_cancel-label { display: inline-block; margin: 0px; }
 .upload_post-tab.empty:hover { background-color: rgba(11, 72, 117, 0.09); cursor: context-menu; }
 .upload_post-tab:not(.empty):hover { background-color: rgb(11, 72, 117); }
 .remove__tab { position: absolute; top: 5px; cursor: pointer; right: 10px; }
-.remove__tab i { font-size: 25px; color: rgba(216, 50, 60, 0.7); }
-.remove__tab i:hover { color: rgb(216, 50, 60); }
+.remove__tab i {font-size: 25px;color: rgba(216, 50, 60, 0.9);background-color: rgba(216, 50, 60, 0);padding: 4px 8px;}
+.remove__tab i:hover {color: rgba(255,255,255,.8);background-color: rgba(216, 50, 60, 0.5);}
 .upload_post-tab.remove__tab:hover { background-color: rgba(216, 50, 60, 0.95) !important; }
 .hiden_upload_post-btn { background-image: radial-gradient(circle farthest-side, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.32) 80%, rgba(255, 255, 255, 0) 100%); transform: translate(-50%, -50%) scale(0); transition: opacity 0.2s ease 0s, visibility 0s ease 0.2s, -webkit-transform 0s ease 0.2s; background-size: cover; left: 0px; opacity: 0; pointer-events: none; position: absolute; top: 0px; visibility: hidden; }
 span.upload_post-btn { padding: 0px 24px; -webkit-box-align: center; align-items: center; display: flex; position: relative; }
@@ -136,17 +134,11 @@ span.upload_post-label { display: inline-block; margin: 0px; }
 .w3-display-right { right: -6% !important; top: 30% !important; }
 button.w3-button { background-color: rgba(11, 72, 117, 0.95) !important; outline: none !important; }
 button.w3-button:hover { background-color: rgba(63, 63, 63, 0.35) !important; }
-
+div#custom__scrollbar { background-color: rgba(11, 72, 117, 0.1); }
 @media (min-width: 768px) {
-    .cv__layout--right.col-md-8{
-        zoom: unset;
-    }
-    #custom__scrollbar {
-        overflow-y: scroll;
-        height: 305mm;
-    }
-    #custom__scrollbar::-webkit-scrollbar-track { box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 1px inset; background-color: rgb(245, 245, 245); }
-    #custom__scrollbar::-webkit-scrollbar { width: 8px; background-color: rgb(245, 245, 245); }
-    #custom__scrollbar::-webkit-scrollbar-thumb { background-color: rgba(11, 72, 117, 0.75); border: 2px solid rgb(237, 237, 237); }
-
+  .cv__layout--right.col-md-8 { zoom: unset; }
+  #custom__scrollbar { overflow-y: scroll; height: 320mm; box-shadow: rgba(60, 64, 67, 0.31) 1px 0px 2px 0px, rgba(60, 64, 67, 0.15) 0px 4px 6px 4px; }
+  #custom__scrollbar::-webkit-scrollbar-track { box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 1px inset; background-color: rgb(245, 245, 245); }
+  #custom__scrollbar::-webkit-scrollbar { width: 8px; background-color: rgb(245, 245, 245); }
+  #custom__scrollbar::-webkit-scrollbar-thumb { background-color: rgba(11, 72, 117, 0.75); border: 2px solid rgb(237, 237, 237); }
 }

@@ -55,7 +55,7 @@ var options = {
 }
 var cropper;
 var uploadedImageURL;
-
+var cvPages = []
 var defaultFullNameBoxH = 63;
 
 $(document).ready(function () {
@@ -158,12 +158,10 @@ $(document).ready(function () {
     console.log('cvh: ' + cvHeaderW);
     $('.cv__opening--right').width(cvHeaderW);
   })
-  // $('.color__choice').click((this)=>{
-  //   console.log('choose')
-  //   var choice = $(this).attr("color");
-  //   console.log(choice)
-  //   $('.cv__opening--right').css({'background-color': colorChoices[choice]+'!important'});
-  // })
+  $('body').on('DOMSubtreeModified', function(){
+    
+    console.log('body changed')
+  });
 });
 // header bg -> cv bg -> cv text -> header fullname --> header position -> not -> yes -> line -> section text -> icon
 var updateColor = function(choiceElement) {
