@@ -571,6 +571,125 @@ var loadFile = function(event) {
 //   console.log(sample_name_content);
 // });
 
+//Edit textbox website
+var webTextbox = document.getElementById('cv_websites');
+var webForm = document.getElementById('websites');
+if(window.addEventListener) {
+   // Normal browsers
+   webTextbox.addEventListener('DOMSubtreeModified', contentWebChanged, false);
+} else
+   if(window.attachEvent) {
+      // IE
+      webTextbox.attachEvent('DOMSubtreeModified', contentWebChanged);
+   }
 
+function contentWebChanged() {
+  webForm.value = webTextbox.textContent;
+}
+
+//Edit form web
+webForm.onkeyup = function() {
+  webTextbox.innerHTML = webForm.value;
+}
+
+//Edit social textbox
+let socialTextbox = document.getElementById('cv_socials');
+let socialForm = document.getElementById('socials');
+if(window.addEventListener) {
+   // Normal browsers
+   socialTextbox.addEventListener('DOMSubtreeModified', contentSocialChanged, false);
+} else
+   if(window.attachEvent) {
+      // IE
+      socialTextbox.attachEvent('DOMSubtreeModified', contentSocialChanged);
+   }
+
+function contentSocialChanged() {
+  socialForm.value = socialTextbox.textContent;
+}
+//Edit form social
+socialForm.onkeyup = function() {
+  socialTextbox.innerHTML = socialForm.value;
+}
+
+//From div to input fullname
+let nameTextbox = document.getElementById('cv__fullname');
+let nameForm = document.getElementById('full_name');
+if(window.addEventListener) {
+   // Normal browsers
+   nameTextbox.addEventListener('DOMSubtreeModified', contentNameChanged, false);
+} else
+   if(window.attachEvent) {
+      // IE
+      nameTextbox.attachEvent('DOMSubtreeModified', contentNameChanged);
+   }
+
+function contentNameChanged() {
+  nameForm.value = nameTextbox.textContent;
+}
+
+//From div to input job
+let jobTextbox = document.getElementById('cv__wanted__position');
+let jobForm = document.getElementById('wanted_job_position');
+if(window.addEventListener) {
+   // Normal browsers
+   jobTextbox.addEventListener('DOMSubtreeModified', contentJobChanged, false);
+} else
+   if(window.attachEvent) {
+      // IE
+      jobTextbox.attachEvent('DOMSubtreeModified', contentJobChanged);
+   }
+
+function contentJobChanged() {
+  jobForm.value = jobTextbox.textContent;
+}
+
+//From div to input email
+let mailTextbox = document.getElementById('cv__email');
+let mailForm = document.getElementById('email');
+if(window.addEventListener) {
+   // Normal browsers
+   mailTextbox.addEventListener('DOMSubtreeModified', contentEmailChanged, false);
+} else
+   if(window.attachEvent) {
+      // IE
+      mailTextbox.attachEvent('DOMSubtreeModified', contentEmailChanged);
+   }
+
+function contentEmailChanged() {
+  mailForm.value = mailTextbox.textContent;
+}
+
+//From div to input phone number
+let phoneTextbox = document.getElementById('cv__phone__number');
+let phoneForm = document.getElementById('phone_number');
+if(window.addEventListener) {
+   // Normal browsers
+   phoneTextbox.addEventListener('DOMSubtreeModified', contentPhoneChanged, false);
+} else
+   if(window.attachEvent) {
+      // IE
+      phoneTextbox.attachEvent('DOMSubtreeModified', contentPhoneChanged);
+   }
+
+function contentPhoneChanged() {
+  phoneForm.value = phoneTextbox.textContent;
+}
+
+//From div to input address
+let addressTextbox = document.getElementById('cv__address');
+let addressForm = document.getElementById('address');
+if(window.addEventListener) {
+   // Normal browsers
+   addressTextbox.addEventListener('DOMSubtreeModified', contentAddressChanged, false);
+} else
+   if(window.attachEvent) {
+      // IE
+      addressTextbox.attachEvent('DOMSubtreeModified', contentAddressChanged);
+   }
+
+function contentAddressChanged() {
+  addressForm.value = addressTextbox.textContent;
+}
 
 
