@@ -8,6 +8,36 @@ var colorChoices = {
   'gray': ['rgba(193, 193, 193, .95)', 'rgba(255,255,255,1)', 'rgba(0, 0, 0, 1)','rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(63, 63, 63, .2)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)'],
 
 }
+
+var loadFile = function(event) {
+  $('#cropper__container').show();
+
+  var image = document.getElementById('image--cropped');
+  var review = document.getElementById('preview')
+  console.log('changed')
+    image.src = URL.createObjectURL(event.target.files[0]);
+  // var cropperCanva = $('.cropper-canvas img')[0];
+  // cropperCanva.src = URL.createObjectURL(event.target.files[0]);
+  $.each($("img"), function() {
+    $(this).attr("src", URL.createObjectURL(event.target.files[0]));
+  });
+  console.log(image.src)
+  new Cropper(image, {
+    // dragMode: DRAG_MODE_CROP,
+    aspectRatio: 1/1,
+    preview: review,
+    crop(event) {
+      console.log(event.detail.x);
+      console.log(event.detail.y);
+      console.log(event.detail.width);
+      console.log(event.detail.height);
+      console.log(event.detail.rotate);
+      console.log(event.detail.scaleX);
+      console.log(event.detail.scaleY);
+    },
+  });
+};
+
 var ggID = localStorage.getItem('uid') || null,
     ggAvatar = localStorage.getItem('avatar') || null,
     ggEmail = localStorage.getItem('email') || null,
