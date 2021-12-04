@@ -202,7 +202,7 @@ $(document).ready(function () {
       $(this).parents('.post_editor-expand').find('.upload_post-tab').addClass('empty');
   })
 
-  $('.cv__body').on('DOMSubtreeModified', function(){
+  $('body').on('DOMSubtreeModified', function(){
 
     if($('.cv__body').height() > currentCvHeight) {
 
