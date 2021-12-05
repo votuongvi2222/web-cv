@@ -127,8 +127,8 @@ $(document).ready(function () {
 
     var avatarW = $('.avatar__box--left').outerWidth();
     var cvHeaderW = $('.cv__header').outerWidth();
-    // console.log('avaw: ' + avatarW);
-    // console.log('cvh: ' + cvHeaderW);
+    console.log('avaw: ' + avatarW);
+    console.log('cvh: ' + cvHeaderW);
     $('.cv__opening--right').width(cvHeaderW - avatarW - 4);
   }
   if(localStorage.getItem('theme')){
@@ -200,6 +200,238 @@ $(document).ready(function () {
     }
     else
       $(this).parents('.post_editor-expand').find('.upload_post-tab').addClass('empty');
+  })
+  // 2 way2
+  // var cvFullName = $('#cv__fullname') || null,
+  //   cvWantedPosition = $('#cv__wanted__position') || null,
+  //   cvPhoneNumber = $('#cv__phone__number') || null,
+  //   cvEmail = $('#cv__email') || null,
+  //   cvAddress = $('#cv__address') || null,
+  //   cvWebsites = $('.cv__websites') || [],
+  //   cvSocials = $('.cv__socials') || [],
+  //   cvSkillItems = $('#cv__skill__items') || null,
+  //   cvLanguageItems = $('#cv__language__items') || null,
+  //   cvAwardItems = $('#cv__award__items') || null,
+  //   cvProfileDesc = $('#cv__profile__desc') || null,
+  //   cvHobbies = $('.cv__hobby') || [],
+  //   cvEducationItems = $('#cv__education__items') || null,
+  //   cvExperienceItems = $('#cv__experience__items') || null,
+  //   cvCertificateItems = $('#cv__certificate__items') || null,
+  //   cvReferenceItems = $('.cv__reference') || [];
+
+
+  //=================================================
+  // var inFullName = $('#full_name') || null,
+  //   inWantedPosition = $('#wanted_job_position') || null,
+  //   inEmail = $('#email') || null,
+  //   inPhoneNumber = $('#phone_number') || null,
+  //   inAddress = $('#address') || null,
+  //   inWebsites = $('#websites') || null,
+  //   inSkillSections = $('.skill__section') || [],
+  //   inLanguageSections = $('.language__section') || [],
+  //   inAwardSections = $('.award__section') || [],
+  //   inProfileDesc = $('#profile_desc') || null,
+  //   inExperienceSections = $('.timeline__section') || [],
+  //   inEductionSections = $('.education__section') || [],
+  //   inHobbies = $('.hobby_title') || []
+  //   inCertificateSections = $('.certificate__section') || [],
+  //   inReferenceDections = $('.reference__section') || [];
+  $('.cv__textbox').on('DOMSubtreeModified', ()=>{
+    // ======================SKILL============================
+    let skillTitles = [],
+        skillLevels = [],
+        skillDescs = [];
+
+    $(cvSkillItems).children('.cv__item').each((index,item)=>{
+      // console.log($(item).find('.yes').length);
+      skillTitles.push($(item).children('.cv__skill__title').text());
+      skillLevels.push($(item).find('.yes').length);
+      skillDescs.push($(item).children('.cv__skill__desc').text());
+    })
+    // console.log(skillTitles[0])
+    $('.skill_title').each((index, item)=> {
+        $(item).val(skillTitles[index]);
+    })
+    $('.skill_level').each((index, item)=> {
+      $(item).val(skillLevels[index]);
+    })
+    $('.skill_desc').each((index, item)=> {
+      $(item).text(skillDescs[index]);
+    })
+
+    let languageTitles = [],
+        languageLevels = [],
+        languageDescs = [];
+
+    // ======================LANGUAGE============================
+        
+    $(cvLanguageItems).children('.cv__item').each((index,item)=>{
+      // console.log($(item).find('.yes').length);
+      languageTitles.push($(item).children('.cv__language__title').text());
+      languageLevels.push($(item).find('.yes').length);
+      languageDescs.push($(item).children('.cv__language__desc').text());
+    })
+    // console.log(skillTitles[0])
+    $('.language_title').each((index, item)=> {
+        $(item).val(languageTitles[index]);
+    })
+    $('.language_level').each((index, item)=> {
+      $(item).val(languageLevels[index]);
+    })
+    $('.language_desc').each((index, item)=> {
+      $(item).text(languageDescs[index]);
+    })
+
+    // ======================AWARD============================
+
+    let awardTitles = [],
+        awardPlaces = [],
+        awardYears = [],
+        awardDescs = [];
+        
+    $(cvAwardItems).children('.cv__item').each((index,item)=>{
+      // console.log($(item).find('.cv__award__title').text())
+      awardTitles.push($(item).find('.cv__award__title').text());
+      awardPlaces.push($(item).find('.cv__award__place').text());
+      awardYears.push($(item).find('.cv__award__year').text());
+      awardDescs.push($(item).find('.cv__award__desc').text());
+    })
+    // console.log(skillTitles[0])
+    $('.award_title').each((index, item)=> {
+        $(item).val(awardTitles[index]);
+    })
+    $('.award_place').each((index, item)=> {
+      $(item).val(awardPlaces[index]);
+    })
+    $('.award_year').each((index, item)=> {
+      $(item).val(awardYears[index]);
+    })
+    $('.award_desc').each((index, item)=> {
+      $(item).text(awardDescs[index]);
+    })
+    // ======================HOBBIES============================
+    let hobbies = []
+    $(cvHobbies).each((index,item)=>{
+      // console.log($(item).text())
+      hobbies.push($(item).text());
+    })
+    $('.hobby_title').each((index,item) => {
+      $(item).val(hobbies[index]);
+    })
+    inProfileDesc.text($('#cv__profile__desc').text())
+    // ======================EDUCATION============================
+    let eduSchools = [],
+        eduFroms = [],
+        eduTos = [],
+        eduLocations = [],
+        eduDescs = [];
+    
+    $(cvEducationItems).children('.cv__item').each((index,item)=>{
+      // console.log($(item).find('.cv__award__title').text())
+      eduSchools.push($(item).find('.cv__education__school').text());
+      eduFroms.push($(item).find('.cv__education__from').text());
+      eduTos.push($(item).find('.cv__education__to').text());
+      eduLocations.push($(item).find('.cv__education__location').text());
+      eduDescs.push($(item).find('.cv__education__desc').text());
+
+    })
+    // console.log(skillTitles[0])
+    $('.education_school_title').each((index, item)=> {
+        $(item).val(eduSchools[index]);
+    })
+    $('.education_date_from').each((index, item)=> {
+      let dates = eduFroms[index].split('/');
+      let month = dates[0] || '01'
+      let year = dates[1] || '2021'
+      if(month.length < 2)
+        month = "0" + month;
+      $(item).val(year+"-"+month);
+    })
+    $('.education_date_to').each((index, item)=> {
+      let dates = eduTos[index].split('/');
+      let month = dates[0] || '01'
+      let year = dates[1] || '2021'
+      if(month.length < 2)
+        month = "0" + month;
+      $(item).val(year+"-"+month);
+    })
+    $('.education_location').each((index, item)=> {
+      $(item).val(eduLocations[index]);
+    })
+    $('.education_desc').each((index, item)=> {
+      $(item).text(eduDescs[index]);
+    })
+    // ==============================ExPERIENCE===========================
+    let exJobs = [],
+        exCompanies = [],
+        exFroms = [],
+        exTos = [],
+        exLocations = [],
+        exDescs = [];
+
+    $(cvExperienceItems).children('.cv__item').each((index,item)=>{
+      // console.log($(item).find('.cv__award__title').text())
+      // console.log($('.cv__experience__job__position').text())
+      exJobs.push($(item).find('.cv__experience__job__position').text());
+      exCompanies.push($(item).find('.cv__experience__company').text());
+      exFroms.push($(item).find('.cv__experience__from').text());
+      exTos.push($(item).find('.cv__experience__to').text());
+      exLocations.push($(item).find('.cv__experience__location').text());
+      exDescs.push($(item).find('.cv__experience__desc').text());
+    })
+    // console.log(skillTitles[0])
+    $('.experience_job_position_title').each((index, item)=> {
+        console.log(exJobs[index])
+        $(item).val(exJobs[index]);
+    })
+    $('.experience_date_from').each((index, item)=> {
+      let dates = exFroms[index].split('/');
+      let month = dates[0] || '01'
+      let year = dates[1] || '2021'
+      if(month.length < 2)
+        month = "0" + month;
+      $(item).val(year+"-"+month);
+    })
+    $('.experience_date_to').each((index, item)=> {
+      let dates = exTos[index].split('/');
+      let month = dates[0] || '01'
+      let year = dates[1] || '2021'
+      if(month.length < 2)
+        month = "0" + month;
+      $(item).val(year+"-"+month);
+    })
+    $('.experience_company').each((index, item)=> {
+      $(item).val(exCompanies[index]);
+    })
+    $('.experience_location').each((index, item)=> {
+      $(item).val(exLocations[index]);
+    })
+    $('.experience_desc').each((index, item)=> {
+      $(item).text(exDescs[index]);
+    })
+    //===============================CERTIFICATES==========================
+    let cerTitles = [],
+        cerYears = [],
+        cerDescs = [];
+
+    $(cvCertificateItems).children('.cv__item').each((index,item)=>{
+      // console.log($(item).find('.cv__award__title').text())
+      // console.log($('.cv__experience__job__position').text())
+      cerTitles.push($(item).find('.cv__certificate__title').text());
+      cerYears.push($(item).find('.cv__certificate__year').text());
+      cerDescs.push($(item).find('.cv__certificate__desc').text());
+    })
+    // console.log(skillTitles[0])
+    $('.certificate_title').each((index, item)=> {
+        $(item).val(cerTitles[index]);
+    })
+    $('.certificate_year').each((index, item)=> {
+      $(item).val(cerYears[index]);
+
+    })
+    $('.certificate_desc').each((index, item)=> {
+      $(item).val(cerDescs[index]);
+    })
   })
 
   $('body').on('DOMSubtreeModified', function(){
