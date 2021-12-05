@@ -204,24 +204,10 @@
         localStorage.setItem('name', profile.getName());
         localStorage.setItem('avatar', profile.getImageUrl().replace('=s96-c', ''));
         localStorage.setItem('email', profile.getEmail());
-        // window.location.replace("http://localhost:5500/cv_2.html");
+        window.location.replace("https://votuongvi2222.github.io/web-cv/cv_2.html");
         window.location.href = 'index.html';
     }
 
-    function init() {
-        gapi.load('auth2', function() {
-            console.log('hi')
-            gapi.auth2.init();
-        });
-    }
-    function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-            console.log('User signed out.');
-            // window.location.replace("http://localhost:5500/login.html");
-        });
-        localStorage.clear();
-        window.location.href = 'index.html';
-    }
+
 
 </script>
