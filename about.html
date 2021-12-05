@@ -155,7 +155,7 @@
                 <a class="nav-link" href="javascript:void(0);"><i class="fa fa-address-book"></i>About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><i class="fa fa-file"></i>Resume</a>
+                <a class="nav-link" href="resume.html"><i class="fa fa-file"></i>Resume</a>
             </li>
             <li class="nav-item login">
               <a class="nav-link" href="login.html" onclick="javascript:void(0);"><i class="fa fa-sign-out-alt"></i>Login</a>
@@ -328,7 +328,41 @@
             <div class="about__title">Third years student</div>
         </div>
     </div>
-    
 </body>
 </html>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+    localStorage.clear();
+
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        localStorage.setItem('uid', profile.getId());
+        localStorage.setItem('name', profile.getName());
+        localStorage.setItem('avatar', profile.getImageUrl().replace('=s96-c', ''));
+        localStorage.setItem('email', profile.getEmail());
+        // window.location.replace("http://localhost:5500/cv_2.html");
+        window.location.href = 'index.html';
+    }
+
+    function init() {
+        gapi.load('auth2', function() {
+            console.log('hi')
+            gapi.auth2.init();
+        });
+    }
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+            console.log('User signed out.');
+            // window.location.replace("http://localhost:5500/login.html");
+        });
+        localStorage.clear();
+        window.location.href = 'index.html';
+    }
+
+</script>
 

@@ -524,11 +524,15 @@ $(document).ready(function () {
     // console.log(cloneSkillSection)
     var num = $('.skill__section').length
     var cloneSection = cloneSkillSection.clone(true, true);
-    if(num == 0)
+    if(num == 0){
       cloneSection.attr('order', num+1).insertAfter($('#skill__addition'));
+      skillAddition(num);
+    }
     else{
       cloneSection.attr('order', num+1).insertAfter($('.skill__section')[num-1]);
+      skillAddition(num);
     }
+    
   });
   $('#language__addition').click(()=> {
     var num = $('.language__section').length
@@ -618,16 +622,26 @@ $(function() {
   
 });
 var removeSection = function(element){
-  var sections = $(element).closest('.section__box--expand')
+  var sections = $(element).closest('.section__box--expand');
+  var eIndex = $(sections).attr("order");
   $(element).closest('.section__box--expand').remove();
+  $(".skill_item").each(function( index ) {
+    if($(this).attr("order") == eIndex){
+      $(this).remove();
+    }
+  });
   updateSectionOrder()
 }
 var updateSectionOrder = function(){
-  var skills = $('.skill__section')
+  var skills = $('.skill__section');
+  var skillItem = $('.skill__item');
   // console.log(skills)
   if(skills.length > 0){
     $.each(skills, (index, section) => {
       $(section).attr('order', index+1);
+    });
+    $.each(skillItem,(index) =>{
+      $('.skill__item').eq(index).attr('order', index+1);
     });
   } else {
     $('.cv__skill__box').hide();
@@ -908,6 +922,10 @@ function contentPhoneChanged() {
   phoneForm.value = phoneTextbox.textContent;
 }
 
+phoneForm.onkeyup = function() {
+  phoneTextbox.innerHTML = phoneForm.value;
+}
+
 //From div to input address
 let addressTextbox = document.getElementById('cv__address');
 let addressForm = document.getElementById('address');
@@ -924,4 +942,35 @@ function contentAddressChanged() {
   addressForm.value = addressTextbox.textContent;
 }
 
+//Skill setting
+for (i = 0; i < document.getElementById('cv__skill__items').children.length; i++) {
+  document.getElementById('cv__skill__items').children[i].onclick = function(){
+    let childClicked = $(".skill__section .post-expand_input ").eq(i);
+
+    
+  };
+}
+
+$('.cv__skill__title').on('click', function(){
+  let parentIndex = $(this).parent().index();
+  alert(parentIndex)
+  let formParent = $(".skill__section .post_editor-expand").eq(parentIndex);
+  $(formParent + " input").eq(0).val();
+
+});
+
+var skillAddition = function(num){
+  var newSkillItem = '<div class="cv__item skill_item" order="'+(num+1)+'">'+
+  '<div class="cv__skill__title process__label cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="50">HTML</div>'+
+  '<div class="breakline__container row">'+
+      '<div class="breakline col yes" onclick="rateLevel(this)"></div>'+
+      '<div class="breakline col yes" onclick="rateLevel(this)"></div>'+
+      '<div class="breakline col yes" onclick="rateLevel(this)"></div>'+
+      '<div class="breakline col yes" onclick="rateLevel(this)"></div>'+
+      '<div class="breakline col yes" onclick="rateLevel(this)"></div>'+
+  '</div>'+
+  '<div class="cv__skill__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="300">Có thể sử dụng thành thạo Html cho mọi dự án, hiểu biết sâu về DOM và biết cách tổ chức HTML rõ ràng.</div>'
+  +'</div>'
+  $('.cv__skill__items').append(newSkillItem);
+}
 
