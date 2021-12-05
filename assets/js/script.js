@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-  
-=======
+
 $(document).ready(function(){
     
   let sample_name_content =  $(".employee_name").text();;
@@ -77,7 +75,6 @@ $(document).ready(function(){
       }
   })
 }
->>>>>>> 45035a53fa984e0c52ac000ed1806b5708f0f19d
   $(document).ready(function(){
       setTimeout(function(){ test(); });
   });
@@ -117,10 +114,6 @@ $(document).ready(function () {
     $('#editor_title-textarea').addClass('focused');
     $('.content_editor_focus-line').addClass('focused');
   
-<<<<<<< HEAD
-
-  
-=======
   })
   $('#post_content_editor-textarea').blur(function(){
     var textboxContent = $.trim($('#post_content_editor-textarea').text());
@@ -165,4 +158,3 @@ $(document).ready(function () {
     $('.cv__opening--right').width(cvHeaderW);
   })
 });
->>>>>>> 45035a53fa984e0c52ac000ed1806b5708f0f19d
