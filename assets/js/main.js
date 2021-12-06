@@ -8,6 +8,16 @@ var colorChoices = {
   'gray': ['rgba(193, 193, 193, .95)', 'rgba(255,255,255,1)', 'rgba(0, 0, 0, 1)','rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(63, 63, 63, .2)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)'],
 
 }
+var cloneSkillTextboxTemp = $('.skill_item').eq(0).clone(true, true) || null;
+var cloneLangTextboxTemp = $('.cv__skill__text__items').eq(0).clone(true, true) || null;
+var cloneProfileTemp = $('.cv__paragraph').eq(0).clone(true, true) || null;
+var cloneExperienceTemp = $('.timeline__experience').eq(0).clone(true, true) || null;
+var cloneEducationTemp = $('.timeline__education').eq(0).clone(true, true) || null;
+var cloneHobbyTemp = $('.cv__hobby__item').eq(0).clone(true, true)|| null;
+var cloneAwardTemp = $('.cv__award__item').eq(0).clone(true, true) || null;
+var cloneCerTemp = $('.cv__certificate__item').eq(0).clone(true, true)||null;
+var cloneRefTemp = $('.cv__reference').eq(0).clone(true,true) || null;
+
 var cloneSkillSection = $('.skill__section').eq(0).clone(true, true) || null,
     cloneLanguageSection = $('.language__section').eq(0).clone(true) || null,
     cloneProfileSection = $('.profile__section').eq(0).clone(true) || null,
@@ -757,7 +767,7 @@ $(document).ready(function () {
     // console.log(cloneSkillSection)
     var num = $('.skill__section').length
     var cloneSection = cloneSkillSection.clone(true, true);
-    var cloneSkillTextbox = $('.skill_item').eq(0).clone(true, true).attr('order', num+1);
+    var cloneSkillTextbox = cloneSkillTextboxTemp.clone(true,true).attr('order', num+1);
     if(num == 0){
       cloneSection.attr('order', num+1).insertAfter($('#skill__addition'));
       $('#cv__skill__items').append(cloneSkillTextbox);
@@ -766,30 +776,34 @@ $(document).ready(function () {
       cloneSection.attr('order', num+1).insertAfter($('.skill__section')[num-1]);
       $('#cv__skill__items').append(cloneSkillTextbox);
     }
-    
+    updateSectionOrder();
   });
   $('#language__addition').click(()=> {
     var num = $('.language__section').length
     var cloneSection = $('.language__section').eq(0).clone(true) || null;
-    var cloneLangTextbox = $('.cv__skill__text__items').eq(0).clone(true, true).attr('order', num+1);
+    var cloneLangTextbox = cloneLangTextboxTemp.clone(true,true).attr('order', num+1);
 
     if(num == 0){
       cloneLanguageSection.insertAfter($('#language__addition')).attr('order', num+1);
       $('#cv__language__items').append(cloneLangTextbox);
-    }else
+    }else{
       cloneSection.insertAfter($('.language__section')[num-1]).attr('order', num+1);
       $('#cv__language__items').append(cloneLangTextbox);
+    }
+    updateSectionOrder()
   });
   $('#profile__addition').click(()=> {
     var num = $('.profile__section').length
-
+    var cloneProfileTextbox = cloneProfileTemp.clone(true,true).attr('order', num+1);
     if(num == 0)
       cloneProfileSection.attr('order', num+1).insertAfter($('#profile__addition'));
+      $(".cv__profile__box").append(cloneProfileTextbox);
+    updateSectionOrder();
   });
   $('#timeline__addition').click(()=> {
     var num = $('.timeline__section').length
     var cloneSection = $('.timeline__section').eq(0).clone(true) || null;
-    var cloneExperienceTextbox = $('.timeline__experience').eq(0).clone(true, true).attr('order', num+1);
+    var cloneExperienceTextbox = cloneExperienceTemp.clone(true,true).attr('order', num+1);
 
     if(num == 0){
       cloneExperienceSection.attr('order', num+1).insertAfter($('#timeline__addition'));
@@ -798,10 +812,11 @@ $(document).ready(function () {
     else
       cloneSection.attr('order', num+1).insertAfter($('.timeline__section')[num-1]);
       $('#cv__experience__items').append(cloneExperienceTextbox);
+    updateSectionOrder();
   });
   $('#education__addition').click(()=> {
     var num = $('.education__section').length
-    var cloneEducationTextbox = $('.timeline__education').eq(0).clone(true, true).attr('order', num+1);
+    var cloneEducationTextbox = cloneEducationTemp.clone(true, true).attr('order', num+1);
     var cloneSection = $('.education__section').eq(0).clone(true) || null;
 
     if(num == 0){
@@ -812,10 +827,11 @@ $(document).ready(function () {
     else
       cloneSection.attr('order', num+1).insertAfter($('.education__section')[num-1]);
       $('#cv__education__items').append(cloneEducationTextbox);
+    updateSectionOrder();
   });
   $('#hobby__addition').click(()=> {
     var num = $('.hobby__section').length
-    var cloneHobbieTextbox = $('.cv__hobby__item').eq(0).clone(true, true).attr('order', num+1);
+    var cloneHobbieTextbox = cloneHobbyTemp.clone(true, true).attr('order', num+1);
     var cloneSection = $('.hobby__section').eq(0).clone(true) || null;
 
     if(num == 0){
@@ -834,10 +850,11 @@ $(document).ready(function () {
       }else{
         $('.box_0').append(cloneHobbieTextbox);
       }
+    updateSectionOrder();
   });
   $('#award__addition').click(()=> {
     var num = $('.award__section').length
-    var cloneAwardTextbox = $('.cv__award__item').eq(0).clone(true, true).attr('order', num+1);
+    var cloneAwardTextbox = cloneAwardTemp.clone(true, true).attr('order', num+1);
     var cloneSection = $('.award__section').eq(0).clone(true) || null;
 
     if(num == 0){
@@ -846,10 +863,11 @@ $(document).ready(function () {
     }else
       cloneSection.attr('order', num+1).insertAfter($('.award__section')[num-1]);
       $('#cv__award__items').append(cloneAwardTextbox);
+    updateSectionOrder();
   });
   $('#certificate__addition').click(()=> {
     var num = $('.certificate__section').length
-    var cloneCerTextbox = $('.cv__certificate__item').eq(0).clone(true, true).attr('order', num+1);
+    var cloneCerTextbox = cloneCerTemp.clone(true, true).attr('order', num+1);
     var cloneSection = $('.certificate__section').eq(0).clone(true) || null;
 
     if(num == 0){
@@ -858,10 +876,11 @@ $(document).ready(function () {
     }else
       cloneSection.attr('order', num+1).insertAfter($('.certificate__section')[num-1]);
       $('#cv__certificate__items').append(cloneCerTextbox);
+    updateSectionOrder();
   });
   $('#reference__addition').click(()=> {
     var num = $('.reference__section').length
-    var cloneRefTextbox = $('.cv__reference').eq(0).clone(true, true).attr('order', num+1);
+    var cloneRefTextbox = cloneRefTemp.clone(true, true).attr('order', num+1);
     var cloneSection = $('.reference__section').eq(0).clone(true) || null;
 
     if(num == 0){
@@ -878,6 +897,7 @@ $(document).ready(function () {
       }else{
         $('.col__box__0').append(cloneRefTextbox);
       }
+    updateSectionOrder();
   });
 
 // catch input change
@@ -951,7 +971,7 @@ var removeSection = function(element){
       }});
   }
   if(sections.hasClass("profile__section")){
-    $(".cv__profile__box").remove();
+    $(".cv__paragraph").remove();
   }
   if(sections.hasClass("timeline__section")){
     $(".timeline__experience").each(function(index){
@@ -1006,11 +1026,14 @@ var updateSectionOrder = function(){
     $.each(skills, (index, section) => {
       $(section).attr('order', index+1);
     });
+    $('.cv__skill__box').show();
   } else {
     $('.cv__skill__box').hide();
   }
   var profile = $('.profile__section')
-  if(!profile.length > 0){
+  if(profile.length > 0){
+    $('.cv__profile__box').show();
+  }else{
     $('.cv__profile__box').hide();
   }
   var languages = $('.language__section')
@@ -1018,6 +1041,7 @@ var updateSectionOrder = function(){
     $.each(languages ,(index, section) => {
       $(section).attr('order', index+1);
     });
+    $('.cv__language__box').show();
   }else {
     $('.cv__language__box').hide();
   }
@@ -1026,6 +1050,7 @@ var updateSectionOrder = function(){
     $.each(experiences ,(index, section) => {
       $(section).attr('order', index+1);
     });
+    $('.cv__experience__box').show();
   }else {
     $('.cv__experience__box').hide();
   }
@@ -1034,6 +1059,7 @@ var updateSectionOrder = function(){
     $.each(educations ,(index, section) => {
       $(section).attr('order', index+1);
     });
+    $('.cv__education__box').show();
   }else {
     $('.cv__education__box').hide();
   }
@@ -1042,6 +1068,7 @@ var updateSectionOrder = function(){
     $.each(hobbies ,(index, section) => {
       $(section).attr('order', index+1);
     });
+    $('.cv__hobby__box').show();
   }else {
     $('.cv__hobby__box').hide();
   }
@@ -1050,6 +1077,7 @@ var updateSectionOrder = function(){
     $.each(awards ,(index, section) => {
       $(section).attr('order', index+1);
     });
+    $('.cv__award__box').show();
   }else {
     $('.cv__award__box').hide();
   }
@@ -1058,6 +1086,7 @@ var updateSectionOrder = function(){
     $.each(certificates ,(index, section) => {
       $(section).attr('order', index+1);
     });
+    $('.cv__certificate__box').show();
   }else {
     $('.cv__certificate__box').hide();
   }
@@ -1066,6 +1095,7 @@ var updateSectionOrder = function(){
     $.each(references ,(index, section) => {
       $(section).attr('order', index+1);
     });
+    $('.cv__reference__box').show();
   }else {
     $('.cv__reference__box').hide();
   }
