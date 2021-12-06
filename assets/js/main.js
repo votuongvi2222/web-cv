@@ -524,24 +524,28 @@ $(document).ready(function () {
     // console.log(cloneSkillSection)
     var num = $('.skill__section').length
     var cloneSection = cloneSkillSection.clone(true, true);
+    var cloneSkillTextbox = $('.skill_item').eq(0).clone(true, true);
     if(num == 0){
       cloneSection.attr('order', num+1).insertAfter($('#skill__addition'));
-      skillAddition(num);
+      cloneSkillTextbox.attr('order', num+1).insertAfter($('#skill__title__sample'));
     }
     else{
       cloneSection.attr('order', num+1).insertAfter($('.skill__section')[num-1]);
-      skillAddition(num);
+      cloneSkillTextbox.attr('order', num+1).insertAfter($('#skill__title__sample'));
     }
     
   });
   $('#language__addition').click(()=> {
     var num = $('.language__section').length
     var cloneSection = $('.language__section').eq(0).clone(true) || null;
+    var cloneLangTextbox = $('.cv__skill__text__items').eq(0).clone(true, true);
 
-    if(num == 0)
+    if(num == 0){
       cloneLanguageSection.insertAfter($('#language__addition')).attr('order', num+1);
-    else
+      cloneLangTextbox.attr('order', num+1).insertAfter($('.cv__language__items'));
+    }else
       cloneSection.insertAfter($('.language__section')[num-1]).attr('order', num+1);
+      cloneLangTextbox.attr('order', num+1).insertAfter($('.cv__language__items'));
   });
   $('#profile__addition').click(()=> {
     var num = $('.profile__section').length
@@ -552,56 +556,78 @@ $(document).ready(function () {
   $('#timeline__addition').click(()=> {
     var num = $('.timeline__section').length
     var cloneSection = $('.timeline__section').eq(0).clone(true) || null;
+    var cloneExperienceTextbox = $('.timeline__experience').eq(0).clone(true, true);
 
-    if(num == 0)
+    if(num == 0){
       cloneExperienceSection.attr('order', num+1).insertAfter($('#timeline__addition'));
+      cloneExperienceTextbox.attr('order', num+1).insertAfter($('.timeline__experience'));
+    }
     else
       cloneSection.attr('order', num+1).insertAfter($('.timeline__section')[num-1]);
+      cloneExperienceTextbox.attr('order', num+1).insertAfter($('.timeline__experience')[num-1]);
   });
   $('#education__addition').click(()=> {
     var num = $('.education__section').length
+    var cloneEducationTextbox = $('.timeline__education').eq(0).clone(true, true);
     var cloneSection = $('.education__section').eq(0).clone(true) || null;
 
-    if(num == 0)
+    if(num == 0){
       cloneEducationSection.attr('order', num+1).insertAfter($('#education__addition'));
+      cloneEducationTextbox.attr('order', num+1).insertAfter($('.timeline__education'));
+    }
+      
     else
       cloneSection.attr('order', num+1).insertAfter($('.education__section')[num-1]);
+      cloneEducationTextbox.attr('order', num+1).insertAfter($('.timeline__education')[num-1]);
   });
   $('#hobby__addition').click(()=> {
     var num = $('.hobby__section').length
+    var cloneHobbieTextbox = $('.cv__hobby__item').eq(0).clone(true, true);
     var cloneSection = $('.hobby__section').eq(0).clone(true) || null;
 
-    if(num == 0)
+    if(num == 0){
       cloneHobbySection.attr('order', num+1).insertAfter($('#hobby__addition'));
+      cloneHobbieTextbox.attr('order', num+1).insertAfter($('.cv__hobby__item'));
+    }
     else
       cloneSection.attr('order', num+1).insertAfter($('.hobby__section')[num-1]);
+      cloneHobbieTextbox.attr('order', num+1).insertAfter($('.cv__hobby__item')[num-1]);
   });
   $('#award__addition').click(()=> {
     var num = $('.award__section').length
+    var cloneAwardTextbox = $('.cv__award__item').eq(0).clone(true, true);
     var cloneSection = $('.award__section').eq(0).clone(true) || null;
 
-    if(num == 0)
+    if(num == 0){
       cloneAwardSection.attr('order', num+1).insertAfter($('#award__addition'));
-    else
+      cloneAwardTextbox.attr('order', num+1).insertAfter($('.cv__award__item'));
+    }else
       cloneSection.attr('order', num+1).insertAfter($('.award__section')[num-1]);
+      cloneAwardTextbox.attr('order', num+1).insertAfter($('.cv__award__item')[num-1]);
   });
   $('#certificate__addition').click(()=> {
     var num = $('.certificate__section').length
+    var cloneCerTextbox = $('.cv__certificate__item').eq(0).clone(true, true);
     var cloneSection = $('.certificate__section').eq(0).clone(true) || null;
 
-    if(num == 0)
+    if(num == 0){
       cloneCertificateSection.attr('order', num+1).insertAfter($('#certificate__addition'));
-    else
+      cloneCerTextbox.attr('order', num+1).insertAfter($('.cv__certificate__item'));
+    }else
       cloneSection.attr('order', num+1).insertAfter($('.certificate__section')[num-1]);
+      cloneCerTextbox.attr('order', num+1).insertAfter($('.cv__certificate__item')[num-1]);
   });
   $('#reference__addition').click(()=> {
     var num = $('.reference__section').length
+    var cloneRefTextbox = $('.cv__reference').eq(0).clone(true, true);
     var cloneSection = $('.reference__section').eq(0).clone(true) || null;
 
-    if(num == 0)
+    if(num == 0){
       cloneReferenceSection.attr('order', num+1).insertAfter($('#reference__addition'));
-    else
+      cloneRefTextbox.attr('order', num+1).insertAfter($('.cv__reference'));
+    }else
       cloneSection.attr('order', num+1).insertAfter($('.reference__section')[num-1]);
+      cloneRefTextbox.attr('order', num+1).insertAfter($('.cv__reference')[num-1]);
   });
 
 // catch input change
@@ -628,20 +654,49 @@ var removeSection = function(element){
   $(".skill_item").each(function( index ) {
     if($(this).attr("order") == eIndex){
       $(this).remove();
+    }  });
+  $(".cv__skill__text__items").each(function( index ) {
+    if($(this).attr("order") == eIndex){
+      $(this).remove();
+    }});
+  $(".timeline__experience").each(function(index){
+    if($(this).attr("order") == eIndex){
+      $(this).remove();
     }
-  });
+  })
+  $(".timeline__education").each(function(index){
+    if($(this).attr("order") == eIndex){
+      $(this).remove();
+    }
+  })
+  $(".cv__hobby__item").each(function(index){
+    if($(this).attr("order") == eIndex){
+      $(this).remove();
+    }
+  })
+  $(".cv__award__item").each(function(index){
+    if($(this).attr("order") == eIndex){
+      $(this).remove();
+    }
+  })
+  $(".cv__certificate__item").each(function(index){
+    if($(this).attr("order") == eIndex){
+      $(this).remove();
+    }
+  })  
+  $(".cv__reference").each(function(index){
+    if($(this).attr("order") == eIndex){
+      $(this).remove();
+    }
+  })  
   updateSectionOrder()
 }
 var updateSectionOrder = function(){
   var skills = $('.skill__section');
-  var skillItem = $('.skill__item');
   // console.log(skills)
   if(skills.length > 0){
     $.each(skills, (index, section) => {
       $(section).attr('order', index+1);
-    });
-    $.each(skillItem,(index) =>{
-      $('.skill__item').eq(index).attr('order', index+1);
     });
   } else {
     $('.cv__skill__box').hide();
@@ -949,22 +1004,5 @@ for (i = 0; i < document.getElementById('cv__skill__items').children.length; i++
 
     
   };
-}
-
-
-
-var skillAddition = function(num){
-  var newSkillItem = '<div class="cv__item skill_item" order="'+(num+1)+'">'+
-  '<div class="cv__skill__title process__label cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="50">HTML</div>'+
-  '<div class="breakline__container row">'+
-      '<div class="breakline col yes" onclick="rateLevel(this)"></div>'+
-      '<div class="breakline col yes" onclick="rateLevel(this)"></div>'+
-      '<div class="breakline col yes" onclick="rateLevel(this)"></div>'+
-      '<div class="breakline col yes" onclick="rateLevel(this)"></div>'+
-      '<div class="breakline col yes" onclick="rateLevel(this)"></div>'+
-  '</div>'+
-  '<div class="cv__skill__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="300">Có thể sử dụng thành thạo Html cho mọi dự án, hiểu biết sâu về DOM và biết cách tổ chức HTML rõ ràng.</div>'
-  +'</div>'
-  $('.cv__skill__items').append(newSkillItem);
 }
 
