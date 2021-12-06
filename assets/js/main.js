@@ -404,8 +404,246 @@ $(document).ready(function () {
         refEmails = [],
         refDescs = [];
 
-    $(cvReferenceItems).each((index,item)=>{
-      console.log($(item).find('.cv__reference__email').text())
+    $('.cv__reference').each((index,item)=>{
+      // console.log($(item).find('.cv__reference__email').text())
+      refJobs.push($(item).find('.cv__reference__job__position').text());
+      refNames.push($(item).find('.cv__reference__called__name').text());
+      refPhones.push($(item).find('.cv__reference__phone__number').text());
+      refEmails.push($(item).find('.cv__reference__email').text());
+      refDescs.push($(item).find('.cv__reference__desc').text());
+    })
+    $('.reference_called_name').each((index, item)=> {
+      $(item).val(refNames[index]);
+    })
+    $('.reference_job_position').each((index, item)=> {
+      $(item).val(refJobs[index]);
+    })
+    $('.reference_email').each((index, item)=> {
+      $(item).val(refEmails[index]);
+    })
+    $('.reference_phone_number').each((index, item)=> {
+      $(item).val(refPhones[index]);
+    })
+    $('.reference_desc').each((index, item)=> {
+      $(item).text(refDescs[index]);
+    })
+  })
+
+  $('input').on('', () => {
+    // ======================SKILL============================
+    let skillTitles = [],
+        skillLevels = [],
+        skillDescs = [];
+
+    $(inSkillSections).each((index,item)=>{
+      // console.log($(item).find('.yes').length);
+      skillTitles.push($(item).children('.skill_title').val());
+      skillLevels.push($(item).find('.skill_level').val());
+      skillDescs.push($(item).children('.skill_desc').val());
+    })
+    // console.log(skillTitles[0])
+    $('.cv__skill__title').each((index, item)=> {
+        $(item).text(skillTitles[index]);
+    })
+    $('.cv__skill__rating').each((index, item)=> {
+      let num_yes = skillLevels[index];
+      $(item).children('.rating').each((i, rating)=> {
+        if(num_yes > 0){
+          $(rate).addClass('yes');
+          $(rate).removeClass('not');
+          num_yes--
+        } else {
+          $(rate).addClass('not')
+          $(rate).removeClass('yes')
+        }
+      })
+      
+    })
+    setColor(localStorage.getItem('theme'));
+    $('.cv__skill__desc').each((index, item)=> {
+      $(item).text(skillDescs[index]);
+    })
+
+    let languageTitles = [],
+        languageLevels = [],
+        languageDescs = [];
+
+    // ======================LANGUAGE============================
+        
+    $(cvLanguageItems).children('.cv__item').each((index,item)=>{
+      // console.log($(item).find('.yes').length);
+      languageTitles.push($(item).children('.cv__language__title').text());
+      languageLevels.push($(item).find('.yes').length);
+      languageDescs.push($(item).children('.cv__language__desc').text());
+    })
+    // console.log(skillTitles[0])
+    $('.language_title').each((index, item)=> {
+        $(item).val(languageTitles[index]);
+    })
+    $('.language_level').each((index, item)=> {
+      $(item).val(languageLevels[index]);
+    })
+    $('.language_desc').each((index, item)=> {
+      $(item).text(languageDescs[index]);
+    })
+
+    // ======================AWARD============================
+
+    let awardTitles = [],
+        awardPlaces = [],
+        awardYears = [],
+        awardDescs = [];
+        
+    $(cvAwardItems).children('.cv__item').each((index,item)=>{
+      // console.log($(item).find('.cv__award__title').text())
+      awardTitles.push($(item).find('.cv__award__title').text());
+      awardPlaces.push($(item).find('.cv__award__place').text());
+      awardYears.push($(item).find('.cv__award__year').text());
+      awardDescs.push($(item).find('.cv__award__desc').text());
+    })
+    // console.log(skillTitles[0])
+    $('.award_title').each((index, item)=> {
+        $(item).val(awardTitles[index]);
+    })
+    $('.award_place').each((index, item)=> {
+      $(item).val(awardPlaces[index]);
+    })
+    $('.award_year').each((index, item)=> {
+      $(item).val(awardYears[index]);
+    })
+    $('.award_desc').each((index, item)=> {
+      $(item).text(awardDescs[index]);
+    })
+    // ======================HOBBIES============================
+    let hobbies = []
+    $(cvHobbies).each((index,item)=>{
+      // console.log($(item).text())
+      hobbies.push($(item).text());
+    })
+    $('.hobby_title').each((index,item) => {
+      $(item).val(hobbies[index]);
+    })
+    inProfileDesc.text($('#cv__profile__desc').text())
+    // ======================EDUCATION============================
+    let eduSchools = [],
+        eduFroms = [],
+        eduTos = [],
+        eduLocations = [],
+        eduDescs = [];
+    
+    $(cvEducationItems).children('.cv__item').each((index,item)=>{
+      // console.log($(item).find('.cv__award__title').text())
+      eduSchools.push($(item).find('.cv__education__school').text());
+      eduFroms.push($(item).find('.cv__education__from').text());
+      eduTos.push($(item).find('.cv__education__to').text());
+      eduLocations.push($(item).find('.cv__education__location').text());
+      eduDescs.push($(item).find('.cv__education__desc').text());
+    })
+    // console.log(skillTitles[0])
+    $('.education_school_title').each((index, item)=> {
+        $(item).val(eduSchools[index]);
+    })
+    $('.education_date_from').each((index, item)=> {
+      let dates = eduFroms[index].split('/');
+      let month = dates[0] || '01'
+      let year = dates[1] || '2021'
+      if(month.length < 2)
+        month = "0" + month;
+      $(item).val(year+"-"+month);
+    })
+    $('.education_date_to').each((index, item)=> {
+      let dates = eduTos[index].split('/');
+      let month = dates[0] || '01'
+      let year = dates[1] || '2021'
+      if(month.length < 2)
+        month = "0" + month;
+      $(item).val(year+"-"+month);
+    })
+    $('.education_location').each((index, item)=> {
+      $(item).val(eduLocations[index]);
+    })
+    $('.education_desc').each((index, item)=> {
+      $(item).text(eduDescs[index]);
+    })
+    // ==============================ExPERIENCE===========================
+    let exJobs = [],
+        exCompanies = [],
+        exFroms = [],
+        exTos = [],
+        exLocations = [],
+        exDescs = [];
+
+    $(cvExperienceItems).children('.cv__item').each((index,item)=>{
+      // console.log($(item).find('.cv__award__title').text())
+      // console.log($('.cv__experience__job__position').text())
+      exJobs.push($(item).find('.cv__experience__job__position').text());
+      exCompanies.push($(item).find('.cv__experience__company').text());
+      exFroms.push($(item).find('.cv__experience__from').text());
+      exTos.push($(item).find('.cv__experience__to').text());
+      exLocations.push($(item).find('.cv__experience__location').text());
+      exDescs.push($(item).find('.cv__experience__desc').text());
+    })
+    // console.log(skillTitles[0])
+    $('.experience_job_position_title').each((index, item)=> {
+        // console.log(exJobs[index])
+        $(item).val(exJobs[index]);
+    })
+    $('.experience_date_from').each((index, item)=> {
+      let dates = exFroms[index].split('/');
+      let month = dates[0] || '01'
+      let year = dates[1] || '2021'
+      if(month.length < 2)
+        month = "0" + month;
+      $(item).val(year+"-"+month);
+    })
+    $('.experience_date_to').each((index, item)=> {
+      let dates = exTos[index].split('/');
+      let month = dates[0] || '01'
+      let year = dates[1] || '2021'
+      if(month.length < 2)
+        month = "0" + month;
+      $(item).val(year+"-"+month);
+    })
+    $('.experience_company').each((index, item)=> {
+      $(item).val(exCompanies[index]);
+    })
+    $('.experience_location').each((index, item)=> {
+      $(item).val(exLocations[index]);
+    })
+    $('.experience_desc').each((index, item)=> {
+      $(item).text(exDescs[index]);
+    })
+    //===============================CERTIFICATES==========================
+    let cerTitles = [],
+        cerYears = [],
+        cerDescs = [];
+
+    $(cvCertificateItems).children('.cv__item').each((index,item)=>{
+      cerTitles.push($(item).find('.cv__certificate__title').text());
+      cerYears.push($(item).find('.cv__certificate__year').text());
+      cerDescs.push($(item).find('.cv__certificate__desc').text());
+    })
+    // console.log(skillTitles[0])
+    $('.certificate_title').each((index, item)=> {
+        $(item).val(cerTitles[index]);
+    })
+    $('.certificate_year').each((index, item)=> {
+      $(item).val(cerYears[index]);
+
+    })
+    $('.certificate_desc').each((index, item)=> {
+      $(item).text(cerDescs[index]);
+    })
+
+    //=============================== REFERENCES ==========================
+    let refJobs = [],
+        refNames = [],
+        refPhones = [],
+        refEmails = [],
+        refDescs = [];
+
+    $('.cv__reference').each((index,item)=>{
+      // console.log($(item).find('.cv__reference__email').text())
       refJobs.push($(item).find('.cv__reference__job__position').text());
       refNames.push($(item).find('.cv__reference__called__name').text());
       refPhones.push($(item).find('.cv__reference__phone__number').text());
@@ -489,7 +727,7 @@ $(document).ready(function () {
     $(this).parents('.post_editor-expand').prev('.post_editor-btn').show();
     // $('#post_content_editor-textarea').innerText = '';
   })
-  $('.post_instruction-btn').click(function(){
+  $('.post_instruction-btn').on('click', function(){
     $(this).closest('.post_editor-btn').next('.post_editor-expand').show();
     // console.log( $(this).closest('.post_editor-expand'))
     $(this).parents('.post_editor-btn').hide();
@@ -657,6 +895,43 @@ $(function() {
   inEmail.keyup(() => {
     cvEmail.text(inEmail.val());
   });
+  $('input').keyup((e) => {
+    // if(e.key === 'Enter'){
+      let skillTitles = [],
+          skillLevels = [],
+          skillDescs = [];
+
+      $(inSkillSections).each((index,item)=>{
+        // console.log($(item).find('.yes').length);
+        skillTitles.push($(item).find('.skill_title').val());
+        skillLevels.push($(item).find('.skill_level').val());
+        skillDescs.push($(item).find('.skill_desc').text());
+      })
+      // console.log(skillTitles[0])
+      $('.cv__skill__title').each((index, item)=> {
+        console.log(skillTitles[index])
+          $(item).text(skillTitles[index]);
+      })
+      $('.cv__skill__rating').each((index, item)=> {
+        let num_yes = skillLevels[index];
+        // console.log(num_yes)
+        $(item).children('.rating').each((i, rate)=> {
+          if(num_yes > 0){
+            $(rate).addClass('yes');
+            $(rate).removeClass('not');
+            num_yes--
+          } else {
+            $(rate).addClass('not')
+            $(rate).removeClass('yes')
+          }
+        })
+
+        
+      })
+      setColor(localStorage.getItem('theme'));
+
+    // }
+  })
   
 });
 var removeSection = function(element){

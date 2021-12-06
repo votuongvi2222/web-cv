@@ -1118,12 +1118,12 @@
                                                         <i class="fas fa-circle yes" onclick="rateLevel(this)"></i>
                                                         <i class="fas fa-circle yes" onclick="rateLevel(this)"></i>
                                                     </div> -->
-                                                    <div class="breakline__container row">
-                                                        <div class="breakline col yes" onclick="rateLevel(this)"></div>
-                                                        <div class="breakline col yes" onclick="rateLevel(this)"></div>
-                                                        <div class="breakline col yes" onclick="rateLevel(this)"></div>
-                                                        <div class="breakline col yes" onclick="rateLevel(this)"></div>
-                                                        <div class="breakline col yes" onclick="rateLevel(this)"></div>
+                                                    <div class="breakline__container cv__skill__rating row">
+                                                        <div class="breakline rating col yes" onclick="rateLevel(this)"></div>
+                                                        <div class="breakline rating col yes" onclick="rateLevel(this)"></div>
+                                                        <div class="breakline rating col yes" onclick="rateLevel(this)"></div>
+                                                        <div class="breakline rating col yes" onclick="rateLevel(this)"></div>
+                                                        <div class="breakline rating col yes" onclick="rateLevel(this)"></div>
                                                     </div>
                                                     <div class="cv__skill__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="300">Có thể sử dụng thành thạo Html cho mọi dự án, hiểu biết sâu về DOM và biết cách tổ chức HTML rõ ràng.</div>
                                                 </div>
@@ -1215,12 +1215,12 @@
                                                             </div>
                                                         </div>
                                                     </div> -->
-                                                    <div class="star__container">
-                                                        <i class="fas fa-star yes" onclick="rateLevel(this)"></i>
-                                                        <i class="fas fa-star yes" onclick="rateLevel(this)"></i>
-                                                        <i class="fas fa-star yes" onclick="rateLevel(this)"></i>
-                                                        <i class="fas fa-star yes" onclick="rateLevel(this)"></i>
-                                                        <i class="fas fa-star yes" onclick="rateLevel(this)"></i>
+                                                    <div class="star__container cv__languague__rating">
+                                                        <i class="fas fa-star rating yes" onclick="rateLevel(this)"></i>
+                                                        <i class="fas fa-star rating yes" onclick="rateLevel(this)"></i>
+                                                        <i class="fas fa-star rating yes" onclick="rateLevel(this)"></i>
+                                                        <i class="fas fa-star rating yes" onclick="rateLevel(this)"></i>
+                                                        <i class="fas fa-star rating yes" onclick="rateLevel(this)"></i>
                                                     </div>
                                                     <!-- <div class="dot__container">
                                                         <i class="fas fa-circle yes" onclick="rateLevel(this)"></i>
@@ -1562,7 +1562,7 @@
 
         function generatePDF(){
             var options = {
-                margin: [0, 0, 0, -0.1],
+                margin: [0, 0, 0, -0.05],
                 // pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
                 filename:'myCV.pdf',
                 image: { type: 'jpeg', quality: 1 },
