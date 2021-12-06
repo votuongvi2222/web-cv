@@ -543,7 +543,7 @@ $(document).ready(function () {
       cloneSection.attr('order', num+1).insertAfter($('.skill__section')[num-1]);
       $('#cv__skill__items').append(cloneSkillTextbox);
     }
-    updateSectionOrder()
+    updateSectionOrder();
   });
   $('#language__addition').click(()=> {
     var num = $('.language__section').length
