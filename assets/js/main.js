@@ -542,10 +542,10 @@ $(document).ready(function () {
 
     if(num == 0){
       cloneLanguageSection.insertAfter($('#language__addition')).attr('order', num+1);
-      cloneLangTextbox.attr('order', num+1).insertAfter($('.cv__language__items'));
+      cloneLangTextbox.attr('order', num+1).insertAfter($('.cv__skill__text__items'));
     }else
       cloneSection.insertAfter($('.language__section')[num-1]).attr('order', num+1);
-      cloneLangTextbox.attr('order', num+1).insertAfter($('.cv__language__items'));
+      cloneLangTextbox.attr('order', num+1).insertAfter($('.cv__skill__text__items'));
   });
   $('#profile__addition').click(()=> {
     var num = $('.profile__section').length
@@ -762,6 +762,9 @@ var updateSectionOrder = function(){
     $('.cv__reference__box').hide();
   }
 }
+//Update textbox
+
+
 // header bg -> cv bg -> cv text -> header fullname --> header position -> not -> yes -> line -> section text -> icon
 var rateLevel = function(element) {
   $(element).toggleClass('yes');
