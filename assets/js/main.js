@@ -951,13 +951,7 @@ for (i = 0; i < document.getElementById('cv__skill__items').children.length; i++
   };
 }
 
-$('.cv__skill__title').on('click', function(){
-  let parentIndex = $(this).parent().index();
-  alert(parentIndex)
-  let formParent = $(".skill__section .post_editor-expand").eq(parentIndex);
-  $(formParent + " input").eq(0).val();
 
-});
 
 var skillAddition = function(num){
   var newSkillItem = '<div class="cv__item skill_item" order="'+(num+1)+'">'+
