@@ -40,6 +40,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- W3 CSS -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel = "icon" href = "./assets/img/logo-svg.svg" type = "image/x-icon">
 </head>
 
 <body>
@@ -47,9 +48,13 @@
         <div class="row">
             <!-- =========================== EDITOR SIDEBAR ============================ -->
             <div class="editor__sidebar--left col-md-4" id="custom__scrollbar">
+                <div class="media header align-self-center" style="margin-top:5px;cursor:pointer" onclick="location.href='index.html'">
+                    <span class="media-left">
+                      <img class="" src="./assets/img/Untitled (2).png" style="width:110px;height: 55px;"/>
+                    </span>
+                    <div class="media-body align-self-center">TRIX - CV</div>
+                </div>
                 <!-- =========================== DOWNLOAD PDF <html2pdf> ============================ -->
-                <input id="export" onclick="generatePDF()" type="submit" name="download" value="Download Your CV" class="button download__btn">
-                <div id="hidden_export"></div>
                 <!-- =========================== IMAGE UPLOADER ============================ -->
                 <div class="cv__uploader--image">
                     <div class="addition__box">
@@ -982,6 +987,8 @@
                         </div>
                     </div>
                 </div>
+                <input id="export" onclick="generatePDF()" type="submit" name="download" value="Download Your CV" class="button download__btn">
+                <div id="hidden_export" style="margin-bottom: 20px;"></div>
             </div>
             <!-- =========================== CV VIEW CONTAINER ============================ -->
             <div class="cv__layout--right col-md-8">
@@ -1080,14 +1087,14 @@
                                             </div>
                                         </div>
                                         <!-- =============== CV SKILL SECTION ============= -->
-                                        <div class="cv__section__box cv__skill__box">
-                                            <div class="cv__section__title--underline">
+                                        <div class="cv__section__box cv__skill__box" id="skill__box__title">
+                                            <div class="cv__section__title--underline" id="skill__title__sample" >
                                                 <span class="section__title--uppercase">
                                                     Skill
                                                 </span>
                                             </div>
                                             <div class="cv__section__content cv__skill__items" id="cv__skill__items">
-                                                <div class="cv__item" order="1">
+                                                <div class="cv__item skill_item" order="1">
                                                     <div class="cv__skill__title process__label cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="50">HTML</div>
                                                     <!-- <div class="process__container">
                                                         <div class="process__bar" style="width: 90%;">
@@ -1192,13 +1199,13 @@
                                         </div>
                                         <!-- =============== CV LANGUAGE SECTION ============= -->
                                         <div class="cv__section__box cv__language__box">
-                                            <div class="cv__section__title--underline">
+                                            <div class="cv__section__title--underline" id="tit">
                                                 <span class="section__title--uppercase">
                                                     Language
                                                 </span>
                                             </div>
                                             <div class="cv__section__content cv__language__items" id="cv__language__items">
-                                                <div class="cv__item" order="1">
+                                                <div class="cv__item cv__skill__text__items" order="1">
                                                     <div class="cv__language__title process__label cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="50">English</div>
                                                     <!-- <div class="process__container">
                                                         <div class="process__bar" style="width: 84%;">
@@ -1276,7 +1283,7 @@
                                                 </span>
                                             </div>
                                             <div class="cv__section__content cv__award__items" id="cv__award__items">
-                                                <div class="cv__item" order="1">
+                                                <div class="cv__item cv__award__item" order="1">
                                                     <div class="award__title">
                                                         <div class="cv__award__title cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="200">Web Developer of the year</div>
                                                     </div>
@@ -1342,7 +1349,7 @@
                                                 </span>
                                             </div>
                                             <div class="cv__section__content cv__education__items" id="cv__education__items">
-                                                <div order="1" class="cv__item cv__timeline">
+                                                <div order="1" class="cv__item cv__timeline timeline__education">
                                                     <div class="education__timeline timeline">
                                                         <span class="timeline__circle"></span>
                                                         <span class="timeline__line"></span>
@@ -1406,7 +1413,7 @@
                                                 </span>
                                             </div>
                                             <div class="cv__section__content cv__experience__items" id="cv__experience__items">
-                                                <div order="1" class="cv__item cv__timeline">
+                                                <div order="1" class="cv__item cv__timeline timeline__experience">
                                                     <div class="experience__timeline timeline">
                                                         <span class="timeline__circle"></span>
                                                         <span class="timeline__line"></span>
@@ -1456,23 +1463,25 @@
                                                 </span>
                                             </div>
                                             <div class="cv__section__content cv__certificate__items" id="cv__certificate__items">
-                                                <div class="cv__item" order="1">
-                                                    <div class="certificate__title">
-                                                        <div class="cv__certificate__title cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="300">
+                                                <!-- <div class="cv__item cv__certificate__item" order="1">
+                                                    <div class="certificate__title row">
+                                                        <div class="cv__certificate__title cv__textbox sub_title col-10" spellcheck="false" contenteditable="true" data-max-length="300">
                                                             Certified cloud security professional (CCSP)
-                                                            <div class="cv__certificate__year cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="4">2021</div>
                                                         </div>
+                                                        <div class="col"></div>
+                                                        <div class="cv__certificate__year cv__textbox single col-1" spellcheck="false" contenteditable="true" data-max-length="4">2021</div>
+
                                                     </div>
-                                                </div>
-                                                <div class="cv__item" order="1">
-                                                    <div class="certificate__title">
-                                                        <div class="cv__certificate__title cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="300">
-                                                            Oracle database and MySQL administration certifications
-                                                            <div class="cv__certificate__year cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="4">2019</div>
-                                                        </div>
+                                                </div> -->
+                                                <div class="cv__item cv__certificate__item" order="1">
+                                                    <div class="certificate__title row">
+                                                        <div class="cv__certificate__title col-11 cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="300">Oracle database and MySQL administration certifications </div>
+                                                        <!-- <div class="col"></div> -->
+                                                        <div class="cv__certificate__year col-1 cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="4">2019</div>
+
                                                     </div>
                                                     <div class="certificate__detail item__detail">
-                                                        <!-- <div class="cv__certificate__desc cv__textbox" spellcheck="false" contenteditable="true" data-max-length="50">Đạt điểm tuyệt đối.</div> -->
+                                                        <div class="cv__certificate__desc cv__textbox" spellcheck="false" contenteditable="true" data-max-length="50">Đạt điểm tuyệt đối.</div>
                                                     </div>
                                                 </div>
                                             </div>
