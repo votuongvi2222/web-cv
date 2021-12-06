@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     
   let sample_name_content =  $(".employee_name").text();;
