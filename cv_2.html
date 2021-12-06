@@ -40,6 +40,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- W3 CSS -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel = "icon" href = "./assets/img/logo-svg.svg" type = "image/x-icon">
 </head>
 
 <body>
@@ -47,14 +48,18 @@
         <div class="row">
             <!-- =========================== EDITOR SIDEBAR ============================ -->
             <div class="editor__sidebar--left col-md-4" id="custom__scrollbar">
+                <div class="media header align-self-center" style="margin-top:5px">
+                    <span class="media-left">
+                      <img class="" src="./assets/img/Untitled (2).png" style="width:110px;height: 55px;"/>
+                    </span>
+                    <div class="media-body align-self-center" style="width: auto;height: 100%;margin-left:50px;font-size: 2em;">INFORMATION</div>
+                </div>
                 <!-- =========================== DOWNLOAD PDF <html2pdf> ============================ -->
-                <input id="export" onclick="generatePDF()" type="submit" name="download" value="Download Your CV" class="button download__btn">
-                <div id="hidden_export"></div>
                 <!-- =========================== IMAGE UPLOADER ============================ -->
                 <div class="cv__uploader--image">
                     <div class="addition__box">
                         <input type="file"  accept="image/gif, image/jpeg, image/png" name="image" id="file" onchange="loadFile(event)" style="display: none;">
-                        <label for="file" style="cursor: pointer;"><i class="fas fa-upload"></i>Upload Image</label>
+                        <label for="file" style="cursor: pointer;padding:10px"><i class="fas fa-upload"></i>Upload Image</label>
                     </div>
                 </div>
                 <!-- =========================== IMAGE CROPPER <cropper.js> ============================ -->
@@ -982,6 +987,8 @@
                         </div>
                     </div>
                 </div>
+                <input id="export" onclick="generatePDF()" type="submit" name="download" value="Download Your CV" class="button download__btn">
+                <div id="hidden_export" style="margin-bottom: 20px;"></div>
             </div>
             <!-- =========================== CV VIEW CONTAINER ============================ -->
             <div class="cv__layout--right col-md-8">
@@ -1080,14 +1087,14 @@
                                             </div>
                                         </div>
                                         <!-- =============== CV SKILL SECTION ============= -->
-                                        <div class="cv__section__box cv__skill__box">
-                                            <div class="cv__section__title--underline">
+                                        <div class="cv__section__box cv__skill__box" id="skill__box__title">
+                                            <div class="cv__section__title--underline" >
                                                 <span class="section__title--uppercase">
                                                     Skill
                                                 </span>
                                             </div>
                                             <div class="cv__section__content cv__skill__items" id="cv__skill__items">
-                                                <div class="cv__item" order="1">
+                                                <div class="cv__item skill_item" order="1">
                                                     <div class="cv__skill__title process__label cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="50">HTML</div>
                                                     <!-- <div class="process__container">
                                                         <div class="process__bar" style="width: 90%;">
