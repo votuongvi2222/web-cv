@@ -71,6 +71,8 @@ div#preview { border-top-left-radius: 0.2rem; width: 100%; height: 100%;}
 .dot__container .not, .star__container .not, .breakline__container .not { color: lightgray; }
 .dot__container i, .star__container i, .breakline { cursor: pointer; }
 .star__container, .dot__container { display: inline-block; float: right; }
+.breakline:hover{ box-shadow: rgb(60 64 67 / 31%) 1px 2px 4px 2px, rgb(60 64 67 / 15%) 4px 0px 6px 0px;}
+i.yes:hover, i.not:hover{text-shadow: 0cm;text-shadow: 0 0 grey;font-size: larger;}
 .item__detail { font-size: 11px; font-weight: 500; }
 .item__detail .cv__textbox { padding: 0px 10px 0px 0px; text-transform: capitalize; }
 .cv__item__content .cv__textbox { font-size: 13px; font-weight: 450; }

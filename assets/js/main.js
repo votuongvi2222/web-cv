@@ -162,10 +162,9 @@ $(document).ready(function () {
     } else {
       $('.cv--fullname').css({'margin-top': '40px'})
     }
-    // console.log('over: ' + $(this).outerHeight())
+
   });
-  // $(".cv__textbox").keypress(function(e){ return e.which != 13; });
-  // toolbar
+
   $('.toolbar-btn').click(function(){
     $(this).toggleClass('focused');
   })
@@ -201,41 +200,7 @@ $(document).ready(function () {
     else
       $(this).parents('.post_editor-expand').find('.upload_post-tab').addClass('empty');
   })
-  // 2 way2
-  // var cvFullName = $('#cv__fullname') || null,
-  //   cvWantedPosition = $('#cv__wanted__position') || null,
-  //   cvPhoneNumber = $('#cv__phone__number') || null,
-  //   cvEmail = $('#cv__email') || null,
-  //   cvAddress = $('#cv__address') || null,
-  //   cvWebsites = $('.cv__websites') || [],
-  //   cvSocials = $('.cv__socials') || [],
-  //   cvSkillItems = $('#cv__skill__items') || null,
-  //   cvLanguageItems = $('#cv__language__items') || null,
-  //   cvAwardItems = $('#cv__award__items') || null,
-  //   cvProfileDesc = $('#cv__profile__desc') || null,
-  //   cvHobbies = $('.cv__hobby') || [],
-  //   cvEducationItems = $('#cv__education__items') || null,
-  //   cvExperienceItems = $('#cv__experience__items') || null,
-  //   cvCertificateItems = $('#cv__certificate__items') || null,
-  //   cvReferenceItems = $('.cv__reference') || [];
 
-
-  //=================================================
-  // var inFullName = $('#full_name') || null,
-  //   inWantedPosition = $('#wanted_job_position') || null,
-  //   inEmail = $('#email') || null,
-  //   inPhoneNumber = $('#phone_number') || null,
-  //   inAddress = $('#address') || null,
-  //   inWebsites = $('#websites') || null,
-  //   inSkillSections = $('.skill__section') || [],
-  //   inLanguageSections = $('.language__section') || [],
-  //   inAwardSections = $('.award__section') || [],
-  //   inProfileDesc = $('#profile_desc') || null,
-  //   inExperienceSections = $('.timeline__section') || [],
-  //   inEductionSections = $('.education__section') || [],
-  //   inHobbies = $('.hobby_title') || []
-  //   inCertificateSections = $('.certificate__section') || [],
-  //   inReferenceDections = $('.reference__section') || [];
   $('.cv__textbox').on('DOMSubtreeModified', ()=>{
     // ======================SKILL============================
     let skillTitles = [],
@@ -381,7 +346,7 @@ $(document).ready(function () {
     })
     // console.log(skillTitles[0])
     $('.experience_job_position_title').each((index, item)=> {
-        console.log(exJobs[index])
+        // console.log(exJobs[index])
         $(item).val(exJobs[index]);
     })
     $('.experience_date_from').each((index, item)=> {
@@ -415,8 +380,6 @@ $(document).ready(function () {
         cerDescs = [];
 
     $(cvCertificateItems).children('.cv__item').each((index,item)=>{
-      // console.log($(item).find('.cv__award__title').text())
-      // console.log($('.cv__experience__job__position').text())
       cerTitles.push($(item).find('.cv__certificate__title').text());
       cerYears.push($(item).find('.cv__certificate__year').text());
       cerDescs.push($(item).find('.cv__certificate__desc').text());
@@ -431,6 +394,37 @@ $(document).ready(function () {
     })
     $('.certificate_desc').each((index, item)=> {
       $(item).val(cerDescs[index]);
+    })
+
+    //=============================== REFERENCES ==========================
+    let refJobs = [],
+        refNames = [],
+        refPhones = [],
+        refEmails = [],
+        refDescs = [];
+
+    $(cvReferenceItems).each((index,item)=>{
+      console.log($(item).find('.cv__reference__email').text())
+      refJobs.push($(item).find('.cv__reference__job__position').text());
+      refNames.push($(item).find('.cv__reference__called__name').text());
+      refPhones.push($(item).find('.cv__reference__phone__number').text());
+      refEmails.push($(item).find('.cv__reference__email').text());
+      refDescs.push($(item).find('.cv__reference__desc').text());
+    })
+    $('.reference_called_name').each((index, item)=> {
+      $(item).val(refNames[index]);
+    })
+    $('.reference_job_position').each((index, item)=> {
+      $(item).val(refJobs[index]);
+    })
+    $('.reference_email').each((index, item)=> {
+      $(item).val(refEmails[index]);
+    })
+    $('.reference_phone_number').each((index, item)=> {
+      $(item).val(refPhones[index]);
+    })
+    $('.reference_desc').each((index, item)=> {
+      $(item).text(refDescs[index]);
     })
   })
 
@@ -526,11 +520,11 @@ $(document).ready(function () {
     var cloneSection = cloneSkillSection.clone(true, true);
     if(num == 0){
       cloneSection.attr('order', num+1).insertAfter($('#skill__addition'));
-      skillAddition(num);
+      // skillAddition(num);
     }
     else{
       cloneSection.attr('order', num+1).insertAfter($('.skill__section')[num-1]);
-      skillAddition(num);
+      // skillAddition(num);
     }
     
   });
@@ -711,11 +705,10 @@ var updateSectionOrder = function(){
 var rateLevel = function(element) {
   $(element).toggleClass('yes');
   $(element).toggleClass('not');
+  $('#cv__fullname').text($('#cv__fullname').text());
   setColor(localStorage.getItem('theme'));
-  // console.log('token changed')
 }
 var updateColor = function(choiceElement) {
-  // console.log('choise')
   var choice = $(choiceElement).data("color");
   $('.cv__opening--right').css({'background-color': colorChoices[choice][0]});
   $('.cv').css({'background-color': colorChoices[choice][1], 'color': colorChoices[choice][2]});
@@ -781,41 +774,6 @@ var loadFile = function(event) {
 
 };
 
-// $(document).ready(function(){
-    
-//   let sample_name_content =  $(".employee_name").text();;
-//   let sample_profession_name_content = $(".profession_name").text();
-
-//   $(".employee_name").focus(function(){
-//       $(".employee_name").empty();
-//   });
-
-//   $(".profession_name").focus(function(){
-//       $(".profession_name").empty();
-//   });
-
-//   $("#experience--save").on('click',function(){
-//       let started_date = $("#experience--from").val();
-//       let end_date = $("#experience--to").val();
-//       let company = $("#company--name").val();
-//       let task = $("#task").val();
-//       let descript = $("#job--description").val();
-//       $('.modal-body').find('input').each(function(){
-//           if(!$(this).prop('required')){
-//           } else {
-//               if(!$(this).val()){
-//                   $(".alert").css("display","block");
-//                   return false;
-//               }
-//                   $('#work--experience').append("<li><div class='date'> From " + started_date + " to " + end_date +
-//                   "</div> <div class='info'><p class='semi-bold'>"+ task +" ( for " + company +")"+
-//                   "</p> <p>" + descript+"</p></div></li>");
-//                   $("#addExperience").modal("hide");
-//           }
-//       })
-//   });
-//   console.log(sample_name_content);
-// });
 
 //Edit textbox website
 var webTextbox = document.getElementById('cv_websites');
