@@ -4,7 +4,7 @@
 var colorChoices = {
   'yellow': ['rgba(255, 238, 85,.95)', 'rgba(255,255,255,1)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(63, 63, 63, .2)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)'],
   'black': ['rgba(193, 193, 193, .95)', 'rgba(0,0,0,1)', 'rgb(211, 211, 211)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(63, 63, 63, 0.8)', 'rgba(193, 193, 193, 0.95)', 'rgba(193, 193, 193, 0.35)', 'rgba(255, 255, 255, 0.9)', 'rgba(193, 193, 193, 0.95)'],
-  'blue': ['rgba(115, 146, 172, .7)', 'rgba(229, 222, 222, .6)','rgba(0, 0, 0, 1)', 'rgba(255,255,255,.8)', 'rgba(229, 222, 222, 0.9)', 'rgba(169, 169, 169, 0.3)', 'rgba(115, 146, 172, 0.7)', 'rgba(255, 255, 255, .8)', 'rgba(115, 146, 172, 0.7)', 'rgba(0,0,0,1)'],
+  'blue': ['rgba(115, 146, 172, .7)', 'rgba(229, 222, 222, .6)','rgba(0, 0, 0, 1)', 'rgba(255,255,255,.8)', 'rgba(229, 222, 222, 0.9)', 'rgba(169, 169, 169, 0.3)', 'rgba(115, 146, 172, 0.7)', 'rgba(255, 255, 255, .8)', 'rgba(115, 146, 172, 0.7)', 'rgba(115, 146, 172, 0.7)'],
   'gray': ['rgba(193, 193, 193, .95)', 'rgba(255,255,255,1)', 'rgba(0, 0, 0, 1)','rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(63, 63, 63, .2)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 1)'],
 
 }
@@ -123,9 +123,11 @@ var position = 0;
 $(document).ready(function () {
   $('.editor__sidebar--left').height(windowHeight);
   $('.w3-display-container').height(windowHeight-90)
+  $('.timeline__line').hide()
   if(localStorage.getItem('uid')){
     $('#cropper__container').show();
     $('#cropper__container').height(200);
+
 
     cvFullName.text(ggName);
     inFullName.val(ggName);
@@ -777,6 +779,7 @@ $(document).ready(function () {
       $('#cv__skill__items').append(cloneSkillTextbox);
     }
     updateSectionOrder();
+    setColor(localStorage.getItem('theme'))
   });
   $('#language__addition').click(()=> {
     var num = $('.language__section').length
@@ -791,6 +794,8 @@ $(document).ready(function () {
       $('#cv__language__items').append(cloneLangTextbox);
     }
     updateSectionOrder()
+    setColor(localStorage.getItem('theme'))
+
   });
   $('#profile__addition').click(()=> {
     var num = $('.profile__section').length
@@ -799,8 +804,11 @@ $(document).ready(function () {
       cloneProfileSection.attr('order', num+1).insertAfter($('#profile__addition'));
       $(".cv__profile__box").append(cloneProfileTextbox);
     updateSectionOrder();
+    setColor(localStorage.getItem('theme'))
+
   });
   $('#timeline__addition').click(()=> {
+    $('.timeline__experience .timeline__line').eq(0).show();
     var num = $('.timeline__section').length
     var cloneSection = $('.timeline__section').eq(0).clone(true) || null;
     var cloneExperienceTextbox = cloneExperienceTemp.clone(true,true).attr('order', num+1);
@@ -813,8 +821,12 @@ $(document).ready(function () {
       cloneSection.attr('order', num+1).insertAfter($('.timeline__section')[num-1]);
       $('#cv__experience__items').append(cloneExperienceTextbox);
     updateSectionOrder();
+    setColor(localStorage.getItem('theme'))
+    $('.timeline__experience .timeline__line').eq(num).hide();
+
   });
   $('#education__addition').click(()=> {
+    $('.timeline__education .timeline__line').eq(0).show();
     var num = $('.education__section').length
     var cloneEducationTextbox = cloneEducationTemp.clone(true, true).attr('order', num+1);
     var cloneSection = $('.education__section').eq(0).clone(true) || null;
@@ -828,6 +840,9 @@ $(document).ready(function () {
       cloneSection.attr('order', num+1).insertAfter($('.education__section')[num-1]);
       $('#cv__education__items').append(cloneEducationTextbox);
     updateSectionOrder();
+    setColor(localStorage.getItem('theme'))
+    $('.timeline__education .timeline__line').eq(num).hide();
+
   });
   $('#hobby__addition').click(()=> {
     var num = $('.hobby__section').length
@@ -851,6 +866,8 @@ $(document).ready(function () {
         $('.box_0').append(cloneHobbieTextbox);
       }
     updateSectionOrder();
+    setColor(localStorage.getItem('theme'))
+
   });
   $('#award__addition').click(()=> {
     var num = $('.award__section').length
@@ -864,6 +881,8 @@ $(document).ready(function () {
       cloneSection.attr('order', num+1).insertAfter($('.award__section')[num-1]);
       $('#cv__award__items').append(cloneAwardTextbox);
     updateSectionOrder();
+    setColor(localStorage.getItem('theme'))
+
   });
   $('#certificate__addition').click(()=> {
     var num = $('.certificate__section').length
@@ -877,6 +896,8 @@ $(document).ready(function () {
       cloneSection.attr('order', num+1).insertAfter($('.certificate__section')[num-1]);
       $('#cv__certificate__items').append(cloneCerTextbox);
     updateSectionOrder();
+    setColor(localStorage.getItem('theme'))
+
   });
   $('#reference__addition').click(()=> {
     var num = $('.reference__section').length
@@ -898,6 +919,8 @@ $(document).ready(function () {
         $('.col__box__0').append(cloneRefTextbox);
       }
     updateSectionOrder();
+    setColor(localStorage.getItem('theme'))
+
   });
 
 // catch input change
