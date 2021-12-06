@@ -524,28 +524,28 @@ $(document).ready(function () {
     // console.log(cloneSkillSection)
     var num = $('.skill__section').length
     var cloneSection = cloneSkillSection.clone(true, true);
-    var cloneSkillTextbox = $('.skill_item').eq(0).clone(true, true);
+    var cloneSkillTextbox = $('.skill_item').eq(0).clone(true, true).attr('order', num+1);
     if(num == 0){
       cloneSection.attr('order', num+1).insertAfter($('#skill__addition'));
-      cloneSkillTextbox.attr('order', num+1).insertAfter($('#skill__title__sample'));
+      $('#cv__skill__items').append(cloneSkillTextbox);
     }
     else{
       cloneSection.attr('order', num+1).insertAfter($('.skill__section')[num-1]);
-      cloneSkillTextbox.attr('order', num+1).insertAfter($('#skill__title__sample'));
+      $('#cv__skill__items').append(cloneSkillTextbox);
     }
     
   });
   $('#language__addition').click(()=> {
     var num = $('.language__section').length
     var cloneSection = $('.language__section').eq(0).clone(true) || null;
-    var cloneLangTextbox = $('.cv__skill__text__items').eq(0).clone(true, true);
+    var cloneLangTextbox = $('.cv__skill__text__items').eq(0).clone(true, true).attr('order', num+1);
 
     if(num == 0){
       cloneLanguageSection.insertAfter($('#language__addition')).attr('order', num+1);
-      cloneLangTextbox.attr('order', num+1).insertAfter($('.cv__skill__text__items'));
+      $('#cv__language__items').append(cloneLangTextbox);
     }else
       cloneSection.insertAfter($('.language__section')[num-1]).attr('order', num+1);
-      cloneLangTextbox.attr('order', num+1).insertAfter($('.cv__skill__text__items'));
+      $('#cv__language__items').append(cloneLangTextbox);
   });
   $('#profile__addition').click(()=> {
     var num = $('.profile__section').length
@@ -556,78 +556,95 @@ $(document).ready(function () {
   $('#timeline__addition').click(()=> {
     var num = $('.timeline__section').length
     var cloneSection = $('.timeline__section').eq(0).clone(true) || null;
-    var cloneExperienceTextbox = $('.timeline__experience').eq(0).clone(true, true);
+    var cloneExperienceTextbox = $('.timeline__experience').eq(0).clone(true, true).attr('order', num+1);
 
     if(num == 0){
       cloneExperienceSection.attr('order', num+1).insertAfter($('#timeline__addition'));
-      cloneExperienceTextbox.attr('order', num+1).insertAfter($('.timeline__experience'));
+      $('#cv__experience__items').append(cloneExperienceTextbox);
     }
     else
       cloneSection.attr('order', num+1).insertAfter($('.timeline__section')[num-1]);
-      cloneExperienceTextbox.attr('order', num+1).insertAfter($('.timeline__experience')[num-1]);
+      $('#cv__experience__items').append(cloneExperienceTextbox);
   });
   $('#education__addition').click(()=> {
     var num = $('.education__section').length
-    var cloneEducationTextbox = $('.timeline__education').eq(0).clone(true, true);
+    var cloneEducationTextbox = $('.timeline__education').eq(0).clone(true, true).attr('order', num+1);
     var cloneSection = $('.education__section').eq(0).clone(true) || null;
 
     if(num == 0){
       cloneEducationSection.attr('order', num+1).insertAfter($('#education__addition'));
-      cloneEducationTextbox.attr('order', num+1).insertAfter($('.timeline__education'));
+      $('#cv__education__items').append(cloneEducationTextbox);
     }
       
     else
       cloneSection.attr('order', num+1).insertAfter($('.education__section')[num-1]);
-      cloneEducationTextbox.attr('order', num+1).insertAfter($('.timeline__education')[num-1]);
+      $('#cv__education__items').append(cloneEducationTextbox);
   });
   $('#hobby__addition').click(()=> {
     var num = $('.hobby__section').length
-    var cloneHobbieTextbox = $('.cv__hobby__item').eq(0).clone(true, true);
+    var cloneHobbieTextbox = $('.cv__hobby__item').eq(0).clone(true, true).attr('order', num+1);
     var cloneSection = $('.hobby__section').eq(0).clone(true) || null;
 
     if(num == 0){
       cloneHobbySection.attr('order', num+1).insertAfter($('#hobby__addition'));
-      cloneHobbieTextbox.attr('order', num+1).insertAfter($('.cv__hobby__item'));
+      if((num+1) % 2 == 0){
+        $('.box_1').append(cloneHobbieTextbox);
+      }else{
+        $('.box_0').append(cloneHobbieTextbox);
+      }
+
     }
     else
       cloneSection.attr('order', num+1).insertAfter($('.hobby__section')[num-1]);
-      cloneHobbieTextbox.attr('order', num+1).insertAfter($('.cv__hobby__item')[num-1]);
+      if((num+1) % 2 == 0){
+        $('.box_1').append(cloneHobbieTextbox);
+      }else{
+        $('.box_0').append(cloneHobbieTextbox);
+      }
   });
   $('#award__addition').click(()=> {
     var num = $('.award__section').length
-    var cloneAwardTextbox = $('.cv__award__item').eq(0).clone(true, true);
+    var cloneAwardTextbox = $('.cv__award__item').eq(0).clone(true, true).attr('order', num+1);
     var cloneSection = $('.award__section').eq(0).clone(true) || null;
 
     if(num == 0){
       cloneAwardSection.attr('order', num+1).insertAfter($('#award__addition'));
-      cloneAwardTextbox.attr('order', num+1).insertAfter($('.cv__award__item'));
+      $('#cv__award__items').append(cloneAwardTextbox);
     }else
       cloneSection.attr('order', num+1).insertAfter($('.award__section')[num-1]);
-      cloneAwardTextbox.attr('order', num+1).insertAfter($('.cv__award__item')[num-1]);
+      $('#cv__award__items').append(cloneAwardTextbox);
   });
   $('#certificate__addition').click(()=> {
     var num = $('.certificate__section').length
-    var cloneCerTextbox = $('.cv__certificate__item').eq(0).clone(true, true);
+    var cloneCerTextbox = $('.cv__certificate__item').eq(0).clone(true, true).attr('order', num+1);
     var cloneSection = $('.certificate__section').eq(0).clone(true) || null;
 
     if(num == 0){
       cloneCertificateSection.attr('order', num+1).insertAfter($('#certificate__addition'));
-      cloneCerTextbox.attr('order', num+1).insertAfter($('.cv__certificate__item'));
+      $('#cv__certificate__items').append(cloneCerTextbox);
     }else
       cloneSection.attr('order', num+1).insertAfter($('.certificate__section')[num-1]);
-      cloneCerTextbox.attr('order', num+1).insertAfter($('.cv__certificate__item')[num-1]);
+      $('#cv__certificate__items').append(cloneCerTextbox);
   });
   $('#reference__addition').click(()=> {
     var num = $('.reference__section').length
-    var cloneRefTextbox = $('.cv__reference').eq(0).clone(true, true);
+    var cloneRefTextbox = $('.cv__reference').eq(0).clone(true, true).attr('order', num+1);
     var cloneSection = $('.reference__section').eq(0).clone(true) || null;
 
     if(num == 0){
       cloneReferenceSection.attr('order', num+1).insertAfter($('#reference__addition'));
-      cloneRefTextbox.attr('order', num+1).insertAfter($('.cv__reference'));
+      if((num+1) % 2 == 0){
+        $('.col__box__1').append(cloneRefTextbox);
+      }else{
+        $('.col__box__0').append(cloneRefTextbox);
+      }
     }else
       cloneSection.attr('order', num+1).insertAfter($('.reference__section')[num-1]);
-      cloneRefTextbox.attr('order', num+1).insertAfter($('.cv__reference')[num-1]);
+      if((num+1) % 2 == 0){
+        $('.col__box__1').append(cloneRefTextbox);
+      }else{
+        $('.col__box__0').append(cloneRefTextbox);
+      }
   });
 
 // catch input change
@@ -651,44 +668,65 @@ var removeSection = function(element){
   var sections = $(element).closest('.section__box--expand');
   var eIndex = $(sections).attr("order");
   $(element).closest('.section__box--expand').remove();
-  $(".skill_item").each(function( index ) {
-    if($(this).attr("order") == eIndex){
-      $(this).remove();
-    }  });
-  $(".cv__skill__text__items").each(function( index ) {
-    if($(this).attr("order") == eIndex){
-      $(this).remove();
-    }});
-  $(".timeline__experience").each(function(index){
-    if($(this).attr("order") == eIndex){
-      $(this).remove();
-    }
-  })
-  $(".timeline__education").each(function(index){
-    if($(this).attr("order") == eIndex){
-      $(this).remove();
-    }
-  })
-  $(".cv__hobby__item").each(function(index){
-    if($(this).attr("order") == eIndex){
-      $(this).remove();
-    }
-  })
-  $(".cv__award__item").each(function(index){
-    if($(this).attr("order") == eIndex){
-      $(this).remove();
-    }
-  })
-  $(".cv__certificate__item").each(function(index){
-    if($(this).attr("order") == eIndex){
-      $(this).remove();
-    }
-  })  
-  $(".cv__reference").each(function(index){
-    if($(this).attr("order") == eIndex){
-      $(this).remove();
-    }
-  })  
+  if(sections.hasClass("skill__section")){
+    $(".skill_item").each(function( index ) {
+      if($(this).attr("order") == eIndex){
+        $(this).remove();
+      }  });
+  }
+  if(sections.hasClass("language__section")){
+    $(".cv__skill__text__items").each(function( index ) {
+      if($(this).attr("order") == eIndex){
+        $(this).remove();
+      }});
+  }
+  if(sections.hasClass("profile__section")){
+    $(".cv__profile__box").remove();
+  }
+  if(sections.hasClass("timeline__section")){
+    $(".timeline__experience").each(function(index){
+      if($(this).attr("order") == eIndex){
+        $(this).remove();
+      }
+    })
+  }
+  if(sections.hasClass("education__section")){
+    $(".timeline__education").each(function(index){
+      if($(this).attr("order") == eIndex){
+        $(this).remove();
+      }
+    })
+  }
+  if(sections.hasClass("hobby__section")){
+    $(".cv__hobby__item").each(function(index){
+      if($(this).attr("order") == eIndex){
+        $(this).remove();
+      }
+    })
+  }
+  if(sections.hasClass("award__section")){
+    $(".cv__award__item").each(function(index){
+      if($(this).attr("order") == eIndex){
+        $(this).remove();
+      }
+    })
+  }
+  if(sections.hasClass("certificate__section")){
+    $(".cv__certificate__item").each(function(index){
+      if($(this).attr("order") == eIndex){
+        $(this).remove();
+      }
+    })  
+  }
+  if(sections.hasClass("reference__section")){
+    $(".cv__reference").each(function(index){
+      if($(this).attr("order") == eIndex){
+        $(this).remove();
+      }
+    })   
+  }
+
+
   updateSectionOrder()
 }
 var updateSectionOrder = function(){
