@@ -1,6 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- JQUERY -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- DEVEXPRESS -->
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.2.3/css/dx.common.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.2.3/css/dx.light.css" />
+  <script src="https://cdn3.devexpress.com/jslib/21.2.3/js/dx.all.js"></script> -->
+  <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+
+  <!-- CROOPER -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+  <!-- FONTAWESOME ICON -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+  <!-- CSS -->
+  <!-- MATERIAL FONT -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Extended" rel="stylesheet" nonce="">
+  <!-- Owl carseul -->
+  <!-- <link rel="stylesheet" href="./OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css"> -->
+  <!-- <link rel="stylesheet" href="./OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">     -->
+  <!-- GG FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- W3 CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel = "icon" href = "./assets/img/logo-svg.svg" type = "image/x-icon">
+    <!--Heade-->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,271 +44,1188 @@
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="./assets/js/main.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Develovebug</title>
 </head>
 <body>
     <div class='container-fluid'>
-        <div class='row'>
-            <div class="col-3" style="background-color: #fff;margin: 50px auto;">
-              <div class="media header align-self-center">
+        <div class='row'>     
+          <div class="editor__sidebar--left col-md-4" id="custom__scrollbar">
+            <div class="media header align-self-center" style="margin-top:5px;cursor:pointer" onclick="location.href='index.html'">
                 <span class="media-left">
                   <img class="" src="./assets/img/Untitled (2).png" style="width:110px;height: 55px;"/>
                 </span>
-                <div class="media-body align-self-center" style="width: auto;height: 100%;margin-left:10px;font-size: 2em;">INFORMATION</div>
-              </div>
-              <button class="btn_setting" type="button" data-toggle="modal" data-target="#addExperience">ADD EXPERIENCE</button>
-              <!--Modal add experience-->
-              <div class="modal fade " id="addExperience" tabindex="-1" role="dialog" aria-labelledby="addExperienceLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="addExperienceLabel">Add Experience</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body text-center">
-                      <form>
-                        <div style="display: inline-block;" class="form-group">
-                          <label for="experience--from" style="margin-right:28px">Started date<span style="color: red;">*</span>:</label>
-                          <input type="date" id="experience--from" class="modal--input border-primary " placeholder="Started year" style="padding-right:38px" required>
-                        </div>
-                        <div style="display: inline-block;" class="form-group">
-                          <label for="experience--to">End date<span style="color: red;">*</span>:</label>
-                          <input type="date" id="experience--to" class="modal--input border-primary" placeholder="End year" style="padding-right:38px" required>
-                        </div>
-                        
-                        <div style="display: inline-block;margin:3px;" class="form-group">
-                          <label for="company--name">Company name<span style="color: red;">*</span>:</label>
-                          <input type="text" id="company--name" class="modal--input border-primary" placeholder="Garena..." required>
-                        </div>
-                        <div style="display: inline-block;" class="form-group">
-                          <label for="company--name">Your job<span style="color: red;">*</span>:</label>
-                          <input type="text" id="task" class="modal--input border-primary" placeholder="Designer..." required>
-                        </div>
-                        <div class="form-group">
-                          <label for="job--description" style="display: block;margin-right: 625px;">Description :</label>
-                          <textarea id= "job--description"class="modal--input border-primary "  rows="5" cols="77" style="margin-left: 0;"></textarea>
-                        </div>
-                        <div class="alert alert-danger" role="alert">
-                          Some required field is empty. Please check again
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="submit" class="btn btn-primary" id="experience--save">Save changes</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--End modal add experience-->
+                <div class="media-body align-self-center" style="width: auto;height: 100%;margin-left:50px;font-size: 2em;">INFORMATION</div>
             </div>
-            <div class="col-9 ">
+            <!-- =========================== DOWNLOAD PDF <html2pdf> ============================ -->
+            <!-- =========================== IMAGE UPLOADER ============================ -->
+            <div class="cv__uploader--image">
+                <div class="addition__box">
+                    <input type="file"  accept="image/gif, image/jpeg, image/png" name="image" id="file" onchange="loadFile(event)" style="display: none;">
+                    <label for="file" style="cursor: pointer;padding:10px"><i class="fas fa-upload"></i>Upload Image</label>
+                </div>
+            </div>
+            <!-- =========================== IMAGE CROPPER <cropper.js> ============================ -->
+            <div class="cropper__container" id="cropper__container">
+                <img src="#" id="image--cropped" alt=""
+                srcset="">
+                <div class="remove__tab" id="remove__btn" role="button">
+                    <i class="fas fa-times w3-badge"></i>
+                </div>
+            </div>
+            <!-- =========================== PERSONAL CONTACT INFO EDITOR ============================ -->
+            <div class="addition__box" id="personal__addition">
+                <span style="cursor: pointer;">Personal Information</span>
+            </div>
+            <div class="section__box--expand personal__section" order="1">
+                <div class="post_editor-container">
+                    <div class="post_editor-expand" id="personal__section--block">
+                        <div class="editor-body">
+                            <div class="editor-body-container">
+                                <p>
+                                    <label>
+                                        Full Name
+                                    </label>
+                                    <input id="full_name" name="full_name" type="text" class="the-title full_name" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type your full name.</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Wanted Job Position 
+                                    </label>
+                                    <input id="wanted_job_position" name="wanted_job_position" type="text" class="the-title wanted_job_position" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type the job position that you want to apply for .</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Contact Email
+                                    </label>
+                                    <input id="email" name="email" type="email" class="the-title email" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type your email.</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Phone Number
+                                    </label>
+                                    <input id="phone_number" name="phone_number" type="tel" class="the-title phone_number" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type your phone number.</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Address
+                                    </label>
+                                    <input id="address" name="address" type="text" class="the-title address" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type your address.</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Websites
+                                    </label>
+                                    <input id="websites" name="websites" type="text" class="the-title websites" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type your website. (Use comma ',' to seperate your websites)</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Socials
+                                    </label>
+                                    <input id="socials" name="socials" type="text" class="the-title socials" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type your socials. (Use comma ',' to seperate your socials)</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =========================== SKILL EDITOR ============================ -->
+            <div class="addition__box" id="skill__addition">
+                <span style="cursor: pointer;"><i class="fas fa-plus"></i>Skills</span>
+            </div>
+            <div class="section__box--expand skill__section" order="1">        
+                <div class="post_editor-container">
+                    <div class="post_editor-btn" role="button">
+                        <div class="icon-container">
+                            <div class="remove__icon" onclick="removeSection(this)">
+                                <i class="far fa-trash-alt w3-badge"></i>
+                            </div>
+                        </div>
+                        <div class="post_instruction-btn">Write something ...</div>
+                    </div>
+                    <div class="post_editor-expand" style="display: none;">
+                        <div class="editor-body">
+                            <div class="editor-body-container">
+                                <p>
+                                    <label class="required">
+                                        Skill
+                                        <span>*</span>
+                                    </label>
+                                    <input name="skill_title" type="text" class="the-title skill_title" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type your skill.</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Level
+                                    </label>
+                                    <input name="skill_level" type="number" class="the-title skill_level" required="" value="" min="1" max="100">
+                                    <span class="infocenter-qform-desc">Please rate your skill.</span>
+                                </p>
+                                <div class="editor-textarea-box">
+                                    <div class="editor_title-textarea">Write details here ...</div>
+                                    <div class="post_content_editor-textarea skill_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
+                                    <div class="content_editor_unfocus-line"></div>
+                                    <div class="content_editor_focus-line"></div>
+                                </div>
+                                <div class="editor-toolbar" role="toolbar">
+                                    <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
+                                        <div class="hidden_bold-label hidden-toolbar-label"></div>
+                                        <span class="text_bold-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
+                                        <div class="hidden_italic-label hidden-toolbar-label"></div>
+                                        <span class="text_italic-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
+                                        <div class="hidden_underline-label hidden-toolbar-label"></div>
+                                        <span class="text_underline-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
+                                        <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
+                                        <span class="text_bulleted_list-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
+                                        <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
+                                        <span class="text_remove_formatting-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="editor-footer">
+                            <div class="post_action-nav">
+                                <div class="cancel_post-tab" role="button">
+                                    <div class="hiden_cancel_post-btn"></div>
+                                    <span class="cancel_post-btn">
+                                        <span class="post_cancel-label">Close</span>
+                                    </span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =========================== LANGUAGE EDITOR ============================ -->
+            <div class="addition__box" id="language__addition">
+                <span style="cursor: pointer;"><i class="fas fa-plus"></i>Languages</span>
+            </div>
+            <div class="section__box--expand language__section" order="1">
+                
+                <div class="post_editor-container">
+                    <div class="post_editor-btn" role="button">
+                        <div class="icon-container">
+                            <div class="remove__icon" onclick="removeSection(this)">
+                                <i class="far fa-trash-alt w3-badge"></i>
+                            </div>
+                        </div>
+                        <div class="post_instruction-btn">Write something ...</div>
+                    </div>
+                    <div class="post_editor-expand" style="display: none;">
+                        <div class="editor-body">
+                            <div class="editor-body-container">
+                                <p>
+                                    <label class="required">
+                                        Language
+                                        <span>*</span>
+                                    </label>
+                                    <input name="language_title" type="text" class="the-title language_title" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type the language you know.</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Level
+                                    </label>
+                                    <input name="language_level" type="number" class="the-title language_level" required="" value="" min="1" max="100">
+                                    <span class="infocenter-qform-desc">Please rate your language level.</span>
+                                </p>
+                                <div class="editor-textarea-box">
+                                    <div class="editor_title-textarea">Write details here ...</div>
+                                    <div class="post_content_editor-textarea language_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
+                                    <div class="content_editor_unfocus-line"></div>
+                                    <div class="content_editor_focus-line"></div>
+                                </div>
+                                <div class="editor-toolbar" role="toolbar">
+                                    <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
+                                        <div class="hidden_bold-label hidden-toolbar-label"></div>
+                                        <span class="text_bold-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
+                                        <div class="hidden_italic-label hidden-toolbar-label"></div>
+                                        <span class="text_italic-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
+                                        <div class="hidden_underline-label hidden-toolbar-label"></div>
+                                        <span class="text_underline-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
+                                        <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
+                                        <span class="text_bulleted_list-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
+                                        <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
+                                        <span class="text_remove_formatting-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="editor-footer">
+                            <div class="post_action-nav">
+                                <div class="cancel_post-tab" role="button">
+                                    <div class="hiden_cancel_post-btn"></div>
+                                    <span class="cancel_post-btn">
+                                        <span class="post_cancel-label">Close</span>
+                                    </span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =========================== PROFILE/ABOUT ME EDITOR ============================ -->
+            <div class="addition__box" id="profile__addition">
+                <span style="cursor: pointer;"><i class="fas fa-plus"></i>Profile</span>
+            </div>
+            <div class="section__box--expand profile__section" order="1">                    
+                <div class="post_editor-container">
+                    <div class="post_editor-btn" role="button">
+                        <div class="icon-container">
+                            <div class="remove__icon" onclick="removeSection(this)">
+                                <i class="far fa-trash-alt w3-badge"></i>
+                            </div>
+                        </div>
+                        <div class="post_instruction-btn">Write something ...</div>
+                    </div>
+                    <div class="post_editor-expand" style="display: none;">
+                        <div class="editor-body">
+                            <div class="editor-body-container">
+                                <p>
+                                    <label class="required">
+                                        Description
+                                        <span>*</span>
+                                    </label>
+                                </p>
+                                <div class="editor-textarea-box">
+                                    <div class="editor_title-textarea">Write details here ...</div>
+                                    <div id="profile_desc" class="post_content_editor-textarea profile_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
+                                    <div class="content_editor_unfocus-line"></div>
+                                    <div class="content_editor_focus-line"></div>
+                                </div>
+                                <div class="editor-toolbar" role="toolbar">
+                                    <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
+                                        <div class="hidden_bold-label hidden-toolbar-label"></div>
+                                        <span class="text_bold-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
+                                        <div class="hidden_italic-label hidden-toolbar-label"></div>
+                                        <span class="text_italic-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
+                                        <div class="hidden_underline-label hidden-toolbar-label"></div>
+                                        <span class="text_underline-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
+                                        <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
+                                        <span class="text_bulleted_list-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
+                                        <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
+                                        <span class="text_remove_formatting-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="editor-footer">
+                            <div class="post_action-nav">
+                                <div class="cancel_post-tab" role="button">
+                                    <div class="hiden_cancel_post-btn"></div>
+                                    <span class="cancel_post-btn">
+                                        <span class="post_cancel-label">Close</span>
+                                    </span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =========================== EXPERIENCE/HISTORY EDITOR ============================ -->
+            <div class="addition__box" id="timeline__addition">
+                <span style="cursor: pointer;"><i class="fas fa-plus"></i>Experiences</span>
+            </div>
+            <div class="section__box--expand timeline__section" order="1">
+                
+                <div class="post_editor-container">
+                    <div class="post_editor-btn" role="button" >
+                        <div class="icon-container">
+                            <div class="remove__icon" onclick="removeSection(this)">
+                                <i class="far fa-trash-alt w3-badge"></i>
+                            </div>
+                        </div>
+                        <div class="post_instruction-btn">Write something ...</div>
+                    </div>
+                    <div class="post_editor-expand" style="display: none;">
+                        <div class="editor-body">
+                            <div class="editor-body-container">
+                                <p>
+                                    <label for="" class="required">
+                                        Job Position
+                                        <span>*</span>
+                                    </label>
+                                    <input name="experience_job_position_title" type="text" class="the-title experience_job_position_title" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type your job title.</span>
+                                </p>
+                                <p>
+                                    <label class="required">
+                                        From
+                                        <span>*</span>
+                                    </label>
+                                    <input name="experience_date_from" type="month"  class="the-title experience_date_from" required="" value="">
+                                    <label class="required">
+                                        To
+                                        <span>*</span>
+                                    </label>
+                                    <input name="experience_date_to" type="month"  class="the-title experience_date_to" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type duration time.</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Company/Office
+                                    </label>
+                                    <input name="experience_company" type="text" class="the-title experience_company" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type the company/office you work at.</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Location
+                                    </label>
+                                    <input name="experience_location" type="text" class="the-title experience_location" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type location.</span>
+                                </p>
+                                <div class="editor-textarea-box">
+                                    <div class="editor_title-textarea">Write details here ...</div>
+                                    <div class="post_content_editor-textarea experience_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
+                                    <div class="content_editor_unfocus-line"></div>
+                                    <div class="content_editor_focus-line"></div>
+                                </div>
+                                <div class="editor-toolbar" role="toolbar">
+                                    <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
+                                        <div class="hidden_bold-label hidden-toolbar-label"></div>
+                                        <span class="text_bold-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
+                                        <div class="hidden_italic-label hidden-toolbar-label"></div>
+                                        <span class="text_italic-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
+                                        <div class="hidden_underline-label hidden-toolbar-label"></div>
+                                        <span class="text_underline-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
+                                        <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
+                                        <span class="text_bulleted_list-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
+                                        <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
+                                        <span class="text_remove_formatting-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="editor-footer">
+                            <div class="post_action-nav">
+                                <div class="cancel_post-tab" role="button">
+                                    <div class="hiden_cancel_post-btn"></div>
+                                    <span class="cancel_post-btn">
+                                        <span class="post_cancel-label">Close</span>
+                                    </span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =========================== EDUCATION EDITOR ============================ -->
+            <div class="addition__box" id="education__addition">
+                <span style="cursor: pointer;"><i class="fas fa-plus"></i>Education</span>
+            </div>
+            <div class="section__box--expand education__section" order="1">
+                <div class="post_editor-container">
+                    <div class="post_editor-btn" role="button" >
+                        <div class="icon-container">
+                            <div class="remove__icon" onclick="removeSection(this)">
+                                <i class="far fa-trash-alt w3-badge"></i>
+                            </div>
+                        </div>
+                        <div class="post_instruction-btn">Write something ...</div>
+                    </div>
+                    <div class="post_editor-expand" style="display: none;">
+                        <div class="editor-body">
+                            <div class="editor-body-container">
+                                <p>
+                                    <label for="" class="required">
+                                        School/University Name
+                                        <span>*</span>
+                                    </label>
+                                    <input name="education_school_title" type="text" class="the-title education_school_title" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type your school/university name.</span>
+                                </p>
+                                <p>
+                                    <label class="required">
+                                        From
+                                        <span>*</span>
+                                    </label>
+                                    <input name="education_date_from" type="month"  class="the-title education_date_from" required="" value="">
+                                    <label class="required">
+                                        To
+                                        <span>*</span>
+                                    </label>
+                                    <input name="education_date_to" type="month"  class="the-title education_date_to" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type duration time.</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Location
+                                    </label>
+                                    <input name="education_location" type="text" class="the-title education_location" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type location.</span>
+                                </p>
+                                <div class="editor-textarea-box">
+                                    <div class="editor_title-textarea">Write details here ...</div>
+                                    <div class="post_content_editor-textarea education_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
+                                    <div class="content_editor_unfocus-line"></div>
+                                    <div class="content_editor_focus-line"></div>
+                                </div>
+                                <div class="editor-toolbar" role="toolbar">
+                                    <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
+                                        <div class="hidden_bold-label hidden-toolbar-label"></div>
+                                        <span class="text_bold-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
+                                        <div class="hidden_italic-label hidden-toolbar-label"></div>
+                                        <span class="text_italic-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
+                                        <div class="hidden_underline-label hidden-toolbar-label"></div>
+                                        <span class="text_underline-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
+                                        <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
+                                        <span class="text_bulleted_list-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
+                                        <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
+                                        <span class="text_remove_formatting-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="editor-footer">
+                            <div class="post_action-nav">
+                                <div class="cancel_post-tab" role="button">
+                                    <div class="hiden_cancel_post-btn"></div>
+                                    <span class="cancel_post-btn">
+                                        <span class="post_cancel-label">Close</span>
+                                    </span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =========================== HOBBIES EDITOR ============================ -->
+            <div class="addition__box" id="hobby__addition">
+                <span style="cursor: pointer;"><i class="fas fa-plus"></i>Hobbies And Interests</span>
+            </div>
+            <div class="section__box--expand hobby__section" order="1">      
+                <div class="post_editor-container">
+                    <div class="post_editor-btn" role="button">
+                        <div class="icon-container">
+                            <div class="remove__icon" onclick="removeSection(this)">
+                                <i class="far fa-trash-alt w3-badge"></i>
+                            </div>
+                        </div>
+                        <div class="post_instruction-btn">Write something ...</div>
+                    </div>
+                    <div class="post_editor-expand" style="display: none;">
+                        <div class="editor-body">
+                            <div class="editor-body-container">
+                                <p>
+                                    <label class="required">
+                                        Hobby
+                                        <span>*</span>
+                                    </label>
+                                    <input name="hobby_title" type="text" class="the-title hobby_title" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type your hobby.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="editor-footer">
+                            <div class="post_action-nav">
+                                <div class="cancel_post-tab" role="button">
+                                    <div class="hiden_cancel_post-btn"></div>
+                                    <span class="cancel_post-btn">
+                                        <span class="post_cancel-label">Close</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =========================== AWARDS EDITOR ============================ -->
+            <div class="addition__box" id="award__addition">
+                <span style="cursor: pointer;"><i class="fas fa-plus"></i>Awards</span>
+            </div>
+            <div class="section__box--expand award__section" order="1">
+                <div class="post_editor-container">
+                    <div class="post_editor-btn" role="button" >
+                        <div class="icon-container">
+                            <div class="remove__icon" onclick="removeSection(this)">
+                                <i class="far fa-trash-alt w3-badge"></i>
+                            </div>
+                        </div>
+                        <div class="post_instruction-btn">Write something ...</div>
+                    </div>
+                    <div class="post_editor-expand" style="display: none;">
+                        <div class="editor-body">
+                            <div class="editor-body-container">
+                                <p>
+                                    <label for="" class="required">
+                                        Award Name
+                                        <span>*</span>
+                                    </label>
+                                    <input name="award_title" type="text" class="the-title award_title" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type your award.</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Year
+                                    </label>
+                                    <input name="award_year" type="text" class="the-title award_year" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type the year when you get this award.</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Place
+                                    </label>
+                                    <input name="award_place" type="text" class="the-title award_place" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type the place you gain.</span>
+                                </p>
+                                <div class="editor-textarea-box">
+                                    <div class="editor_title-textarea">Write details here ...</div>
+                                    <div class="post_content_editor-textarea award_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
+                                    <div class="content_editor_unfocus-line"></div>
+                                    <div class="content_editor_focus-line"></div>
+                                </div>
+                                <div class="editor-toolbar" role="toolbar">
+                                    <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
+                                        <div class="hidden_bold-label hidden-toolbar-label"></div>
+                                        <span class="text_bold-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
+                                        <div class="hidden_italic-label hidden-toolbar-label"></div>
+                                        <span class="text_italic-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
+                                        <div class="hidden_underline-label hidden-toolbar-label"></div>
+                                        <span class="text_underline-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
+                                        <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
+                                        <span class="text_bulleted_list-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
+                                        <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
+                                        <span class="text_remove_formatting-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="editor-footer">
+                            <div class="post_action-nav">
+                                <div class="cancel_post-tab" role="button">
+                                    <div class="hiden_cancel_post-btn"></div>
+                                    <span class="cancel_post-btn">
+                                        <span class="post_cancel-label">Close</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =========================== CERTIFICATES EDITOR ============================ -->
+            <div class="addition__box" id="certificate__addition">
+                <span style="cursor: pointer;"><i class="fas fa-plus"></i>Certificates</span>
+            </div>
+            <div class="section__box--expand certificate__section" order="1">
+                <div class="post_editor-container">
+                    <div class="post_editor-btn" role="button" >
+                        <div class="icon-container">
+                            <div class="remove__icon" onclick="removeSection(this)">
+                                <i class="far fa-trash-alt w3-badge"></i>
+                            </div>
+                        </div>
+                        <div class="post_instruction-btn">Write something ...</div>
+                    </div>
+                    <div class="post_editor-expand" style="display: none;">
+                        <div class="editor-body">
+                            <div class="editor-body-container">
+                                <p>
+                                    <label for="" class="required">
+                                        Certificate Title
+                                        <span>*</span>
+                                    </label>
+                                    <input name="certificate_title" type="text" class="the-title certificate_title" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type your certificate.</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Year
+                                    </label>
+                                    <input name="certificate_year" type="text" class="the-title certificate_year" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type the year when you get this certificate.</span>
+                                </p>
+                                <div class="editor-textarea-box">
+                                    <div class="editor_title-textarea">Write details here ...</div>
+                                    <div class="post_content_editor-textarea certificate_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
+                                    <div class="content_editor_unfocus-line"></div>
+                                    <div class="content_editor_focus-line"></div>
+                                </div>
+                                <div class="editor-toolbar" role="toolbar">
+                                    <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
+                                        <div class="hidden_bold-label hidden-toolbar-label"></div>
+                                        <span class="text_bold-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
+                                        <div class="hidden_italic-label hidden-toolbar-label"></div>
+                                        <span class="text_italic-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
+                                        <div class="hidden_underline-label hidden-toolbar-label"></div>
+                                        <span class="text_underline-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
+                                        <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
+                                        <span class="text_bulleted_list-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
+                                        <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
+                                        <span class="text_remove_formatting-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="editor-footer">
+                            <div class="post_action-nav">
+                                <div class="cancel_post-tab" role="button">
+                                    <div class="hiden_cancel_post-btn"></div>
+                                    <span class="cancel_post-btn">
+                                        <span class="post_cancel-label">Close</span>
+                                    </span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =========================== REFERENCES EDITOR ============================ -->
+            <div class="addition__box" id="reference__addition">
+                <span style="cursor: pointer;"><i class="fas fa-plus"></i>References</span>
+            </div>
+            <div class="section__box--expand reference__section" order="1">
+                <div class="post_editor-container">
+                    <div class="post_editor-btn" role="button" >
+                        <div class="icon-container">
+                            <div class="remove__icon" onclick="removeSection(this)">
+                                <i class="far fa-trash-alt w3-badge"></i>
+                            </div>
+                        </div>
+                        <div class="post_instruction-btn">Write something ...</div>
+                    </div>
+                    <div class="post_editor-expand" style="display: none;">
+                        <div class="editor-body">
+                            <div class="editor-body-container">
+                                <p>
+                                    <label for="" class="required">
+                                        Reference Called Name
+                                        <span>*</span>
+                                    </label>
+                                    <input name="reference_called_name" type="text" class="the-title reference_called_name" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type your reference.</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Reference Job Position
+                                    </label>
+                                    <input name="reference_job_position" type="text" class="the-title reference_job_postion" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type the job position of that reference.</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Reference Email
+                                    </label>
+                                    <input name="reference_email" type="text" class="the-title reference_email" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type the reference's email.</span>
+                                </p>
+                                <p>
+                                    <label>
+                                        Reference Phone Number
+                                    </label>
+                                    <input name="reference_phone_number" type="text" class="the-title reference_phone_number" required="" value="">
+                                    <span class="infocenter-qform-desc">Please type the reference's phone number.</span>
+                                </p>
+                                <div class="editor-textarea-box">
+                                    <div class="editor_title-textarea">Write details here ...</div>
+                                    <div class="post_content_editor-textarea reference_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
+                                    <div class="content_editor_unfocus-line"></div>
+                                    <div class="content_editor_focus-line"></div>
+                                </div>
+                                <div class="editor-toolbar" role="toolbar">
+                                    <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
+                                        <div class="hidden_bold-label hidden-toolbar-label"></div>
+                                        <span class="text_bold-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
+                                        <div class="hidden_italic-label hidden-toolbar-label"></div>
+                                        <span class="text_italic-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
+                                        <div class="hidden_underline-label hidden-toolbar-label"></div>
+                                        <span class="text_underline-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
+                                        <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
+                                        <span class="text_bulleted_list-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
+                                        <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
+                                        <span class="text_remove_formatting-label text-toolbar-label">
+                                            <span class="toolbar-btn-icon">
+                                                <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="editor-footer">
+                            <div class="post_action-nav">
+                                <div class="cancel_post-tab" role="button">
+                                    <div class="hiden_cancel_post-btn"></div>
+                                    <span class="cancel_post-btn">
+                                        <span class="post_cancel-label">Close</span>
+                                    </span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input id="export" onclick="generatePDF()" type="submit" name="download" value="Download Your CV" class="button download__btn">
+            <div id="hidden_export" style="margin-bottom: 20px;"></div>
+        </div>    
+        <div class="w3-content w3-display-container">
+            <div class="col-8 cv__layout--right col-md-8 cv " id="cv">
                 <div class="resume shadow p-3 mb-5 bg-white">
                     <div class="resume_left">
-                      <div class="resume_profile">
-                        <img class="rounded-circle" src="./assets/img/vue-color-avatar (1).png" alt="profile_pic">
+                      <div class="resume_profile avatar__uploader">
+                        <div class="rounded-circle demo-container preview" id="preview">
+
+                        </div>
                       </div>
                       <div class="resume_content">
-                        <div class="resume_item resume_info">
-                          <div class="title">
-                            <p class="bold" >CONTACT</p>
-                          </div>
-                          <ul>
-                            <li>
-                              <div class="icon">
-                                <i class="fas fa-map-signs"></i>
-                              </div>
-                              <div class="data">
-                                21 Street, Texas <br /> USA
-                              </div>
-                            </li>
-                            <li>
-                              <div class="icon">
-                                <i class="fas fa-mobile-alt"></i>
-                              </div>
-                              <div class="data">
-                                +324 4445678
-                              </div>
-                            </li>
-                            <li>
-                              <div class="icon">
-                                <i class="fas fa-envelope"></i>
-                              </div>
-                              <div class="data">
-                                stephen@gmail.com
-                              </div>
-                            </li>
-                            <li>
-                              <div class="icon">
-                                <i class="fab fa-weebly"></i>
-                              </div>
-                              <div class="data">
-                                www.stephen.com
-                              </div>
-                            </li>
-                          </ul>
+                        <div class="resume_item resume_info ">
+                            <div class="cv__section__box cv__personal__box">
+                                <div class="cv__section__title--underline title">
+                                    <span class="section__title--uppercase bold">
+                                        Contact
+                                    </span>
+                                </div>
+                                <div class="cv__section__content cv__personal__items">
+                                    <div order="1" class="cv__item row">
+                                        <div class="cv__item__icon cv__item--inlineblock col-1">
+                                            <i class="fas fa-phone-alt"></i> 
+                                        </div>
+                                        <div class="cv__item__content cv__item--inlineblock col-9">
+                                            <div id="cv__phone__number" class="cv__textbox" spellcheck="false" contenteditable="true" data-max-length="15"">+84 17 004 354</div>
+                                        </div>
+                                    </div>
+                                    <div order="1" class="cv__item row">
+                                        <div class="cv__item__icon cv__item--inlineblock col-1">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div class="cv__item__content cv__item--inlineblock col-9">
+                                            <div id="cv__email" class=" cv__textbox" spellcheck="false" contenteditable="true" data-max-length="200">votuongvi2001@gmail.com</div>
+                                        </div>
+                                    </div>
+                                    <div order="1" class="cv__item row">
+                                        <div class="cv__item__icon cv__item--inlineblock col-1">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div class="cv__item__content cv__item--inlineblock col-9">
+                                            <div id="cv__address" class=" cv__textbox" spellcheck="false" contenteditable="true" data-max-length="200">19 Nguyen Huu Tho, Tan Phong, Quan 7</div>
+                                        </div>
+                                    </div>
+                                    <div order="1" class="cv__item row">
+                                        <div class="cv__item__icon cv__item--inlineblock col-1">
+                                            <i class="fab fa-github"></i>
+                                        </div>
+                                        <div class="cv__item__content cv__item--inlineblock col-9">
+                                            <div id = "cv_websites" class="cv__websites cv__textbox" spellcheck="false" contenteditable="true" data-max-length="300" > votuongvi2001.github.io</div>
+                                        </div>
+                                    </div>
+                                    <div order="1" class="cv__item row">
+                                        <div class="cv__item__icon cv__item--inlineblock col-1">
+                                            <i class="fab fa-facebook"></i>
+                                        </div>
+                                        <div class="cv__item__content cv__item--inlineblock col-9">
+                                            <div id = "cv_socials" class="cv__socials cv__textbox" spellcheck="false" contenteditable="true" data-max-length="300" > https://www.facebook.com/tnt.tnt.0829.0309</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
                         </div>
                         <div class="resume_item resume_skills">
-                          <div class="title">
-                            <p class="bold">skill's</p>
-                          </div>
-                          <ul>
-                            <li>
-                              <div class="skill_name">
-                                HTML
-                              </div>
-                              <div class="skill_progress">
-                                <span style="width: 80%;"></span>
-                              </div>
-                              <div class="skill_per">80%</div>
-                            </li>
-                            <li>
-                              <div class="skill_name">
-                                CSS
-                              </div>
-                              <div class="skill_progress">
-                                <span style="width: 70%;"></span>
-                              </div>
-                              <div class="skill_per">70%</div>
-                            </li>
-                            <li>
-                              <div class="skill_name">
-                                SASS
-                              </div>
-                              <div class="skill_progress">
-                                <span style="width: 90%;"></span>
-                              </div>
-                              <div class="skill_per">90%</div>
-                            </li>
-                            <li>
-                              <div class="skill_name">
-                                JS
-                              </div>
-                              <div class="skill_progress">
-                                <span style="width: 60%;"></span>
-                              </div>
-                              <div class="skill_per">60%</div>
-                            </li>
-                            <li>
-                              <div class="skill_name">
-                                Java
-                              </div>
-                              <div class="skill_progress">
-                                <span style="width: 88%;"></span>
-                              </div>
-                              <div class="skill_per">88%</div>
-                            </li>
-                          </ul>
+                            <div class="cv__section__box cv__skill__box" id="skill__box__title">
+                                <div class="cv__section__title--underline title" id="skill__title__sample" >
+                                    <span class="section__title--uppercase bold">
+                                        Skill
+                                    </span>
+                                </div>
+                                <div class="cv__section__content cv__skill__items" id="cv__skill__items">
+                                    <div class="cv__item skill_item" order="1">
+                                        <div class="cv__skill__title process__label cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="50">HTML</div>
+                                        <div class="breakline__container row">
+                                            <div class="breakline col yes" onclick="rateLevel(this)"></div>
+                                            <div class="breakline col yes" onclick="rateLevel(this)"></div>
+                                            <div class="breakline col yes" onclick="rateLevel(this)"></div>
+                                            <div class="breakline col yes" onclick="rateLevel(this)"></div>
+                                            <div class="breakline col yes" onclick="rateLevel(this)"></div>
+                                        </div>
+                                        <div class="cv__skill__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="300">Có thể sử dụng thành thạo Html cho mọi dự án, hiểu biết sâu về DOM và biết cách tổ chức HTML rõ ràng.</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="resume_item resume_social">
-                          <div class="title">
-                            <p class="bold">Social</p>
-                          </div>
-                          <ul>
-                            <li>
-                              <div class="icon">
-                                <i class="fab fa-facebook-square" style="color:#0bb5f4"></i>
-                              </div>
-                              <div class="data">
-                                <p class="semi-bold">Facebook</p>
-                                <p>Stephen@facebook</p>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="icon">
-                                <i class="fab fa-twitter-square"></i>
-                              </div>
-                              <div class="data">
-                                <p class="semi-bold">Twitter</p>
-                                <p>Stephen@twitter</p>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="icon">
-                                <i class="fab fa-youtube"></i>
-                              </div>
-                              <div class="data">
-                                <p class="semi-bold">Youtube</p>
-                                <p>Stephen@youtube</p>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="icon">
-                                <i class="fab fa-linkedin"></i>
-                              </div>
-                              <div class="data">
-                                <p class="semi-bold">Linkedin</p>
-                                <p>Stephen@linkedin</p>
-                              </div>
-                            </li>
-                          </ul>
+                            <div class="cv__section__box cv__language__box">
+                                <div class="cv__section__title--underline title" id="tit">
+                                    <span class="section__title--uppercase bold">
+                                        Language
+                                    </span>
+                                </div>
+                                <div class="cv__section__content cv__language__items" id="cv__language__items">
+                                    <div class="cv__item cv__skill__text__items" order="1">
+                                        <div class="cv__language__title process__label cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="50">English</div>
+                                        <div class="star__container resume_1">
+                                            <i class="fas fa-star yes" onclick="rateLevel(this)"></i>
+                                            <i class="fas fa-star yes" onclick="rateLevel(this)"></i>
+                                            <i class="fas fa-star yes" onclick="rateLevel(this)"></i>
+                                            <i class="fas fa-star yes" onclick="rateLevel(this)"></i>
+                                            <i class="fas fa-star yes" onclick="rateLevel(this)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resume_item resume_social">
+                        <div class="cv__section__box cv__award__box">
+                            <div class="cv__section__title--underline">
+                                <span class="section__title--uppercase">
+                                    Award
+                                </span>
+                            </div>
+                            <div class="cv__section__content cv__award__items" id="cv__award__items">
+                                <div class="cv__item cv__award__item" order="1">
+                                    <div class="award__title">
+                                        <div class="cv__award__title cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="200">Web Developer of the year</div>
+                                    </div>
+                                    <div class="award__detail item__detail">
+                                        <div class="cv__award__place cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="50">Place top 1</div> 
+                                        <span>/</span> 
+                                        <div class="cv__award__year cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="4">2017</div>
+                                    </div>
+                                    <div class="cv__award__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="300">Xếp hạng từ 50 quốc gia với 20000 nhân viên.</div>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                       </div>
                    </div>
-                   <div class="resume_right">
+                   <div class="resume_right ">
                      <div class="resume_item resume_about">
-                         <div class="title">
-                            <p class="employee_name bold" style="font-size: 24px;" contenteditable="true"> TRẦN NGUYÊN TRƯỜNG</p>
-                            <p class="regular profession_name" style="font-size: 18px;" contenteditable="true">Designer</p>
+                         <div class="title cv__box cv--fullname">
+                            <div class="cv__textbox employee_name bold" style="font-size: 24px;" spellcheck="false" contenteditable="true" aria-placeholder="Họ tên" data-max-length="50" id="cv__fullname">Le ciel de vivi</div>
+                            <div class="cv__box cv--position regular profession_name" >
+                              <div class="cv__textbox single" spellcheck="false" contenteditable="true"
+                                  data-max-length="40" id="cv__wanted__position" style="font-size: 18px;">Frontend Developer</div>
+                            </div>
                           </div>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis illo fugit officiis distinctio culpa officia totam atque exercitationem inventore repudiandae?</p>
+                          <div class="cv__section__box cv__profile__box">
+                            <div class="cv__section__title--underline">
+                            </div>
+                            <div class="cv__paragraph">
+                                <div id="cv__profile__desc" class="cv__profile__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true">Áp dụng những kinh nghiệm về kỹ năng bán hàng và sự hiểu biết về thị trường để trở thành một nhân viên bán hàng chuyên nghiệp, mang đến nhiều giá trị cho khách hàng. Từ đó giúp Công ty tăng số lượng khách hàng và mở rộng tập khách hàng.</div>
+                            </div>
+                        </div>
                      </div>
-                     <div class="resume_item resume_work">
-                         <div class="title">
-                            <p class="bold">Work Experience</p>
+                     <div class="resume_item resume_work cv__section__box cv__experience__box">
+                        <div class="title cv__section__title--underline">
+                          <span class="section__title--uppercase bold">
+                              Experience
+                          </span>
+                        </div>
+                        <div class="cv__section__content cv__experience__items" id="cv__experience__items">
+                            <div order="1" class="cv__item cv__timeline timeline__experience">
+                              <div class="experience__timeline timeline">
+                                <span class="timeline__circle"></span>
+                                <span class="timeline__line"></span>
+                              </div>
+                              <div class="experience__content">
+                                <div class="experience__company">
+                                  <div class="cv__experience__job__position cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">mobile engineering</div>
+                                  <span class="divider">|</span>
+                                  <div class="cv__experience__company cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">fpt software</div>
+                                </div>
+                                <div class="experience__company__details">
+                                  <div class="cv__experience__from cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">2/2013</div> 
+                                    <span>-</span> 
+                                    <div class="cv__experience__to cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">9/2017</div>
+                                      <!-- <span class="divider"></span> -->
+                                    <div class="cv__experience__location cv__location cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="50">Hà Nội</div>
+                                </div>
+                                <div class="cv__experience__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="300">Được vinh danh nhân viên xuất sắc 2 năm liền.</div>
+                              </div>
+                            </div>
                           </div>
-                         <ul id="work--experience">
-                             <li>
-                                 <div class="date">2013 - 2015</div> 
-                                 <div class="info">
-                                      <p class="semi-bold">Lorem ipsum dolor sit amet.</p> 
-                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
-                                 </div>
-                             </li>
-                             <li>
-                               <div class="date">2015 - 2017</div>
-                               <div class="info">
-                                      <p class="semi-bold">Lorem ipsum dolor sit amet.</p> 
-                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
-                                 </div>
-                             </li>
-                             <li>
-                               <div class="date">2017 - Present</div>
-                               <div class="info">
-                                      <p class="semi-bold">Lorem ipsum dolor sit amet.</p> 
-                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
-                                 </div>
-                             </li>
-                         </ul>
-                     </div>
-                     <div class="resume_item resume_education">
-                       <div class="title">
-                            <p class="bold">Education</p>
-                          </div>
-                       <ul>
-                             <li>
-                                 <div class="date">2010 - 2013</div> 
-                                 <div class="info">
-                                      <p class="semi-bold">Web Designing (Texas University)</p> 
-                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!
-                                   </p>
-                                 </div>
-                             </li>
-                             <li>
-                               <div class="date">2000 - 2010</div>
-                               <div class="info">
-                                      <p class="semi-bold">Texas International School</p> 
-                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
-                                 </div>
-                             </li>
-                         </ul>
-                     </div>
+                        </div>
+                        <div class="cv__section__box cv__education__box resume_item resume_education">
+                            <div class="cv__section__title--underline title">
+                                <span class="section__title--uppercase bold">
+                                    Education
+                                </span>
+                            </div>
+                            <div class="cv__section__content cv__education__items" id="cv__education__items">
+                                <div order="1" class="cv__item cv__timeline timeline__education">
+                                    <div class="education__timeline timeline">
+                                        <span class="timeline__circle"></span>
+                                        <span class="timeline__line"></span>
+                                    </div>
+                                    <div class="education__content">
+                                        <div class="education__school">
+                                            <div class="cv__education__school cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="200">Ton duc thang university</div>
+                                        </div>
+                                        <div class="education__school__details">
+                                            <div class="cv__education__from cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">2/2013</div> 
+                                            <span>-</span> 
+                                            <div class="cv__education__to cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">9/2017</div>
+                                            <!-- <span class="divider"></span> -->
+                                            <div class="cv__education__location cv__location cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="100">TP Ho Chi Minh</div>
+                                        </div>
+                                        <div class="cv__education__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="300">Tốt nghiệp thủ khoa đầu ra niên khóa 2013-2019.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cv__section__box cv__certificate__box resume_item resume_certificate">
+                            <div class="cv__section__title--underline title">
+                                <span class="section__title--uppercase bold">
+                                    Certificate
+                                </span>
+                            </div>
+                            <div class="cv__section__content cv__certificate__items" id="cv__certificate__items">
+                                <div class="cv__item cv__certificate__item" order="1">
+                                    <div class="certificate__title">
+                                        <div class="cv__certificate__title cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="300">
+                                            Certified cloud security professional (CCSP)
+                                            <div class="cv__certificate__year cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="4">2021</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cv__item" order="1">
+                                    <div class="certificate__title">
+                                        <div class="cv__certificate__title cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="300">
+                                            Oracle database and MySQL administration certifications
+                                            <div class="cv__certificate__year cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="4">2019</div>
+                                        </div>
+                                    </div>
+                                    <div class="certificate__detail item__detail">
+                                        <!-- <div class="cv__certificate__desc cv__textbox" spellcheck="false" contenteditable="true" data-max-length="50">Đạt điểm tuyệt đối.</div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                      <div class="resume_item resume_hobby">
                        <div class="title">
                             <p class="bold">Hobby</p>
@@ -290,5 +1242,53 @@
             </div>
         </div>
     </div>
+    </div>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/html2pdf.bundle.min.js"></script>
+    <script src="https://unpkg.com/maxlength-contenteditable@1.0.1/dist/maxlength-contenteditable.js"></script>
+    <!-- OWL CAROUSEL  -->
+    <!-- <script src="./OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script> -->
+    <script>
+        // console.log()
+        maxlengthContentEditableModule.maxlengthContentEditable();
+        
+
+        function generatePDF(){
+            var options = {
+                margin: [0, 0, 0, -0.1],
+                // pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
+                filename:'myCV.pdf',
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas:{letterRendering: true,  scale: 6, useCORS: true},
+                jsPDF: {format: 'a4', orientation: 'portrait' }
+                // pageBreak: {mode: ['avoid-all', 'css']}
+            };
+            console.log('generate')
+            var element = document.getElementById('cv')
+
+            var worker = html2pdf().set(options).from(element).save();
+
+        }
+
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("cv");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            x[slideIndex-1].style.display = "block";  
+            $('.page__index').val(slideIndex);
+            $('.page__total').text(x.length)
+        }
+    </script>
 </body>
 </html>
