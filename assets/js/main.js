@@ -160,6 +160,14 @@ $(document).ready(function () {
     $('.underline__chooser').click();
   }
 
+  // ================= SET ORDER ===============
+  $('.cv__aboutme--left').find('.cv__section__box').each((index, el)=>{
+    $(el).css('order', index)
+  })
+  $('.cv__aboutme--right').find('.cv__section__box').each((index, el)=>{
+    $(el).css('order', index)
+  })
+
   if($('#cv__fullname').outerHeight() > defaultFullNameBoxH) {
     $('.cv--fullname').css({'margin-top': '22px'})
   } else {
@@ -922,6 +930,8 @@ $(document).ready(function () {
     setColor(localStorage.getItem('theme'))
 
   });
+   
+  
 
 // catch input change
 });
@@ -1042,7 +1052,17 @@ var removeSection = function(element){
 
   updateSectionOrder()
 }
+var resetSectionOrder = function(){
+  $('.cv__aboutme--left').find('.cv__section__box').each((index, el)=>{
+    $(el).css('order', index)
+  })
+  $('.cv__aboutme--right').find('.cv__section__box').each((index, el)=>{
+    $(el).css('order', index)
+  })
+}
 var updateSectionOrder = function(){
+  var numSectionsR = $('.cv__aboutme--right').find('.cv__section__box').length
+  var numSectionsL = $('.cv__aboutme--left').find('.cv__section__box').length
   var skills = $('.skill__section');
   // console.log(skills)
   if(skills.length > 0){
@@ -1050,14 +1070,21 @@ var updateSectionOrder = function(){
       $(section).attr('order', index+1);
     });
     $('.cv__skill__box').show();
+    // resetSectionOrder()
   } else {
     $('.cv__skill__box').hide();
+    // resetSectionOrder()
+
   }
   var profile = $('.profile__section')
   if(profile.length > 0){
     $('.cv__profile__box').show();
+    // resetSectionOrder()
+
   }else{
     $('.cv__profile__box').hide();
+    // resetSectionOrder()
+
   }
   var languages = $('.language__section')
   if(languages.length > 0){
@@ -1065,8 +1092,12 @@ var updateSectionOrder = function(){
       $(section).attr('order', index+1);
     });
     $('.cv__language__box').show();
+    // resetSectionOrder()
+
   }else {
     $('.cv__language__box').hide();
+    // resetSectionOrder()
+
   }
   var experiences = $('.timeline__section')
   if(experiences.length > 0){
@@ -1074,8 +1105,12 @@ var updateSectionOrder = function(){
       $(section).attr('order', index+1);
     });
     $('.cv__experience__box').show();
+    // resetSectionOrder()
+
   }else {
     $('.cv__experience__box').hide();
+    // resetSectionOrder()
+
   }
   var educations = $('.education__section')
   if(educations.length > 0){
@@ -1083,8 +1118,12 @@ var updateSectionOrder = function(){
       $(section).attr('order', index+1);
     });
     $('.cv__education__box').show();
+    // resetSectionOrder()
+
   }else {
     $('.cv__education__box').hide();
+    // resetSectionOrder()
+
   }
   var hobbies = $('.hobby__section')
   if(hobbies.length > 0){
@@ -1092,8 +1131,12 @@ var updateSectionOrder = function(){
       $(section).attr('order', index+1);
     });
     $('.cv__hobby__box').show();
+    // resetSectionOrder()
+
   }else {
     $('.cv__hobby__box').hide();
+    // resetSectionOrder()
+
   }
   var awards = $('.award__section')
   if(awards.length > 0){
@@ -1101,8 +1144,12 @@ var updateSectionOrder = function(){
       $(section).attr('order', index+1);
     });
     $('.cv__award__box').show();
+    // resetSectionOrder()
+
   }else {
     $('.cv__award__box').hide();
+    // resetSectionOrder()
+
   }
   var certificates = $('.certificate__section')
   if(certificates.length > 0){
@@ -1110,8 +1157,12 @@ var updateSectionOrder = function(){
       $(section).attr('order', index+1);
     });
     $('.cv__certificate__box').show();
+    // resetSectionOrder()
+
   }else {
     $('.cv__certificate__box').hide();
+    // resetSectionOrder()
+
   }
   var references = $('.reference__section')
   if(references.length > 0){
@@ -1119,9 +1170,15 @@ var updateSectionOrder = function(){
       $(section).attr('order', index+1);
     });
     $('.cv__reference__box').show();
+    // resetSectionOrder()
+
   }else {
     $('.cv__reference__box').hide();
+    // resetSectionOrder()
+
   }
+
+
 }
 //Update textbox
 
@@ -1334,3 +1391,64 @@ for (i = 0; i < document.getElementById('cv__skill__items').children.length; i++
   };
 }
 
+// ========================= MOVE SECTION TOOLBAR ===============================
+function displaySetting (el){
+  $(el).next('.ce-settings').toggleClass('ce-settings--opened')
+}
+
+// ================ CHANGE ORDER ================
+function changeOrderUp(el){
+  let editedSection = $(el).parents('.cv__section__box').eq(0)
+  let currOrder = parseInt($(editedSection).css('order'))
+  let editCol = $(el).parents('.cv__aboutme--right')
+  let isRight = false
+  if(editCol && editCol.length > 0) {
+    isRight = true
+  }
+  if(currOrder > 0){
+    if(isRight){
+      $('.cv__aboutme--right').find('.cv__section__box').each((index, el)=>{
+        if(parseInt($(el).css('order')) == (currOrder - 1)){
+          $(el).css('order', currOrder)
+        }
+      })
+    }else{
+      $('.cv__aboutme--left').find('.cv__section__box').each((index, el)=>{
+        if(parseInt($(el).css('order')) == (currOrder - 1)){
+          $(el).css('order', currOrder)
+        }
+      })
+    }
+    $(editedSection).css('order', currOrder - 1)
+  }
+}
+
+function changeOrderDown(el){
+  let editedSection = $(el).parents('.cv__section__box').eq(0)
+  let currOrder = parseInt($(editedSection).css('order'))
+  let editCol = $(el).parents('.cv__aboutme--right')
+  let numSections = 0
+  let isRight = false
+  if(editCol && editCol.length > 0) {
+    numSections = $('.cv__aboutme--right').find('.cv__section__box').length
+    isRight = true
+  } else {
+    numSections = $('.cv__aboutme--left').find('.cv__section__box').length
+  }
+  if(currOrder < numSections){
+    if(isRight){
+      $('.cv__aboutme--right').find('.cv__section__box').each((index, el)=>{
+        if(parseInt($(el).css('order')) == (currOrder + 1)){
+          $(el).css('order', currOrder)
+        }
+      })
+    }else{
+      $('.cv__aboutme--left').find('.cv__section__box').each((index, el)=>{
+        if(parseInt($(el).css('order')) == (currOrder + 1)){
+          $(el).css('order', currOrder)
+        }
+      })
+    }
+    $(editedSection).css('order', currOrder + 1)
+  }
+}

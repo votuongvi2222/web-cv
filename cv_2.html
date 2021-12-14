@@ -1031,6 +1031,35 @@
                                                 <span class="section__title--uppercase">
                                                     Contact
                                                 </span>
+                                                <div class="ce-toolbar__actions">
+                                                    <div class="ce-toolbar__actions-buttons" onclick="displaySetting(this)">
+                                                        <span class="ce-toolbar__settings-btn">
+                                                            <svg class="icon icon--dots bi bi-three-dots" width="8px" height="8px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <div class="ce-settings">
+                                                        <div class="ce-settings__default-zone">
+                                                            <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-settings__button--delete">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                                                                    <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="cv__section__content cv__personal__items">
                                                 <div order="1" class="cv__item row">
@@ -1076,11 +1105,40 @@
                                             </div>
                                         </div>
                                         <!-- =============== CV SKILL SECTION ============= -->
-                                        <div class="cv__section__box cv__skill__box" id="skill__box__title">
-                                            <div class="cv__section__title--underline" id="skill__title__sample" >
+                                        <div class="cv__section__box cv__skill__box">
+                                            <div class="cv__section__title--underline">
                                                 <span class="section__title--uppercase">
                                                     Skill
                                                 </span>
+                                                <div class="ce-toolbar__actions">
+                                                    <div class="ce-toolbar__actions-buttons" onclick="displaySetting(this)">
+                                                        <span class="ce-toolbar__settings-btn">
+                                                            <svg class="icon icon--dots bi bi-three-dots" width="8px" height="8px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <div class="ce-settings">
+                                                        <div class="ce-settings__default-zone">
+                                                            <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-settings__button--delete">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                                                                    <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="cv__section__content cv__skill__items" id="cv__skill__items">
                                                 <div class="cv__item skill_item" order="1">
@@ -1192,6 +1250,35 @@
                                                 <span class="section__title--uppercase">
                                                     Language
                                                 </span>
+                                                <div class="ce-toolbar__actions">
+                                                    <div class="ce-toolbar__actions-buttons" onclick="displaySetting(this)">
+                                                        <span class="ce-toolbar__settings-btn">
+                                                            <svg class="icon icon--dots bi bi-three-dots" width="8px" height="8px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <div class="ce-settings">
+                                                        <div class="ce-settings__default-zone">
+                                                            <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-settings__button--delete">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                                                                    <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="cv__section__content cv__language__items" id="cv__language__items">
                                                 <div class="cv__item cv__skill__text__items row" order="1">
@@ -1270,6 +1357,35 @@
                                                 <span class="section__title--uppercase">
                                                     Award
                                                 </span>
+                                                <div class="ce-toolbar__actions">
+                                                    <div class="ce-toolbar__actions-buttons" onclick="displaySetting(this)">
+                                                        <span class="ce-toolbar__settings-btn">
+                                                            <svg class="icon icon--dots bi bi-three-dots" width="8px" height="8px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <div class="ce-settings">
+                                                        <div class="ce-settings__default-zone">
+                                                            <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-settings__button--delete">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                                                                    <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="cv__section__content cv__award__items" id="cv__award__items">
                                                 <div class="cv__item cv__award__item" order="1">
@@ -1292,6 +1408,35 @@
                                                 <span class="section__title--uppercase">
                                                     Hobbie
                                                 </span>
+                                                <div class="ce-toolbar__actions">
+                                                    <div class="ce-toolbar__actions-buttons" onclick="displaySetting(this)">
+                                                        <span class="ce-toolbar__settings-btn">
+                                                            <svg class="icon icon--dots bi bi-three-dots" width="8px" height="8px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <div class="ce-settings">
+                                                        <div class="ce-settings__default-zone">
+                                                            <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-settings__button--delete">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                                                                    <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="cv__lists cv__hobby__lists">
                                                 <ul class="cv__list cv__hobby__list box_0">
@@ -1299,20 +1444,8 @@
                                                         <span class="timeline__circle list__bullet" style=""></span>
                                                         <div class="cv__hobby col-11 cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="100">MUSIC</div>                                                        
                                                     </li>
-                                                    <!-- <li order="1" class="cv__item cv__list__item cv__hobby__item">
-                                                        <span class="list__bullet"></span>
-                                                        <div class="cv__hobby cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="15">MOVIE</div>                                                        
-                                                    </li> -->
                                                 </ul>
                                                 <ul class="cv__list cv__hobby__list box_1">
-                                                    <!-- <li order="1" class="cv__item cv__list__item cv__hobby__item">
-                                                        <span class="list__bullet"></span>
-                                                        <div class="cv__hobby cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="15">GYM</div>                                                        
-                                                    </li>
-                                                    <li order="1" class="cv__item cv__list__item cv__hobby__item">
-                                                        <span class="list__bullet"></span>
-                                                        <div class="cv__hobby cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="15">READING</div>
-                                                    </li> -->
                                                 </ul>
                                             </div>
                                         </div>
@@ -1325,6 +1458,35 @@
                                                 <span class="section__title--uppercase">
                                                     Profile
                                                 </span>
+                                                <div class="ce-toolbar__actions">
+                                                    <div class="ce-toolbar__actions-buttons" onclick="displaySetting(this)">
+                                                        <span class="ce-toolbar__settings-btn">
+                                                            <svg class="icon icon--dots bi bi-three-dots" width="8px" height="8px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <div class="ce-settings">
+                                                        <div class="ce-settings__default-zone">
+                                                            <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-settings__button--delete">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                                                                    <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="cv__paragraph">
                                                 <div id="cv__profile__desc" class="cv__profile__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true">Áp dụng những kinh nghiệm về kỹ năng bán hàng và sự hiểu biết về thị trường để trở thành một nhân viên bán hàng chuyên nghiệp, mang đến nhiều giá trị cho khách hàng. Từ đó giúp Công ty tăng số lượng khách hàng và mở rộng tập khách hàng.</div>
@@ -1336,6 +1498,35 @@
                                                 <span class="section__title--uppercase">
                                                     Education
                                                 </span>
+                                                <div class="ce-toolbar__actions">
+                                                    <div class="ce-toolbar__actions-buttons" onclick="displaySetting(this)">
+                                                        <span class="ce-toolbar__settings-btn">
+                                                            <svg class="icon icon--dots bi bi-three-dots" width="8px" height="8px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <div class="ce-settings">
+                                                        <div class="ce-settings__default-zone">
+                                                            <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-settings__button--delete">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                                                                    <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="cv__section__content cv__education__items" id="cv__education__items">
                                                 <div order="1" class="cv__item cv__timeline timeline__education">
@@ -1357,41 +1548,6 @@
                                                         <div class="cv__education__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="300">Tốt nghiệp thủ khoa đầu ra niên khóa 2013-2019.</div>
                                                     </div>
                                                 </div>
-                                                <!-- <div order="1" class="cv__item cv__timeline">
-                                                    <div class="education__timeline timeline">
-                                                        <span class="timeline__circle"></span>
-                                                        <span class="timeline__line"></span>
-                                                    </div>
-                                                    <div class="education__content">
-                                                        <div class="education__school">
-                                                            <div class="cv__education__school cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">Ton duc thang university</div>
-                                                        </div>
-                                                        <div class="education__school__details">
-                                                            <div class="cv__education__from cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">2/2013</div> 
-                                                            <span>-</span> 
-                                                            <div class="cv__education__to cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">9/2017</div>
-                                                            <div class="cv__education__location cv__location cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="30">TP Ho Chi Minh</div>
-                                                        </div>
-                                                        <div class="cv__education__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="100">Tốt nghiệp thủ khoa đầu ra niên khóa 2013-2019.</div>
-                                                    </div>
-                                                </div>
-                                                <div order="1" class="cv__item cv__timeline">
-                                                    <div class="education__timeline timeline">
-                                                        <span class="timeline__circle"></span>
-                                                    </div>
-                                                    <div class="education__content">
-                                                        <div class="education__school">
-                                                            <div class="cv__education__school cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">Ton duc thang university</div>
-                                                        </div>
-                                                        <div class="education__school__details">
-                                                            <div class="cv__education__from cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">2/2013</div> 
-                                                            <span>-</span> 
-                                                            <div class="cv__education__to cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">9/2017</div>
-                                                            <div class="cv__education__location cv__location cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="30">TP Ho Chi Minh</div>
-                                                        </div>
-                                                        <div class="cv__education__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="100">Tốt nghiệp thủ khoa đầu ra niên khóa 2013-2019.</div>
-                                                    </div>
-                                                </div> -->
                                             </div>
                                         </div>
                                         <!-- =============== CV EXPERIENCE TIME LINE SECTION ============= -->
@@ -1400,6 +1556,35 @@
                                                 <span class="section__title--uppercase">
                                                     Experience
                                                 </span>
+                                                <div class="ce-toolbar__actions">
+                                                    <div class="ce-toolbar__actions-buttons" onclick="displaySetting(this)">
+                                                        <span class="ce-toolbar__settings-btn">
+                                                            <svg class="icon icon--dots bi bi-three-dots" width="8px" height="8px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <div class="ce-settings">
+                                                        <div class="ce-settings__default-zone">
+                                                            <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-settings__button--delete">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                                                                    <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="cv__section__content cv__experience__items" id="cv__experience__items">
                                                 <div order="1" class="cv__item cv__timeline timeline__experience">
@@ -1424,25 +1609,6 @@
                                                         <div class="cv__experience__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="300">Được vinh danh nhân viên xuất sắc 2 năm liền.</div>
                                                     </div>
                                                 </div>
-                                                <!-- <div order="1" class="cv__item cv__timeline">
-                                                    <div class="experience__timeline timeline">
-                                                        <span class="timeline__circle"></span>
-                                                    </div>
-                                                    <div class="experience__content">
-                                                        <div class="experience__company">
-                                                            <div class="cv__experience__job__position cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">mobile engineering</div>
-                                                            <span class="divider">|</span>
-                                                            <div class="cv__experience__company cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">fpt software</div>
-                                                        </div>
-                                                        <div class="experience__company__details">
-                                                            <div class="cv__experience__from cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">2/2013</div> 
-                                                            <span>-</span> 
-                                                            <div class="cv__experience__to cv__date cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="7">9/2017</div>
-                                                            <div class="cv__experience__location cv__location cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="30">Hà Nội</div>
-                                                        </div>
-                                                        <div class="cv__experience__desc cv__textbox cv__desc" spellcheck="false" contenteditable="true" data-max-length="100">Được vinh danh nhân viên xuất sắc 2 năm liền.</div>
-                                                    </div>
-                                                </div> -->
                                             </div>
                                         </div>
                                         <!-- =============== CV CERTIFICATE SECTION ============= -->
@@ -1451,22 +1617,40 @@
                                                 <span class="section__title--uppercase">
                                                     Certificate
                                                 </span>
+                                                <div class="ce-toolbar__actions">
+                                                    <div class="ce-toolbar__actions-buttons" onclick="displaySetting(this)">
+                                                        <span class="ce-toolbar__settings-btn">
+                                                            <svg class="icon icon--dots bi bi-three-dots" width="8px" height="8px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <div class="ce-settings">
+                                                        <div class="ce-settings__default-zone">
+                                                            <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-settings__button--delete">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                                                                    <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="cv__section__content cv__certificate__items" id="cv__certificate__items">
-                                                <!-- <div class="cv__item cv__certificate__item" order="1">
-                                                    <div class="certificate__title row">
-                                                        <div class="cv__certificate__title cv__textbox sub_title col-10" spellcheck="false" contenteditable="true" data-max-length="300">
-                                                            Certified cloud security professional (CCSP)
-                                                        </div>
-                                                        <div class="col"></div>
-                                                        <div class="cv__certificate__year cv__textbox single col-1" spellcheck="false" contenteditable="true" data-max-length="4">2021</div>
-
-                                                    </div>
-                                                </div> -->
                                                 <div class="cv__item cv__certificate__item" order="1">
                                                     <div class="certificate__title row">
                                                         <div class="cv__certificate__title col-11 cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="300">Oracle database and MySQL administration certifications </div>
-                                                        <!-- <div class="col"></div> -->
                                                         <div class="cv__certificate__year col-1 cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="4">2019</div>
 
                                                     </div>
@@ -1483,12 +1667,39 @@
                                                 <span class="section__title--uppercase">
                                                     Reference
                                                 </span>
+                                                <div class="ce-toolbar__actions">
+                                                    <div class="ce-toolbar__actions-buttons" onclick="displaySetting(this)">
+                                                        <span class="ce-toolbar__settings-btn">
+                                                            <svg class="icon icon--dots bi bi-three-dots" width="8px" height="8px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <div class="ce-settings">
+                                                        <div class="ce-settings__default-zone">
+                                                            <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-settings__button--delete">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                                                                    <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="cv__col__boxes">
                                                 <div class="cv__col__box col__box__0">
                                                     <div order="1" class="cv__item cv__reference">
-                                                        <!-- <div class="cv__reference__header">
-                                                        </div> -->
                                                         <div class="cv__reference__body row">
                                                             <div class="cv__reference__called__name col-6 cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="100">Mr Tuan Anh</div>
                                                             <div class="cv__reference__job__position col-6 cv__textbox" spellcheck="false" contenteditable="true" data-max-length="100">Team leader</div>
@@ -1505,22 +1716,7 @@
                                                 </div>
                                                 
                                                 <div class="cv__col__box col__box__1">
-                                                    <!-- <div order="1" class="cv__item cv__reference">
-                                                        <div class="cv__reference__header">
-                                                            <div class="cv__reference__job__position cv__textbox" spellcheck="false" contenteditable="true" data-max-length="30">Tech manager</div>
-                                                        </div>
-                                                        <div class="cv__reference__body">
-                                                            <div class="cv__reference__called__name cv__textbox sub_title" spellcheck="false" contenteditable="true" data-max-length="30">Mr Johnson</div>
-                                                        </div>
-                                                        <div class="cv__reference__form">
-                                                            <span class="cv__label">Phone:</span>
-                                                            <div id="cv__reference__phone__number" class="cv__textbox" spellcheck="false" contenteditable="true" data-max-length="15"">+84 17 004 354</div>
-                                                        </div>
-                                                        <div class="cv__reference__form">
-                                                            <span class="cv__label">Email:</span>
-                                                            <div id="cv__reference__email" class=" cv__textbox" spellcheck="false" contenteditable="true" data-max-length="50">johnson@gmail.com</div>
-                                                        </div>
-                                                    </div> -->
+    
                                                 </div>
                                             </div>
                                         </div>
@@ -1557,16 +1753,14 @@
             selector: '.cv__textbox',
             menubar: false,
             inline: true,
-            plugins: [
-                'link',
-                'lists',
-                'powerpaste',
-                'autolink',
-                'tinymcespellchecker'
-            ],
+            plugins: 'powerpaste casechange importcss tinydrive searchreplace' + 
+            ' image link media mediaembed template codesample table charmap hr pagebreak nonbreaking'+
+            ' anchor toc insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker'+
+            ' textpattern noneditable help formatpainter pageembed charmap mentions quickbars linkchecker emoticons advtable',
+    
             toolbar: [
-                'undo redo | bold italic underline | fontselect fontsizeselect',
-                'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent'
+                'undo redo | bold italic underline | fontselect | fontsizeselect',
+                'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent | charmap emoticons'
             ],
             valid_elements: 'p[style],strong,em,span[style],a[href],ul,ol,li',
             valid_styles: {
