@@ -9,7 +9,7 @@ var colorChoices = {
 
 }
 var cloneSkillTextboxTemp = $('.skill_item').eq(0).clone(true, true) || null;
-var cloneLangTextboxTemp = $('.cv__skill__text__items').eq(0).clone(true, true) || null;
+var cloneLangTextboxTemp = $('.language_item').eq(0).clone(true, true) || null;
 var cloneProfileTemp = $('.cv__paragraph').eq(0).clone(true, true) || null;
 var cloneExperienceTemp = $('.timeline__experience').eq(0).clone(true, true) || null;
 var cloneEducationTemp = $('.timeline__education').eq(0).clone(true, true) || null;
@@ -998,7 +998,7 @@ var removeSection = function(element){
       }  });
   }
   if(sections.hasClass("language__section")){
-    $(".cv__skill__text__items").each(function( index ) {
+    $(".language_item").each(function( index ) {
       if($(this).attr("order") == eIndex){
         $(this).remove();
       }});

@@ -983,7 +983,7 @@
             <div class="cv__layout--right col-md-8">
                 <!-- =========================== PAGE COUNTER ============================ -->
                 <div class="page__counter">
-                    <input type="text" class="page__index" value="1" readonly>
+                    <input type="text" class="page__index toolbar__input" value="1" readonly>
                     <span class="divider">/</span>
                     <span class="page__total">2</span>
                 </div>
@@ -996,6 +996,15 @@
                 </div>
                 <div class="underline__chooser" onclick="setUnderline(this)">
                     <span>Underline</span> 
+                </div>
+                <div class="zoom__bar">
+                    <input type="text" class="zoom__box toolbar__input" value="100%" readonly>
+                    <div class="zoom__btn--in" onclick="zoomIn()">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                    <div class="zoom__btn--out" onclick="zoomOut()">
+                        <i class="fas fa-search-minus" ></i>
+                    </div>
                 </div>
                 <!-- =========================== CV SLIDE SHOW ============================ -->
                 <div class="w3-content w3-display-container">   
@@ -1281,7 +1290,7 @@
                                                 </div>
                                             </div>
                                             <div class="cv__section__content cv__language__items" id="cv__language__items">
-                                                <div class="cv__item cv__skill__text__items row" order="1">
+                                                <div class="cv__item language_item row" order="1">
                                                     <div class="cv__language__title process__label col-4 cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="50">...</div>
                                                     <!-- <div class="process__container">
                                                         <div class="process__bar" style="width: 84%;">
@@ -1773,6 +1782,8 @@
         tinymce.init(emailBodyConfig);
 
         function generatePDF(){
+            $('#cv').css('zoom', '1')
+            $('.zoom__box').val('100%')
             var options = {
                 margin: [0, 0, 0, -0.1],
                 // pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
@@ -1807,6 +1818,29 @@
             x[slideIndex-1].style.display = "block";  
             $('.page__index').val(slideIndex);
             $('.page__total').text(x.length)
+        }
+
+        function zoomIn() {
+            console.log('zoom')
+            var zoomValue = parseFloat($('#cv').css('zoom'))
+            console.log(zoomValue)
+            if(zoomValue < 1){
+                $('#cv').css('zoom', ''+ (zoomValue + 0.1))
+                $('.zoom__box').val((zoomValue + 0.1)*100 + '%')
+            }
+            var zoomValue = parseInt($('#cv').css('zoom'))
+        }
+
+        function zoomOut() {
+            console.log('zoom')
+            var zoomValue = parseFloat($('#cv').css('zoom'))
+            console.log(zoomValue)
+            if(zoomValue > 0.5){
+                $('#cv').css('zoom', ''+(zoomValue - 0.1))
+                $('.zoom__box').val((zoomValue - 0.1)*100 + '%')
+            }
+            var zoomValue = parseInt($('#cv').css('zoom'))
+
         }
     </script>
 </body>
