@@ -26,6 +26,10 @@ body {
   color: #555555;
 }
 
+.cv{
+  display: block!important;
+}
+
 .bold {
   font-weight: 700;
   font-size: 20px;
@@ -285,7 +289,6 @@ img { display: block; max-width: 100%; }
 .preview { overflow: hidden; }
 .sub_title { text-transform: uppercase; font-size: 13px; font-weight: 600; }
 .page__counter { position: absolute; top: 1%; left: 10%; color: rgba(11, 72, 117, 0.95); }
-input.page__index { outline: none; border: none; width: 24px; color: rgb(255, 255, 255); font-size: 16px; background-color: rgba(11, 72, 117, 0.3); padding: 0px 4px; text-align: center; }
 .page__counter span { font-weight: 600; }
 .color__chooser { position: absolute; top: 1%; right: 10%; }
 .color__chooser i { cursor: pointer; padding: 0px 3px; }
@@ -299,6 +302,24 @@ input.page__index { outline: none; border: none; width: 24px; color: rgb(255, 25
 .cv__header { width: 100%; }
 div#preview { border-top-left-radius: 0.2rem; width: 100%; height: 100%;}
 #prview > img { max-width: 100%; }
+.breakline:hover { zoom: 1.2; }
+.zoom__bar {
+  position: absolute;
+  top: 1%;
+  left: 20%;
+}
+
+.zoom__btn--in, .zoom__btn--out {
+  display: inline-block;
+  margin: 0 5px;
+}
+input.zoom__box.toolbar__input {
+  width: 60px;
+}
+input.toolbar__input {outline: none;border: none;color: rgb(255, 255, 255);font-size: 16px;background-color: rgba(11, 72, 117, 0.3);padding: 0px 4px;text-align: center;box-shadow: rgb(204 219 232) 2px 6px 2px 5px inset, rgb(255 255 255 / 50%) 0px 5px -1px 6px inset;}
+input.page__index.toolbar__input {
+  width: 24px;
+}
 /* .cropper-crop-box, .cropper-view-box {
     border-radius: 50%;
 }
@@ -448,6 +469,8 @@ div#custom__scrollbar { background-color: rgba(11, 72, 117, 0.1); position: rela
 .cv:hover .cv__separator {
     display: block;
 }
+.media.header.align-self-center { position: sticky; top: 0px; z-index: 999999; background: rgb(208, 219, 228); padding: 4px 14px; margin-left: -15px; width: 108%; box-shadow: rgba(0, 0, 0, 0.45) 20px 20px 20px -26px; height: 65px; margin-top: 0px !important; }
+.media-body.align-self-center {text-align: center;letter-spacing: 10px;font-size: 28px;font-family: system-ui;font-weight: 900;font-style: inherit;background-color: rgb(102, 102, 102);background-clip: text;/* background-color: #666666; */-webkit-background-clip: text;-moz-background-clip: text;background-clip: text;color: transparent;text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;/* color: transparent; *//* text-shadow: rgba(255, 255, 255, 0.5) 0px 3px 3px; */}
 @media (min-width: 768px) {
   .cv__layout--right.col-md-8 { zoom: unset; }
   #custom__scrollbar { overflow-y: scroll; height: 320mm; box-shadow: rgba(60, 64, 67, 0.31) 1px 0px 2px 0px, rgba(60, 64, 67, 0.15) 0px 4px 6px 4px; }
