@@ -302,9 +302,8 @@ top: 178px;
     width: 600px;
     /*background: pink;*/
     text-align: left;
-    position: absolute;
-    top: 20%;
-    left: 50%;
+    margin-top: 6%;
+
 }
 
 .heading_content h1 {
@@ -318,9 +317,6 @@ top: 178px;
 
 .banner_bg {
     width: 300px;
-    position: relative;
-    top: 5%;
-    right: -5%;
 }
 
 .small_bg {
