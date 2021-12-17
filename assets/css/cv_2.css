@@ -67,6 +67,10 @@ div#preview { border-top-left-radius: 0.2rem; width: 100%; height: 100%; }
 .cv__aboutme--left .cv__personal__items .cv__textbox { max-width: 195px; overflow: hidden; }
 .cv__section__box { margin-bottom: 13px; }
 .cv__section__box.hide { display: none;}
+.cv__section__box.language__section.right .cv__item, .cv__section__box.skill__section.right .cv__item {
+  width: 48%;
+  /* flex: 0.5; */
+}
 .cv__section__title--underline {padding: 2px 0px;margin-bottom: 6px;position: relative;}
 .cv__section__title--underline.border__bottom { border-bottom: 2px solid; }
 .cv__item__icon { padding-top: 1px; }
@@ -100,8 +104,8 @@ i.yes:hover, i.not:hover { font-size: larger; }
 .sub_title.cv__certificate__title { overflow: hidden; }
 .cv__aboutme--left .cv__desc { max-width: 225px; overflow: hidden; }
 .certificate__title.row { width: 100%; margin: 0px !important; }
-.cv__col__boxes { display: flex; }
-.cv__col__box { width: 50%; }
+/* .cv__col__boxes { display: flex; } */
+.cv__col__box {width: 100%;display: flex;flex-wrap: wrap;}
 .cv__reference__form, .cv__reference__header { font-size: 12px; width: 100%; margin: 0px !important; }
 .cv__item.cv__reference:not(:last-child) {margin-bottom: 10px;}
 .cv__reference__job__position.col-6.cv__textbox { font-size: 13px; }
@@ -111,9 +115,9 @@ span.cv__label { font-family: Montserrat, sans-serif !important; }
 .cv__reference__header, .cv__reference__body { width: 100%; margin: 0px 0px 0px -1px !important; }
 .cv__reference__body .cv__textbox, .cv__reference__header .cv__textbox { max-width: 200px; }
 .cv__reference__form .cv__textbox { max-width: 165px; font-style: oblique; }
-.cv__lists { display: flex; }
+.cv__lists {display: flex;flex-direction: row;flex-wrap: wrap;}
 ul.cv__list {padding-left: 0;width: 50%;}
-.cv__list__item { padding: 0px 0px 10px; margin: 0px !important; }
+.cv__list__item {padding: 0px 0px 10px;margin: 0px !important;flex: 50%;}
 span.timeline__circle.list__bullet {
     width: 6px;
     height: 6px;
@@ -353,6 +357,73 @@ span.Block.Block--item2.Block--isDraggable {
 
 .remove__icon {
     cursor: pointer;
+}
+.left .timeline { display: none;}
+.left .experience__content .col,
+.left .education__content .col { display: none;}
+.left .experience__content .col-6, .left .experience__content .col-5,
+.left .education__content .col-6, .left .education__content .col-5 { flex: 100%;}
+.left .cv__col__box {width: 100%;flex-direction: column;}
+.right .cv__item.cv__list__item { flex: 25%;}
+.right .cv__skill__items, .right .cv__language__items {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 15px;
+}
+.cv__item.cv__reference {
+  /* flex: .5; */
+  width: 50%;
+}
+.cv__item .ce-toolbar__actions {
+    top: 100%;
+    right: 7%;
+}
+.left .cv__item.cv__reference {
+  flex: 100%;
+  width: 100%;
+}
+.left .certificate__title.row {
+    flex-direction: column;
+}
+
+.left .certificate__title .cv__textbox {width: 100% !important;flex: 0 0 100% !important;max-width: 100%;}
+.move__icon {
+  position: absolute;
+  bottom: 50%;
+  right: 18%;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  display: none;
+}
+
+.cv__item {
+  position: relative;
+}
+.cv__item:hover .move__icon{
+  display: block;
+}
+.move-icon i {
+  width: 16px;
+  height: 16px;
+}
+
+.move__icon i {
+  height: 16px;
+  width: 16px;
+  font-size: 16px;
+}
+.remove__item {
+  position: absolute;
+  bottom: 50%;
+  right: 7%;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  display: none;
+}
+.cv__item:hover .remove__item {
+  display: block;
 }
 @media (min-width: 768px) {
   .cv__layout--right.col-md-8 { zoom: unset; }

@@ -721,163 +721,74 @@ $(document).ready(function () {
     // console.log('cvh: ' + cvHeaderW);
     $('.cv__opening--right').width(cvHeaderW);
   });
-
+  // $('.move__icon').click(()=>{
+  // })
   // ADD NEW SECTION
   $('#skill__addition').click(()=> {
-    // console.log(cloneSkillSection)
-    var num = $('.skill__section').length
-    var cloneSection = cloneSkillSection.clone(true, true);
-    var cloneSkillTextbox = cloneSkillTextboxTemp.clone(true,true).attr('order', num+1);
-    if(num == 0){
-      cloneSection.attr('order', num+1).insertAfter($('#skill__addition'));
-      $('#cv__skill__items').append(cloneSkillTextbox);
-    }
-    else{
-      cloneSection.attr('order', num+1).insertAfter($('.skill__section')[num-1]);
-      $('#cv__skill__items').append(cloneSkillTextbox);
-    }
-    updateSectionOrder();
+    var cloneSkillTextbox = cloneSkillTextboxTemp.clone(true,true)
+    $('#cv__skill__items').append(cloneSkillTextbox);
     tinymce.init(editorConfig);
     setColor(localStorage.getItem('theme'))
   });
   $('#language__addition').click(()=> {
-    var num = $('.language__section').length
-    var cloneSection = $('.language__section').eq(0).clone(true) || null;
-    var cloneLangTextbox = cloneLangTextboxTemp.clone(true,true).attr('order', num+1);
-
-    if(num == 0){
-      cloneLanguageSection.insertAfter($('#language__addition')).attr('order', num+1);
-      $('#cv__language__items').append(cloneLangTextbox);
-    }else{
-      cloneSection.insertAfter($('.language__section')[num-1]).attr('order', num+1);
-      $('#cv__language__items').append(cloneLangTextbox);
-    }
-    updateSectionOrder()
+    var cloneLangTextbox = cloneLangTextboxTemp.clone(true,true)
+    $('#cv__language__items').append(cloneLangTextbox);
+    tinymce.init(editorConfig);
     setColor(localStorage.getItem('theme'))
 
   });
   $('#profile__addition').click(()=> {
-    var num = $('.profile__section').length
-    var cloneProfileTextbox = cloneProfileTemp.clone(true,true).attr('order', num+1);
-    if(num == 0)
-      cloneProfileSection.attr('order', num+1).insertAfter($('#profile__addition'));
-      $(".cv__profile__box").append(cloneProfileTextbox);
-    updateSectionOrder();
+    var cloneProfileTextbox = cloneProfileTemp.clone(true,true)
+    $(".cv__profile__box").append(cloneProfileTextbox);
+    tinymce.init(editorConfig);
     setColor(localStorage.getItem('theme'))
 
   });
-  $('#timeline__addition').click(()=> {
-    $('.timeline__experience .timeline__line').eq(0).show();
-    var num = $('.timeline__section').length
-    var cloneSection = $('.timeline__section').eq(0).clone(true) || null;
-    var cloneExperienceTextbox = cloneExperienceTemp.clone(true,true).attr('order', num+1);
-
-    if(num == 0){
-      cloneExperienceSection.attr('order', num+1).insertAfter($('#timeline__addition'));
-      $('#cv__experience__items').append(cloneExperienceTextbox);
-    }
-    else
-      cloneSection.attr('order', num+1).insertAfter($('.timeline__section')[num-1]);
-      $('#cv__experience__items').append(cloneExperienceTextbox);
-    updateSectionOrder();
+  $('#experience__addition').click(()=> {
+    $('.timeline__experience .timeline__line').show();
+    var num = $('.timeline__experience').length
+    var cloneExperienceTextbox = cloneExperienceTemp.clone(true,true)
+    $('#cv__experience__items').append(cloneExperienceTextbox);
+    tinymce.init(editorConfig);
     setColor(localStorage.getItem('theme'))
     $('.timeline__experience .timeline__line').eq(num).hide();
 
   });
   $('#education__addition').click(()=> {
-    $('.timeline__education .timeline__line').eq(0).show();
-    var num = $('.education__section').length
-    var cloneEducationTextbox = cloneEducationTemp.clone(true, true).attr('order', num+1);
-    var cloneSection = $('.education__section').eq(0).clone(true) || null;
-
-    if(num == 0){
-      cloneEducationSection.attr('order', num+1).insertAfter($('#education__addition'));
-      $('#cv__education__items').append(cloneEducationTextbox);
-    }
-      
-    else
-      cloneSection.attr('order', num+1).insertAfter($('.education__section')[num-1]);
-      $('#cv__education__items').append(cloneEducationTextbox);
-    updateSectionOrder();
+    $('.timeline__education .timeline__line').show();
+    var num = $('.timeline__education').length
+    var cloneEducationTextbox = cloneEducationTemp.clone(true, true)
+    $('#cv__education__items').append(cloneEducationTextbox);
+    tinymce.init(editorConfig);
     setColor(localStorage.getItem('theme'))
     $('.timeline__education .timeline__line').eq(num).hide();
 
   });
   $('#hobby__addition').click(()=> {
-    var num = $('.hobby__section').length
-    var cloneHobbieTextbox = cloneHobbyTemp.clone(true, true).attr('order', num+1);
-    var cloneSection = $('.hobby__section').eq(0).clone(true) || null;
-
-    if(num == 0){
-      cloneHobbySection.attr('order', num+1).insertAfter($('#hobby__addition'));
-      if((num+1) % 2 == 0){
-        $('.box_1').append(cloneHobbieTextbox);
-      }else{
-        $('.box_0').append(cloneHobbieTextbox);
-      }
-
-    }
-    else
-      cloneSection.attr('order', num+1).insertAfter($('.hobby__section')[num-1]);
-      if((num+1) % 2 == 0){
-        $('.box_1').append(cloneHobbieTextbox);
-      }else{
-        $('.box_0').append(cloneHobbieTextbox);
-      }
-    updateSectionOrder();
+    var cloneHobbieTextbox = cloneHobbyTemp.clone(true, true)
+    $('.cv__hobby__lists').append(cloneHobbieTextbox);
+    tinymce.init(editorConfig);
     setColor(localStorage.getItem('theme'))
 
   });
   $('#award__addition').click(()=> {
-    var num = $('.award__section').length
-    var cloneAwardTextbox = cloneAwardTemp.clone(true, true).attr('order', num+1);
-    var cloneSection = $('.award__section').eq(0).clone(true) || null;
-
-    if(num == 0){
-      cloneAwardSection.attr('order', num+1).insertAfter($('#award__addition'));
-      $('#cv__award__items').append(cloneAwardTextbox);
-    }else
-      cloneSection.attr('order', num+1).insertAfter($('.award__section')[num-1]);
-      $('#cv__award__items').append(cloneAwardTextbox);
-    updateSectionOrder();
+    var cloneAwardTextbox = cloneAwardTemp.clone(true, true)
+    $('#cv__award__items').append(cloneAwardTextbox);
+    tinymce.init(editorConfig);
     setColor(localStorage.getItem('theme'))
 
   });
   $('#certificate__addition').click(()=> {
-    var num = $('.certificate__section').length
-    var cloneCerTextbox = cloneCerTemp.clone(true, true).attr('order', num+1);
-    var cloneSection = $('.certificate__section').eq(0).clone(true) || null;
-
-    if(num == 0){
-      cloneCertificateSection.attr('order', num+1).insertAfter($('#certificate__addition'));
-      $('#cv__certificate__items').append(cloneCerTextbox);
-    }else
-      cloneSection.attr('order', num+1).insertAfter($('.certificate__section')[num-1]);
-      $('#cv__certificate__items').append(cloneCerTextbox);
-    updateSectionOrder();
+    var cloneCerTextbox = cloneCerTemp.clone(true, true)
+    $('#cv__certificate__items').append(cloneCerTextbox);
+    tinymce.init(editorConfig);
     setColor(localStorage.getItem('theme'))
 
   });
   $('#reference__addition').click(()=> {
-    var num = $('.reference__section').length
-    var cloneRefTextbox = cloneRefTemp.clone(true, true).attr('order', num+1);
-    var cloneSection = $('.reference__section').eq(0).clone(true) || null;
-
-    if(num == 0){
-      cloneReferenceSection.attr('order', num+1).insertAfter($('#reference__addition'));
-      if((num+1) % 2 == 0){
-        $('.col__box__1').append(cloneRefTextbox);
-      }else{
-        $('.col__box__0').append(cloneRefTextbox);
-      }
-    }else
-      cloneSection.attr('order', num+1).insertAfter($('.reference__section')[num-1]);
-      if((num+1) % 2 == 0){
-        $('.col__box__1').append(cloneRefTextbox);
-      }else{
-        $('.col__box__0').append(cloneRefTextbox);
-      }
-    updateSectionOrder();
+    var cloneRefTextbox = cloneRefTemp.clone(true, true)
+    $('.cv__col__box').append(cloneRefTextbox);
+    tinymce.init(editorConfig);
     setColor(localStorage.getItem('theme'))
 
   });
@@ -938,6 +849,23 @@ $(document).ready(function () {
 //   })
   
 // });
+var removeItemSection = function(element){
+  $(element).closest('.cv__item').remove()
+  if($(element).closest('.timeline__experience') != null){
+    console.log('remove')
+    $('.timeline__experience .timeline__line').show();
+    var num = $('.timeline__experience').length
+    setColor(localStorage.getItem('theme'))
+    $('.timeline__experience .timeline__line').eq(num-1).hide();
+  }
+  else if($(element).closest('.timeline__education') !=null){
+    $('.timeline__education .timeline__line').show();
+    var num = $('.timeline__education').length
+    setColor(localStorage.getItem('theme'))
+    $('.timeline__education .timeline__line').eq(num-1).hide();
+  }
+
+}
 var removeSection = function(element){
   $(element).toggleClass('display')
   $(element).parents('.post_editor-btn').toggleClass('hide')
@@ -1341,6 +1269,7 @@ var loadFile = function(event) {
 
 // ========================= MOVE SECTION TOOLBAR ===============================
 function displaySetting (el){
+  console.log('click')
   $(el).next('.ce-settings').toggleClass('ce-settings--opened')
 }
 
