@@ -66,6 +66,7 @@ div#preview { border-top-left-radius: 0.2rem; width: 100%; height: 100%; }
 .cv__aboutme--left {margin-top: 30px;padding-left: 50px;padding-right: 0px;display: flex;flex-flow: column;margin-bottom: 0 !important;}
 .cv__aboutme--left .cv__personal__items .cv__textbox { max-width: 195px; overflow: hidden; }
 .cv__section__box { margin-bottom: 13px; }
+.cv__section__box.hide { display: none;}
 .cv__section__title--underline {padding: 2px 0px;margin-bottom: 6px;position: relative;}
 .cv__section__title--underline.border__bottom { border-bottom: 2px solid; }
 .cv__item__icon { padding-top: 1px; }

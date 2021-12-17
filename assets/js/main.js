@@ -943,6 +943,11 @@ var removeSection = function(element){
   $(element).parents('.post_editor-btn').toggleClass('hide')
   $(element).find('.fa-eye').toggleClass('hide')
   $(element).find('.fa-eye-slash').toggleClass('hide')
+
+  var className = $(element).parents('.section__box--expand').attr('class').split(' ')[1]
+  $('#cv').find('.'+className).each((i, e)=>{
+      $(e).toggleClass('hide')
+  })
   // var sections = $(element).closest('.section__box--expand');
   // var eIndex = $(sections).attr("order");
   // $(element).closest('.section__box--expand').remove();
