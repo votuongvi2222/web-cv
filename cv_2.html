@@ -1053,78 +1053,78 @@
             $( '.cv__skill__items' ).sortable({
                 connectWith: ".cv__skill__items",
                 handle: '.move__icon',
-                cancel: '.cv__textbox'
-            }).disableSelection();
+                cancel: '[contenteditable]'
+            })
         });
 
         $(function() {
             $( '.cv__language__items' ).sortable({
                 connectWith: ".cv__language__items",
                 handle: '.move__icon',
-                cancel: '.cv__textbox'
-            }).disableSelection();
+                cancel: '[contenteditable]'
+            })
         });
 
         $(function() {
             $( '.cv__experience__items' ).sortable({
                 connectWith: ".cv__experience__items",
                 handle: '.move__icon',
-                cancel: '.cv__textbox',
+                cancel: '[contenteditable]',
                 stop: function(){
                     $('.timeline__experience .timeline__line').show();
                     var num = $('.timeline__experience').length
                     setColor(localStorage.getItem('theme'))
                     $('.timeline__experience .timeline__line').eq(num-1).hide();
                 }
-            }).disableSelection();
+            })
         });
         $(function() {
             $( '.cv__education__items' ).sortable({
                 connectWith: ".cv__education__items",
                 handle: '.move__icon',
-                cancel: '.cv__textbox',
+                cancel: '[contenteditable]',
                 stop: function(){
                     $('.timeline__education .timeline__line').show();
                     var num = $('.timeline__education').length
                     setColor(localStorage.getItem('theme'))
                     $('.timeline__education .timeline__line').eq(num-1).hide();
                 }
-            }).disableSelection();
+            })
         });
         $(function() {
             $( '.cv__hobby__lists' ).sortable({
                 connectWith: ".cv__hobby__lists",
                 handle: '.move__icon',
-                cancel: '.cv__textbox'
-            }).disableSelection();
+                cancel: '[contenteditable]'
+            })
         });
         $(function() {
             $( '.cv__award__items' ).sortable({
                 connectWith: ".cv__award__items",
                 handle: '.move__icon',
-                cancel: '.cv__textbox'
-            }).disableSelection();
+                cancel: '[contenteditable]'
+            })
         });
         $(function() {
             $( '.cv__certificate__items' ).sortable({
                 connectWith: ".cv__certificate__items",
                 handle: '.move__icon',
-                cancel: '.cv__textbox'
-            }).disableSelection();
+                cancel: '[contenteditable]'
+            })
         });
         $(function() {
             $( '.cv__col__box' ).sortable({
                 connectWith: ".cv__col__box",
                 handle: '.move__icon',
-                cancel: '.cv__textbox'
-            }).disableSelection();
+                cancel: '[contenteditable]'
+            })
         });
         $(function() {
             $( '.cv__personal__items' ).sortable({
                 connectWith: ".cv__personal__items",
                 handle: '.move__icon',
-                cancel: '.cv__textbox'
-            }).disableSelection();
+                cancel: '[contenteditable]'
+            })
         });
 
         var editorConfig = {
@@ -1136,7 +1136,7 @@
             ' image link media mediaembed template codesample table charmap hr pagebreak nonbreaking'+
             ' anchor toc insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker'+
             ' textpattern noneditable help formatpainter pageembed charmap mentions quickbars linkchecker emoticons advtable',
-            // toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright alignfull | formatselect | fontselect | fontsizeselect | quicklink blockquote | numlist bullist outdent indent | charmap emoticons | forecolor backcolor',
+            toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright alignfull | formatselect | fontselect | fontsizeselect | quicklink blockquote | numlist bullist outdent indent | charmap emoticons | forecolor backcolor',
             valid_elements: 'p[style],strong,em,span[style],a[href],ul,ol,li',
             valid_styles: {
                 '*': 'font-size,font-family,color,text-decoration,text-align'
