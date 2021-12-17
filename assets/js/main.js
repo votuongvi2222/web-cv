@@ -96,13 +96,7 @@ var options = {
   aspectRatio: 1/1,
   preview: '#preview',
   crop(event) {
-    // console.log(event.detail.x);
-    // console.log(event.detail.y);
-    // console.log(event.detail.width);
-    // console.log(event.detail.height);
-    // console.log(event.detail.rotate);
-    // console.log(event.detail.scaleX);
-    // console.log(event.detail.scaleY);
+    //
   }
 }
 var cropper;
@@ -161,12 +155,12 @@ $(document).ready(function () {
   }
 
   // ================= SET ORDER ===============
-  $('.cv__aboutme--left').find('.cv__section__box').each((index, el)=>{
-    $(el).css('order', index)
-  })
-  $('.cv__aboutme--right').find('.cv__section__box').each((index, el)=>{
-    $(el).css('order', index)
-  })
+  // $('.cv__aboutme--left').find('.cv__section__box').each((index, el)=>{
+  //   $(el).css('order', index)
+  // })
+  // $('.cv__aboutme--right').find('.cv__section__box').each((index, el)=>{
+  //   $(el).css('order', index)
+  // })
 
   if($('#cv__fullname').outerHeight() > defaultFullNameBoxH) {
     $('.cv--fullname').css({'margin-top': '22px'})
@@ -175,9 +169,6 @@ $(document).ready(function () {
   }
   $('#cv__fullname').on('DOMSubtreeModified', function(){
     if($(this).outerHeight() > defaultFullNameBoxH) {
-      // if($(this).outerHeight() > 100) {
-      //   $(this).prop("contenteditable" , false);
-      // }
       $('.cv--fullname').css({'margin-top': '22px'})
     } else {
       $('.cv--fullname').css({'margin-top': '40px'})
@@ -188,39 +179,6 @@ $(document).ready(function () {
   $('.toolbar-btn').click(function(){
     $(this).toggleClass('focused');
   })
-  // editor 
-  // $('.post_editor-expand').hide();
-
-  // $('.post_content_editor-textarea').focus(function(){
-  //   // console.log('focus')
-  //   $(this).prev().addClass('focused');
-  //   $(this).next().next().addClass('focused');
-  
-  // })
-  // $('.post_content_editor-textarea').blur(function(){
-  //   // console.log('blur')
-
-  //   var textboxContent = $.trim($(this).text());
-  //   if(textboxContent == '') {
-  //     $(this).prev().removeClass('focused');
-  //     $(this).next().next().removeClass('focused');
-  //   }
-
-  // })
-
-  
-  // $('body').on('DOMSubtreeModified', '.post_content_editor-textarea', function(){
-  //   // console.log('changed');
-  //   var textboxContent = $.trim($(this).text());
-  //   // console.log(textboxContent)
-
-  //   if(textboxContent != ''){
-  //     $(this).parents('.post_editor-expand').find('.upload_post-tab').removeClass('empty');
-  //     // console.log('not empty text');
-  //   }
-  //   else
-  //     $(this).parents('.post_editor-expand').find('.upload_post-tab').addClass('empty');
-  // })
 
   $('.cv__textbox').on('DOMSubtreeModified', ()=>{
     // ======================SKILL============================
@@ -745,21 +703,13 @@ $(document).ready(function () {
   $('.cancel_post-tab').click(function(){
     $(this).parents('.post_editor-expand').hide();
     $(this).parents('.post_editor-expand').prev('.post_editor-btn').show();
-    // $('#post_content_editor-textarea').innerText = '';
   })
-  // $('.post_instruction-btn').on('click', function(){
-  //   $(this).closest('.post_editor-btn').next('.post_editor-expand').show();
-  //   // console.log( $(this).closest('.post_editor-expand'))
-  //   $(this).parents('.post_editor-btn').hide();
-  // })
 
   $('#file').change(() => {
     $('.avatar__box--left').removeClass('hide');
 
     var avatarW = $('.avatar__box--left').outerWidth();
     var cvHeaderW = $('.cv__header').outerWidth();
-    // console.log('avaw: ' + avatarW);
-    // console.log('cvh: ' + cvHeaderW);
     $('.cv__opening--right').width(cvHeaderW - avatarW - 4);
   })
   // REMOVE AVATAR
@@ -936,122 +886,131 @@ $(document).ready(function () {
 
 // catch input change
 });
-$(function() {
-  inFullName.keyup(() => {
-    cvFullName.text(inFullName.val());
-  });
-  inWantedPosition.keyup(() => {
-    cvWantedPosition.text(inWantedPosition.val());
-  });
-  inAddress.keyup(() => {
-    cvAddress.text(inAddress.val());
-  });
-  inEmail.keyup(() => {
-    cvEmail.text(inEmail.val());
-  });
-  $('input').keyup((e) => {
-    // if(e.key === 'Enter'){
-      let skillTitles = [],
-          skillLevels = [],
-          skillDescs = [];
+// $(function() {
+//   inFullName.keyup(() => {
+//     cvFullName.text(inFullName.val());
+//   });
+//   inWantedPosition.keyup(() => {
+//     cvWantedPosition.text(inWantedPosition.val());
+//   });
+//   inAddress.keyup(() => {
+//     cvAddress.text(inAddress.val());
+//   });
+//   inEmail.keyup(() => {
+//     cvEmail.text(inEmail.val());
+//   });
+//   $('input').keyup((e) => {
+//     // if(e.key === 'Enter'){
+//       let skillTitles = [],
+//           skillLevels = [],
+//           skillDescs = [];
 
-      $(inSkillSections).each((index,item)=>{
-        // console.log($(item).find('.yes').length);
-        skillTitles.push($(item).find('.skill_title').val());
-        skillLevels.push($(item).find('.skill_level').val());
-        skillDescs.push($(item).find('.skill_desc').text());
-      })
-      // console.log(skillTitles[0])
-      $('.cv__skill__title').each((index, item)=> {
-        console.log(skillTitles[index])
-          $(item).text(skillTitles[index]);
-      })
-      $('.cv__skill__rating').each((index, item)=> {
-        let num_yes = skillLevels[index];
-        // console.log(num_yes)
-        $(item).children('.rating').each((i, rate)=> {
-          if(num_yes > 0){
-            $(rate).addClass('yes');
-            $(rate).removeClass('not');
-            num_yes--
-          } else {
-            $(rate).addClass('not')
-            $(rate).removeClass('yes')
-          }
-        })
+//       $(inSkillSections).each((index,item)=>{
+//         // console.log($(item).find('.yes').length);
+//         skillTitles.push($(item).find('.skill_title').val());
+//         skillLevels.push($(item).find('.skill_level').val());
+//         skillDescs.push($(item).find('.skill_desc').text());
+//       })
+//       // console.log(skillTitles[0])
+//       $('.cv__skill__title').each((index, item)=> {
+//         console.log(skillTitles[index])
+//           $(item).text(skillTitles[index]);
+//       })
+//       $('.cv__skill__rating').each((index, item)=> {
+//         let num_yes = skillLevels[index];
+//         // console.log(num_yes)
+//         $(item).children('.rating').each((i, rate)=> {
+//           if(num_yes > 0){
+//             $(rate).addClass('yes');
+//             $(rate).removeClass('not');
+//             num_yes--
+//           } else {
+//             $(rate).addClass('not')
+//             $(rate).removeClass('yes')
+//           }
+//         })
 
         
-      })
-      setColor(localStorage.getItem('theme'));
+//       })
+//       setColor(localStorage.getItem('theme'));
 
-    // }
-  })
+//     // }
+//   })
   
-});
+// });
 var removeSection = function(element){
-  var sections = $(element).closest('.section__box--expand');
-  var eIndex = $(sections).attr("order");
-  $(element).closest('.section__box--expand').remove();
-  if(sections.hasClass("skill__section")){
-    $(".skill_item").each(function( index ) {
-      if($(this).attr("order") == eIndex){
-        $(this).remove();
-      }  });
-  }
-  if(sections.hasClass("language__section")){
-    $(".language_item").each(function( index ) {
-      if($(this).attr("order") == eIndex){
-        $(this).remove();
-      }});
-  }
-  if(sections.hasClass("profile__section")){
-    $(".cv__paragraph").remove();
-  }
-  if(sections.hasClass("timeline__section")){
-    $(".timeline__experience").each(function(index){
-      if($(this).attr("order") == eIndex){
-        $(this).remove();
-      }
-    })
-  }
-  if(sections.hasClass("education__section")){
-    $(".timeline__education").each(function(index){
-      if($(this).attr("order") == eIndex){
-        $(this).remove();
-      }
-    })
-  }
-  if(sections.hasClass("hobby__section")){
-    $(".cv__hobby__item").each(function(index){
-      if($(this).attr("order") == eIndex){
-        $(this).remove();
-      }
-    })
-  }
-  if(sections.hasClass("award__section")){
-    $(".cv__award__item").each(function(index){
-      if($(this).attr("order") == eIndex){
-        $(this).remove();
-      }
-    })
-  }
-  if(sections.hasClass("certificate__section")){
-    $(".cv__certificate__item").each(function(index){
-      if($(this).attr("order") == eIndex){
-        $(this).remove();
-      }
-    })  
-  }
-  if(sections.hasClass("reference__section")){
-    $(".cv__reference").each(function(index){
-      if($(this).attr("order") == eIndex){
-        $(this).remove();
-      }
-    })   
-  }
+  $(element).toggleClass('display')
+  $(element).parents('.post_editor-btn').toggleClass('hide')
+  $(element).find('.fa-eye').toggleClass('hide')
+  $(element).find('.fa-eye-slash').toggleClass('hide')
+
+  var className = $(element).parents('.section__box--expand').attr('class').split(' ')[1]
+  $('#cv').find('.'+className).each((i, e)=>{
+      $(e).toggleClass('hide')
+  })
+  // var sections = $(element).closest('.section__box--expand');
+  // var eIndex = $(sections).attr("order");
+  // $(element).closest('.section__box--expand').remove();
+  // if(sections.hasClass("skill__section")){
+  //   $(".skill_item").each(function( index ) {
+  //     if($(this).attr("order") == eIndex){
+  //       $(this).remove();
+  //     }  });
+  // }
+  // if(sections.hasClass("language__section")){
+  //   $(".language_item").each(function( index ) {
+  //     if($(this).attr("order") == eIndex){
+  //       $(this).remove();
+  //     }});
+  // }
+  // if(sections.hasClass("profile__section")){
+  //   $(".cv__paragraph").remove();
+  // }
+  // if(sections.hasClass("timeline__section")){
+  //   $(".timeline__experience").each(function(index){
+  //     if($(this).attr("order") == eIndex){
+  //       $(this).remove();
+  //     }
+  //   })
+  // }
+  // if(sections.hasClass("education__section")){
+  //   $(".timeline__education").each(function(index){
+  //     if($(this).attr("order") == eIndex){
+  //       $(this).remove();
+  //     }
+  //   })
+  // }
+  // if(sections.hasClass("hobby__section")){
+  //   $(".cv__hobby__item").each(function(index){
+  //     if($(this).attr("order") == eIndex){
+  //       $(this).remove();
+  //     }
+  //   })
+  // }
+  // if(sections.hasClass("award__section")){
+  //   $(".cv__award__item").each(function(index){
+  //     if($(this).attr("order") == eIndex){
+  //       $(this).remove();
+  //     }
+  //   })
+  // }
+  // if(sections.hasClass("certificate__section")){
+  //   $(".cv__certificate__item").each(function(index){
+  //     if($(this).attr("order") == eIndex){
+  //       $(this).remove();
+  //     }
+  //   })  
+  // }
+  // if(sections.hasClass("reference__section")){
+  //   $(".cv__reference").each(function(index){
+  //     if($(this).attr("order") == eIndex){
+  //       $(this).remove();
+  //     }
+  //   })   
+  // }
 
 
-  updateSectionOrder()
+  // updateSectionOrder()
 }
 var resetSectionOrder = function(){
   $('.cv__aboutme--left').find('.cv__section__box').each((index, el)=>{
@@ -1258,140 +1217,127 @@ var loadFile = function(event) {
 };
 
 
-//Edit textbox website
-var webTextbox = document.getElementById('cv_websites');
-var webForm = document.getElementById('websites');
-if(window.addEventListener) {
-   // Normal browsers
-   webTextbox.addEventListener('DOMSubtreeModified', contentWebChanged, false);
-} else
-   if(window.attachEvent) {
-      // IE
-      webTextbox.attachEvent('DOMSubtreeModified', contentWebChanged);
-   }
+// //Edit textbox website
+// var webTextbox = document.getElementById('cv_websites');
+// var webForm = document.getElementById('websites');
+// if(window.addEventListener) {
+//    // Normal browsers
+//    webTextbox.addEventListener('DOMSubtreeModified', contentWebChanged, false);
+// } else
+//    if(window.attachEvent) {
+//       // IE
+//       webTextbox.attachEvent('DOMSubtreeModified', contentWebChanged);
+//    }
 
-function contentWebChanged() {
-  webForm.value = webTextbox.textContent;
-}
+// function contentWebChanged() {
+//   webForm.value = webTextbox.textContent;
+// }
 
-//Edit form web
-webForm.onkeyup = function() {
-  webTextbox.innerHTML = webForm.value;
-}
+// //Edit social textbox
+// let socialTextbox = document.getElementById('cv_socials');
+// let socialForm = document.getElementById('socials');
+// if(window.addEventListener) {
+//    // Normal browsers
+//    socialTextbox.addEventListener('DOMSubtreeModified', contentSocialChanged, false);
+// } else
+//    if(window.attachEvent) {
+//       // IE
+//       socialTextbox.attachEvent('DOMSubtreeModified', contentSocialChanged);
+//    }
 
-//Edit social textbox
-let socialTextbox = document.getElementById('cv_socials');
-let socialForm = document.getElementById('socials');
-if(window.addEventListener) {
-   // Normal browsers
-   socialTextbox.addEventListener('DOMSubtreeModified', contentSocialChanged, false);
-} else
-   if(window.attachEvent) {
-      // IE
-      socialTextbox.attachEvent('DOMSubtreeModified', contentSocialChanged);
-   }
+// function contentSocialChanged() {
+//   socialForm.value = socialTextbox.textContent;
+// }
+// //Edit form social
+// //From div to input fullname
+// let nameTextbox = document.getElementById('cv__fullname');
+// let nameForm = document.getElementById('full_name');
+// if(window.addEventListener) {
+//    // Normal browsers
+//    nameTextbox.addEventListener('DOMSubtreeModified', contentNameChanged, false);
+// } else
+//    if(window.attachEvent) {
+//       // IE
+//       nameTextbox.attachEvent('DOMSubtreeModified', contentNameChanged);
+//    }
 
-function contentSocialChanged() {
-  socialForm.value = socialTextbox.textContent;
-}
-//Edit form social
-socialForm.onkeyup = function() {
-  socialTextbox.innerHTML = socialForm.value;
-}
+// function contentNameChanged() {
+//   nameForm.value = nameTextbox.textContent;
+// }
 
-//From div to input fullname
-let nameTextbox = document.getElementById('cv__fullname');
-let nameForm = document.getElementById('full_name');
-if(window.addEventListener) {
-   // Normal browsers
-   nameTextbox.addEventListener('DOMSubtreeModified', contentNameChanged, false);
-} else
-   if(window.attachEvent) {
-      // IE
-      nameTextbox.attachEvent('DOMSubtreeModified', contentNameChanged);
-   }
+// //From div to input job
+// let jobTextbox = document.getElementById('cv__wanted__position');
+// let jobForm = document.getElementById('wanted_job_position');
+// if(window.addEventListener) {
+//    // Normal browsers
+//    jobTextbox.addEventListener('DOMSubtreeModified', contentJobChanged, false);
+// } else
+//    if(window.attachEvent) {
+//       // IE
+//       jobTextbox.attachEvent('DOMSubtreeModified', contentJobChanged);
+//    }
 
-function contentNameChanged() {
-  nameForm.value = nameTextbox.textContent;
-}
+// function contentJobChanged() {
+//   jobForm.value = jobTextbox.textContent;
+// }
 
-//From div to input job
-let jobTextbox = document.getElementById('cv__wanted__position');
-let jobForm = document.getElementById('wanted_job_position');
-if(window.addEventListener) {
-   // Normal browsers
-   jobTextbox.addEventListener('DOMSubtreeModified', contentJobChanged, false);
-} else
-   if(window.attachEvent) {
-      // IE
-      jobTextbox.attachEvent('DOMSubtreeModified', contentJobChanged);
-   }
+// //From div to input email
+// let mailTextbox = document.getElementById('cv__email');
+// let mailForm = document.getElementById('email');
+// if(window.addEventListener) {
+//    // Normal browsers
+//    mailTextbox.addEventListener('DOMSubtreeModified', contentEmailChanged, false);
+// } else
+//    if(window.attachEvent) {
+//       // IE
+//       mailTextbox.attachEvent('DOMSubtreeModified', contentEmailChanged);
+//    }
 
-function contentJobChanged() {
-  jobForm.value = jobTextbox.textContent;
-}
+// function contentEmailChanged() {
+//   mailForm.value = mailTextbox.textContent;
+// }
 
-//From div to input email
-let mailTextbox = document.getElementById('cv__email');
-let mailForm = document.getElementById('email');
-if(window.addEventListener) {
-   // Normal browsers
-   mailTextbox.addEventListener('DOMSubtreeModified', contentEmailChanged, false);
-} else
-   if(window.attachEvent) {
-      // IE
-      mailTextbox.attachEvent('DOMSubtreeModified', contentEmailChanged);
-   }
+// //From div to input phone number
+// let phoneTextbox = document.getElementById('cv__phone__number');
+// let phoneForm = document.getElementById('phone_number');
+// if(window.addEventListener) {
+//    // Normal browsers
+//    phoneTextbox.addEventListener('DOMSubtreeModified', contentPhoneChanged, false);
+// } else
+//    if(window.attachEvent) {
+//       // IE
+//       phoneTextbox.attachEvent('DOMSubtreeModified', contentPhoneChanged);
+//    }
 
-function contentEmailChanged() {
-  mailForm.value = mailTextbox.textContent;
-}
+// function contentPhoneChanged() {
+//   phoneForm.value = phoneTextbox.textContent;
+// }
 
-//From div to input phone number
-let phoneTextbox = document.getElementById('cv__phone__number');
-let phoneForm = document.getElementById('phone_number');
-if(window.addEventListener) {
-   // Normal browsers
-   phoneTextbox.addEventListener('DOMSubtreeModified', contentPhoneChanged, false);
-} else
-   if(window.attachEvent) {
-      // IE
-      phoneTextbox.attachEvent('DOMSubtreeModified', contentPhoneChanged);
-   }
+// //From div to input address
+// let addressTextbox = document.getElementById('cv__address');
+// let addressForm = document.getElementById('address');
+// if(window.addEventListener) {
+//    // Normal browsers
+//    addressTextbox.addEventListener('DOMSubtreeModified', contentAddressChanged, false);
+// } else
+//    if(window.attachEvent) {
+//       // IE
+//       addressTextbox.attachEvent('DOMSubtreeModified', contentAddressChanged);
+//    }
 
-function contentPhoneChanged() {
-  phoneForm.value = phoneTextbox.textContent;
-}
+// function contentAddressChanged() {
+//   addressForm.value = addressTextbox.textContent;
+// }
 
-phoneForm.onkeyup = function() {
-  phoneTextbox.innerHTML = phoneForm.value;
-}
+// //Skill setting
+// for (i = 0; i < document.getElementById('cv__skill__items').children.length; i++) {
+//   document.getElementById('cv__skill__items').children[i].onclick = function(){
+//     let childClicked = $(".skill__section .post-expand_input ").eq(i);
 
-//From div to input address
-let addressTextbox = document.getElementById('cv__address');
-let addressForm = document.getElementById('address');
-if(window.addEventListener) {
-   // Normal browsers
-   addressTextbox.addEventListener('DOMSubtreeModified', contentAddressChanged, false);
-} else
-   if(window.attachEvent) {
-      // IE
-      addressTextbox.attachEvent('DOMSubtreeModified', contentAddressChanged);
-   }
-
-function contentAddressChanged() {
-  addressForm.value = addressTextbox.textContent;
-}
-
-//Skill setting
-for (i = 0; i < document.getElementById('cv__skill__items').children.length; i++) {
-  document.getElementById('cv__skill__items').children[i].onclick = function(){
-    let childClicked = $(".skill__section .post-expand_input ").eq(i);
-    
 
     
-  };
-}
+//   };
+// }
 
 // ========================= MOVE SECTION TOOLBAR ===============================
 function displaySetting (el){
