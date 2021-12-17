@@ -300,6 +300,13 @@ div#custom__scrollbar { background-color: rgba(11, 72, 117, 0.1); position: rela
   background-color: #eff2f5;
 }
 .cv__section__box:hover .ce-toolbar__actions{   opacity: 1;}
+iframe#pdf-preview {display:none; position: absolute;top: 0;transform: translate(12%, 2%);left: 0;width: 80%;/* align-items: center; */height: 95%;/* display: flex; */z-index: 999999999999;/* flex: 1; */}
+.tox.tox-tinymce.tox-tinymce-inline {
+  max-width: 30%;
+}
+.container-fluid.main__body {
+    position: relative;
+}
 @media (min-width: 768px) {
   .cv__layout--right.col-md-8 { zoom: unset; }
   #custom__scrollbar { overflow: clip scroll; height: 320mm; box-shadow: rgba(60, 64, 67, 0.31) 1px 0px 2px 0px, rgba(60, 64, 67, 0.15) 0px 4px 6px 4px; }

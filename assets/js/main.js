@@ -189,38 +189,38 @@ $(document).ready(function () {
     $(this).toggleClass('focused');
   })
   // editor 
-  $('.post_editor-expand').hide();
+  // $('.post_editor-expand').hide();
 
-  $('.post_content_editor-textarea').focus(function(){
-    // console.log('focus')
-    $(this).prev().addClass('focused');
-    $(this).next().next().addClass('focused');
+  // $('.post_content_editor-textarea').focus(function(){
+  //   // console.log('focus')
+  //   $(this).prev().addClass('focused');
+  //   $(this).next().next().addClass('focused');
   
-  })
-  $('.post_content_editor-textarea').blur(function(){
-    // console.log('blur')
+  // })
+  // $('.post_content_editor-textarea').blur(function(){
+  //   // console.log('blur')
 
-    var textboxContent = $.trim($(this).text());
-    if(textboxContent == '') {
-      $(this).prev().removeClass('focused');
-      $(this).next().next().removeClass('focused');
-    }
+  //   var textboxContent = $.trim($(this).text());
+  //   if(textboxContent == '') {
+  //     $(this).prev().removeClass('focused');
+  //     $(this).next().next().removeClass('focused');
+  //   }
 
-  })
+  // })
 
   
-  $('body').on('DOMSubtreeModified', '.post_content_editor-textarea', function(){
-    // console.log('changed');
-    var textboxContent = $.trim($(this).text());
-    // console.log(textboxContent)
+  // $('body').on('DOMSubtreeModified', '.post_content_editor-textarea', function(){
+  //   // console.log('changed');
+  //   var textboxContent = $.trim($(this).text());
+  //   // console.log(textboxContent)
 
-    if(textboxContent != ''){
-      $(this).parents('.post_editor-expand').find('.upload_post-tab').removeClass('empty');
-      // console.log('not empty text');
-    }
-    else
-      $(this).parents('.post_editor-expand').find('.upload_post-tab').addClass('empty');
-  })
+  //   if(textboxContent != ''){
+  //     $(this).parents('.post_editor-expand').find('.upload_post-tab').removeClass('empty');
+  //     // console.log('not empty text');
+  //   }
+  //   else
+  //     $(this).parents('.post_editor-expand').find('.upload_post-tab').addClass('empty');
+  // })
 
   $('.cv__textbox').on('DOMSubtreeModified', ()=>{
     // ======================SKILL============================
@@ -747,11 +747,11 @@ $(document).ready(function () {
     $(this).parents('.post_editor-expand').prev('.post_editor-btn').show();
     // $('#post_content_editor-textarea').innerText = '';
   })
-  $('.post_instruction-btn').on('click', function(){
-    $(this).closest('.post_editor-btn').next('.post_editor-expand').show();
-    // console.log( $(this).closest('.post_editor-expand'))
-    $(this).parents('.post_editor-btn').hide();
-  })
+  // $('.post_instruction-btn').on('click', function(){
+  //   $(this).closest('.post_editor-btn').next('.post_editor-expand').show();
+  //   // console.log( $(this).closest('.post_editor-expand'))
+  //   $(this).parents('.post_editor-btn').hide();
+  // })
 
   $('#file').change(() => {
     $('.avatar__box--left').removeClass('hide');
@@ -787,6 +787,7 @@ $(document).ready(function () {
       $('#cv__skill__items').append(cloneSkillTextbox);
     }
     updateSectionOrder();
+    tinymce.init(editorConfig);
     setColor(localStorage.getItem('theme'))
   });
   $('#language__addition').click(()=> {
@@ -1386,6 +1387,7 @@ function contentAddressChanged() {
 for (i = 0; i < document.getElementById('cv__skill__items').children.length; i++) {
   document.getElementById('cv__skill__items').children[i].onclick = function(){
     let childClicked = $(".skill__section .post-expand_input ").eq(i);
+    
 
     
   };

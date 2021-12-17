@@ -59,6 +59,80 @@
                         <i class="fas fa-times w3-badge"></i>
                     </div>
                 </div>
+                <!-- ============================ CV LAYOUT CUSTOMER ============================= -->
+                <div class="cv__layout__customer drop__zone">
+                    <section id="GridLayout" class="GridLayout">
+                        <article class="BlockLayout BlockLayout--typeGrid" tabindex="0">
+                            <div class="BlockWrapper">
+                                <span class="Block Block--item1 Block--isDraggable" title="Click to drag" tabindex="0">
+                                    <div class="BlockContent">
+                                        <div class="section__box--expand skill__section" order="1">        
+                                            <div class="post_editor-container">
+                                                <div class="post_editor-btn" role="button">
+                                                    <div class="icon-container">
+                                                        <div class="remove__icon" onclick="removeSection(this)">
+                                                            <i class="far fa-trash-alt w3-badge"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="post_instruction-btn">Contact</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span>
+                                <span class="Block Block--item2 Block--isDraggable" title="Click to drag" tabindex="0">
+                                    <div class="BlockContent">
+                                        <div class="section__box--expand skill__section" order="1">        
+                                            <div class="post_editor-container">
+                                                <div class="post_editor-btn" role="button">
+                                                    <div class="icon-container">
+                                                        <div class="remove__icon" onclick="removeSection(this)">
+                                                            <i class="far fa-trash-alt w3-badge"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="post_instruction-btn">Skills</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span>
+                                <span class="Block Block--item3 Block--isDraggable" title="Click to drag" tabindex="0">
+                                    <div class="BlockContent">
+                                        <div class="section__box--expand skill__section" order="1">        
+                                            <div class="post_editor-container">
+                                                <div class="post_editor-btn" role="button">
+                                                    <div class="icon-container">
+                                                        <div class="remove__icon" onclick="removeSection(this)">
+                                                            <i class="far fa-trash-alt w3-badge"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="post_instruction-btn">Languages</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span>
+                                <span class="Block Block--item4 Block--isDraggable" title="Click to drag" tabindex="0">
+                                    <div class="BlockContent">
+                                        <div class="section__box--expand skill__section" order="1">        
+                                            <div class="post_editor-container">
+                                                <div class="post_editor-btn" role="button">
+                                                    <div class="icon-container">
+                                                        <div class="remove__icon" onclick="removeSection(this)">
+                                                            <i class="far fa-trash-alt w3-badge"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="post_instruction-btn">Hobbies</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+                    
                 <!-- =========================== PERSONAL CONTACT INFO EDITOR ============================ -->
                 <div class="addition__box" id="personal__addition">
                     <span style="cursor: pointer;">Personal Information</span>
@@ -977,6 +1051,8 @@
                     </div>
                 </div>
                 <input id="export" onclick="generatePDF()" type="submit" name="download" value="Download Your CV" class="button download__btn">
+                <input id="pdfpreview" onclick="previewPDF()" type="submit" name="download" value="Preview Your CV" class="button download__btn">
+                
                 <div id="hidden_export" style="margin-bottom: 20px;"></div>
             </div>
             <!-- =========================== CV VIEW CONTAINER ============================ -->
@@ -1739,10 +1815,17 @@
                 </div>
             </div>
         </div>
+        <iframe id="pdf-preview" src="" frameborder="0"></iframe>
     </div>
 
     <!-- APP JS -->
     <script src="./assets/js/main.js"></script>
+    <!-- Entire bundle -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.13/lib/draggable.bundle.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta/lib/draggable.min.js"></script>
+    <!-- legacy bundle for older browsers (IE11) -->
+    <!-- Plugins only -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.13/lib/plugins.js"></script> -->
     <!-- HTML2PDF -->
     <script src="./assets/js/html2pdf.bundle.min.js"></script>
     <!-- CONTENTEDITABLE MAX LENGTH -->
@@ -1757,20 +1840,29 @@
         window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))
         maxlengthContentEditableModule.maxlengthContentEditable();
         
-        
-        var emailBodyConfig = {
-            selector: '.cv__textbox',
+        const containerSelector = '#GridLayout .BlockLayout';
+        const dropZone = document.querySelectorAll(containerSelector);
+        // hi
+        const swappable = new Draggable.Swappable(dropZone, {
+            draggable: '.Block--isDraggable',
+            mirror: {
+                appendTo: containerSelector,
+                constrainDimensions: true,
+            }
+            // plugins: [Plugins.ResizeMirror],
+        });
+
+        var editorConfig = {
+            selector: '.cv__textbox, .section__title--uppercase',
             menubar: false,
             inline: true,
+            toolbar: true,
             plugins: 'powerpaste casechange importcss tinydrive searchreplace' + 
             ' image link media mediaembed template codesample table charmap hr pagebreak nonbreaking'+
             ' anchor toc insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker'+
             ' textpattern noneditable help formatpainter pageembed charmap mentions quickbars linkchecker emoticons advtable',
-    
-            toolbar: [
-                'undo redo | bold italic underline | fontselect | fontsizeselect',
-                'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent | charmap emoticons'
-            ],
+            toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright alignfull | formatselect | fontselect | fontsizeselect | quicklink blockquote | numlist bullist outdent indent | charmap emoticons | forecolor backcolor'
+            ,
             valid_elements: 'p[style],strong,em,span[style],a[href],ul,ol,li',
             valid_styles: {
                 '*': 'font-size,font-family,color,text-decoration,text-align'
@@ -1779,24 +1871,44 @@
             powerpaste_html_import: 'clean',
         };
 
-        tinymce.init(emailBodyConfig);
-
+        tinymce.init(editorConfig);
+        // $('.cv__textbox').click(()=>{
+        //     tinymce.init(editorConfig);
+        //     console.log('change')
+        // })
+        const pdfOptions = {
+            margin: [0, 0, 0, -0.1],
+            // pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
+            filename:'myCV.pdf',
+            image: { type: 'jpeg', quality: 1 },
+            html2canvas:{letterRendering: true,  scale: 6, useCORS: true},
+            jsPDF: {format: 'a4', orientation: 'portrait' }
+            
+            // pageBreak: {mode: ['avoid-all', 'css']}
+        };
         function generatePDF(){
             $('#cv').css('zoom', '1')
             $('.zoom__box').val('100%')
-            var options = {
-                margin: [0, 0, 0, -0.1],
-                // pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
-                filename:'myCV.pdf',
-                image: { type: 'jpeg', quality: 1 },
-                html2canvas:{letterRendering: true,  scale: 6, useCORS: true},
-                jsPDF: {format: 'a4', orientation: 'portrait' }
-                // pageBreak: {mode: ['avoid-all', 'css']}
-            };
-            console.log('generate')
             var element = document.getElementById('cv')
 
-            var worker = html2pdf().set(options).from(element).save();
+            var worker = html2pdf().set(pdfOptions).from(element).save();
+
+        }
+
+        function previewPDF(){
+            $('#cv').css('zoom', '1')
+            $('.zoom__box').val('100%')
+            var element = document.getElementById('cv')
+            html2pdf().from(element).set(pdfOptions).toPdf().get('pdf').output('datauristring').then(function (pdfAsString) {
+                // The PDF has been converted to a Data URI string and passed to this function.
+                // Use pdfAsString however you like (send as email, etc)! For instance:
+                console.log(pdfAsString);
+                const blob = base64ToBlob( pdfAsString, 'application/pdf' );
+                const url = URL.createObjectURL( blob );
+                $('#pdf-preview').css('display', 'block')
+                $('#pdf-preview').attr('src', url)
+            });
+
 
         }
 
