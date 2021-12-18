@@ -76,926 +76,161 @@
                         <i class="fas fa-times w3-badge"></i>
                     </div>
                 </div>
-                <!-- =========================== PERSONAL CONTACT INFO EDITOR ============================ -->
-                <div class="addition__box" id="personal__addition">
-                    <span style="cursor: pointer;">Personal Information</span>
-                </div>
-                <div class="section__box--expand personal__section" order="1">
-                    <div class="post_editor-container">
-                        <div class="post_editor-expand" id="personal__section--block">
-                            <div class="editor-body">
-                                <div class="editor-body-container">
-                                    <p>
-                                        <label>
-                                            Full Name
-                                        </label>
-                                        <input id="full_name" name="full_name" type="text" class="the-title full_name" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type your full name.</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Wanted Job Position 
-                                        </label>
-                                        <input id="wanted_job_position" name="wanted_job_position" type="text" class="the-title wanted_job_position" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type the job position that you want to apply for .</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Contact Email
-                                        </label>
-                                        <input id="email" name="email" type="email" class="the-title email" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type your email.</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Phone Number
-                                        </label>
-                                        <input id="phone_number" name="phone_number" type="tel" class="the-title phone_number" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type your phone number.</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Address
-                                        </label>
-                                        <input id="address" name="address" type="text" class="the-title address" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type your address.</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Websites
-                                        </label>
-                                        <input id="websites" name="websites" type="text" class="the-title websites" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type your website. (Use comma ',' to seperate your websites)</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Socials
-                                        </label>
-                                        <input id="socials" name="socials" type="text" class="the-title socials" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type your socials. (Use comma ',' to seperate your socials)</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- =========================== SKILL EDITOR ============================ -->
-                <div class="addition__box" id="skill__addition">
-                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Skills</span>
-                </div>
-                <div class="section__box--expand skill__section" order="1">        
-                    <div class="post_editor-container">
-                        <div class="post_editor-btn" role="button">
-                            <div class="icon-container">
-                                <div class="remove__icon" onclick="removeSection(this)">
-                                    <i class="far fa-trash-alt w3-badge"></i>
-                                </div>
-                            </div>
-                            <div class="post_instruction-btn">Write something ...</div>
-                        </div>
-                        <div class="post_editor-expand" style="display: none;">
-                            <div class="editor-body">
-                                <div class="editor-body-container">
-                                    <p>
-                                        <label class="required">
-                                            Skill
-                                            <span>*</span>
-                                        </label>
-                                        <input name="skill_title" type="text" class="the-title skill_title" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type your skill.</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Level
-                                        </label>
-                                        <input name="skill_level" type="number" class="the-title skill_level" required="" value="" min="1" max="5">
-                                        <span class="infocenter-qform-desc">Please rate your skill.</span>
-                                    </p>
-                                    <div class="editor-textarea-box">
-                                        <div class="editor_title-textarea">Write details here ...</div>
-                                        <div class="post_content_editor-textarea skill_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
-                                        <div class="content_editor_unfocus-line"></div>
-                                        <div class="content_editor_focus-line"></div>
+                <!-- ============================ CV LAYOUT CUSTOMER ============================= -->
+                <div class="cv__layout__customer drop__zone">
+                    <section class="GridLayout">
+                        <article class="BlockLayout BlockLayout--typeGrid" tabindex="0">
+                            <div class="BlockWrapper">
+                                <div class="BlockWrapper__col" id="layout--left">
+                                    <div class="section__box--expand contact__section left" >        
+                                        <div class="post_editor-container">
+                                            <div class="post_editor-btn" role="button">
+                                                <div class="icon-container">
+                                                    <div class="remove__icon" onclick="removeSection(this)">
+                                                        <i class="fas fa-eye w3-badge hide"></i>
+                                                        <i class="fas fa-eye-slash w3-badge"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="post_instruction-btn">Contact</div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="editor-toolbar" role="toolbar">
-                                        <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
-                                            <div class="hidden_bold-label hidden-toolbar-label"></div>
-                                            <span class="text_bold-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
-                                                </span>
-                                            </span>
+                                    <div class="section__box--expand skill__section" >        
+                                        <div class="post_editor-container">
+                                            <div class="post_editor-btn" role="button">
+                                                <div class="icon-container">
+                                                    <div class="remove__icon" onclick="removeSection(this)">
+                                                        <i class="fas fa-eye w3-badge hide"></i>
+                                                    <i class="fas fa-eye-slash w3-badge"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="post_instruction-btn">Skills</div>
+                                            </div>
                                         </div>
-                                        <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
-                                            <div class="hidden_italic-label hidden-toolbar-label"></div>
-                                            <span class="text_italic-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
-                                                </span>
-                                            </span>
+                                    </div>
+                                    <div class="section__box--expand language__section" >        
+                                        <div class="post_editor-container">
+                                            <div class="post_editor-btn" role="button">
+                                                <div class="icon-container">
+                                                    <div class="remove__icon" onclick="removeSection(this)">
+                                                        <i class="fas fa-eye w3-badge hide"></i>
+                                                        <i class="fas fa-eye-slash w3-badge"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="post_instruction-btn">Languages</div>
+                                            </div>
                                         </div>
-                                        <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
-                                            <div class="hidden_underline-label hidden-toolbar-label"></div>
-                                            <span class="text_underline-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
-                                                </span>
-                                            </span>
+                                    </div>
+                                    <div class="section__box--expand award__section" >        
+                                        <div class="post_editor-container">
+                                            <div class="post_editor-btn" role="button">
+                                                <div class="icon-container">
+                                                    <div class="remove__icon" onclick="removeSection(this)">
+                                                        <i class="fas fa-eye w3-badge hide"></i>
+                                                        <i class="fas fa-eye-slash w3-badge"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="post_instruction-btn">Awards</div>
+                                            </div>
                                         </div>
-                                        <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
-                                            <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
-                                            <span class="text_bulleted_list-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
-                                            <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
-                                            <span class="text_remove_formatting-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
-                                                </span>
-                                            </span>
+                                    </div>
+                                    <div class="section__box--expand hobby__section" >        
+                                        <div class="post_editor-container">
+                                            <div class="post_editor-btn" role="button">
+                                                <div class="icon-container">
+                                                    <div class="remove__icon" onclick="removeSection(this)">
+                                                        <i class="fas fa-eye w3-badge hide"></i>
+                                                    <i class="fas fa-eye-slash w3-badge"></i>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="post_instruction-btn">Hobbies</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="editor-footer">
-                                <div class="post_action-nav">
-                                    <div class="cancel_post-tab" role="button">
-                                        <div class="hiden_cancel_post-btn"></div>
-                                        <span class="cancel_post-btn">
-                                            <span class="post_cancel-label">Close</span>
-                                        </span>
+                                <div class="BlockWrapper__col" id="layout--right">
+                                    <div class="section__box--expand profile__section" >        
+                                        <div class="post_editor-container">
+                                            <div class="post_editor-btn" role="button">
+                                                <div class="icon-container">
+                                                    <div class="remove__icon" onclick="removeSection(this)">
+                                                        <i class="fas fa-eye w3-badge hide"></i>
+                                                        <i class="fas fa-eye-slash w3-badge"></i>
+                                                            
+                                                    </div>
+                                                </div>
+                                                <div class="post_instruction-btn">Profile</div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- =========================== LANGUAGE EDITOR ============================ -->
-                <div class="addition__box" id="language__addition">
-                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Languages</span>
-                </div>
-                <div class="section__box--expand language__section" order="1">
-                    
-                    <div class="post_editor-container">
-                        <div class="post_editor-btn" role="button">
-                            <div class="icon-container">
-                                <div class="remove__icon" onclick="removeSection(this)">
-                                    <i class="far fa-trash-alt w3-badge"></i>
-                                </div>
-                            </div>
-                            <div class="post_instruction-btn">Write something ...</div>
-                        </div>
-                        <div class="post_editor-expand" style="display: none;">
-                            <div class="editor-body">
-                                <div class="editor-body-container">
-                                    <p>
-                                        <label class="required">
-                                            Language
-                                            <span>*</span>
-                                        </label>
-                                        <input name="language_title" type="text" class="the-title language_title" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type the language you know.</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Level
-                                        </label>
-                                        <input name="language_level" type="number" class="the-title language_level" required="" value="" min="1" max="5">
-                                        <span class="infocenter-qform-desc">Please rate your language level.</span>
-                                    </p>
-                                    <div class="editor-textarea-box">
-                                        <div class="editor_title-textarea">Write details here ...</div>
-                                        <div class="post_content_editor-textarea language_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
-                                        <div class="content_editor_unfocus-line"></div>
-                                        <div class="content_editor_focus-line"></div>
+                                    <div class="section__box--expand education__section" >        
+                                        <div class="post_editor-container">
+                                            <div class="post_editor-btn" role="button">
+                                                <div class="icon-container">
+                                                    <div class="remove__icon" onclick="removeSection(this)">
+                                                        <i class="fas fa-eye w3-badge hide"></i>
+                                                    <i class="fas fa-eye-slash w3-badge"></i>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="post_instruction-btn">Education</div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="editor-toolbar" role="toolbar">
-                                        <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
-                                            <div class="hidden_bold-label hidden-toolbar-label"></div>
-                                            <span class="text_bold-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
-                                                </span>
-                                            </span>
+                                    <div class="section__box--expand experience__section" >        
+                                        <div class="post_editor-container">
+                                            <div class="post_editor-btn" role="button">
+                                                <div class="icon-container">
+                                                    <div class="remove__icon" onclick="removeSection(this)">
+                                                        <i class="fas fa-eye w3-badge hide"></i>
+                                                    <i class="fas fa-eye-slash w3-badge"></i>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="post_instruction-btn">Experience</div>
+                                            </div>
                                         </div>
-                                        <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
-                                            <div class="hidden_italic-label hidden-toolbar-label"></div>
-                                            <span class="text_italic-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
-                                                </span>
-                                            </span>
+                                    </div>
+                                    <div class="section__box--expand certificate__section" >        
+                                        <div class="post_editor-container">
+                                            <div class="post_editor-btn" role="button">
+                                                <div class="icon-container">
+                                                    <div class="remove__icon" onclick="removeSection(this)">
+                                                        <i class="fas fa-eye w3-badge hide"></i>
+                                                    <i class="fas fa-eye-slash w3-badge"></i>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="post_instruction-btn">Cetificates</div>
+                                            </div>
                                         </div>
-                                        <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
-                                            <div class="hidden_underline-label hidden-toolbar-label"></div>
-                                            <span class="text_underline-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
-                                            <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
-                                            <span class="text_bulleted_list-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
-                                            <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
-                                            <span class="text_remove_formatting-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
-                                                </span>
-                                            </span>
+                                    </div>
+                                    <div class="section__box--expand reference__section" >        
+                                        <div class="post_editor-container">
+                                            <div class="post_editor-btn" role="button">
+                                                <div class="icon-container">
+                                                    <div class="remove__icon" onclick="removeSection(this)">
+                                                        <i class="fas fa-eye w3-badge hide"></i>
+                                                    <i class="fas fa-eye-slash w3-badge"></i>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="post_instruction-btn">References</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
-                            <div class="editor-footer">
-                                <div class="post_action-nav">
-                                    <div class="cancel_post-tab" role="button">
-                                        <div class="hiden_cancel_post-btn"></div>
-                                        <span class="cancel_post-btn">
-                                            <span class="post_cancel-label">Close</span>
-                                        </span>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- =========================== PROFILE/ABOUT ME EDITOR ============================ -->
-                <div class="addition__box" id="profile__addition">
-                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Profile</span>
-                </div>
-                <div class="section__box--expand profile__section" order="1">                    
-                    <div class="post_editor-container">
-                        <div class="post_editor-btn" role="button">
-                            <div class="icon-container">
-                                <div class="remove__icon" onclick="removeSection(this)">
-                                    <i class="far fa-trash-alt w3-badge"></i>
-                                </div>
-                            </div>
-                            <div class="post_instruction-btn">Write something ...</div>
-                        </div>
-                        <div class="post_editor-expand" style="display: none;">
-                            <div class="editor-body">
-                                <div class="editor-body-container">
-                                    <p>
-                                        <label class="required">
-                                            Description
-                                            <span>*</span>
-                                        </label>
-                                    </p>
-                                    <div class="editor-textarea-box">
-                                        <div class="editor_title-textarea">Write details here ...</div>
-                                        <div id="profile_desc" class="post_content_editor-textarea profile_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
-                                        <div class="content_editor_unfocus-line"></div>
-                                        <div class="content_editor_focus-line"></div>
-                                    </div>
-                                    <div class="editor-toolbar" role="toolbar">
-                                        <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
-                                            <div class="hidden_bold-label hidden-toolbar-label"></div>
-                                            <span class="text_bold-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
-                                            <div class="hidden_italic-label hidden-toolbar-label"></div>
-                                            <span class="text_italic-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
-                                            <div class="hidden_underline-label hidden-toolbar-label"></div>
-                                            <span class="text_underline-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
-                                            <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
-                                            <span class="text_bulleted_list-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
-                                            <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
-                                            <span class="text_remove_formatting-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="editor-footer">
-                                <div class="post_action-nav">
-                                    <div class="cancel_post-tab" role="button">
-                                        <div class="hiden_cancel_post-btn"></div>
-                                        <span class="cancel_post-btn">
-                                            <span class="post_cancel-label">Close</span>
-                                        </span>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- =========================== EXPERIENCE/HISTORY EDITOR ============================ -->
-                <div class="addition__box" id="timeline__addition">
-                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Experiences</span>
-                </div>
-                <div class="section__box--expand timeline__section" order="1">
-                    
-                    <div class="post_editor-container">
-                        <div class="post_editor-btn" role="button" >
-                            <div class="icon-container">
-                                <div class="remove__icon" onclick="removeSection(this)">
-                                    <i class="far fa-trash-alt w3-badge"></i>
-                                </div>
-                            </div>
-                            <div class="post_instruction-btn">Write something ...</div>
-                        </div>
-                        <div class="post_editor-expand" style="display: none;">
-                            <div class="editor-body">
-                                <div class="editor-body-container">
-                                    <p>
-                                        <label for="" class="required">
-                                            Job Position
-                                            <span>*</span>
-                                        </label>
-                                        <input name="experience_job_position_title" type="text" class="the-title experience_job_position_title" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type your job title.</span>
-                                    </p>
-                                    <p>
-                                        <label class="required">
-                                            From
-                                            <span>*</span>
-                                        </label>
-                                        <input name="experience_date_from" type="month"  class="the-title experience_date_from" required="" value="">
-                                        <label class="required">
-                                            To
-                                            <span>*</span>
-                                        </label>
-                                        <input name="experience_date_to" type="month"  class="the-title experience_date_to" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type duration time.</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Company/Office
-                                        </label>
-                                        <input name="experience_company" type="text" class="the-title experience_company" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type the company/office you work at.</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Location
-                                        </label>
-                                        <input name="experience_location" type="text" class="the-title experience_location" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type location.</span>
-                                    </p>
-                                    <div class="editor-textarea-box">
-                                        <div class="editor_title-textarea">Write details here ...</div>
-                                        <div class="post_content_editor-textarea experience_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
-                                        <div class="content_editor_unfocus-line"></div>
-                                        <div class="content_editor_focus-line"></div>
-                                    </div>
-                                    <div class="editor-toolbar" role="toolbar">
-                                        <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
-                                            <div class="hidden_bold-label hidden-toolbar-label"></div>
-                                            <span class="text_bold-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
-                                            <div class="hidden_italic-label hidden-toolbar-label"></div>
-                                            <span class="text_italic-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
-                                            <div class="hidden_underline-label hidden-toolbar-label"></div>
-                                            <span class="text_underline-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
-                                            <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
-                                            <span class="text_bulleted_list-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
-                                            <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
-                                            <span class="text_remove_formatting-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="editor-footer">
-                                <div class="post_action-nav">
-                                    <div class="cancel_post-tab" role="button">
-                                        <div class="hiden_cancel_post-btn"></div>
-                                        <span class="cancel_post-btn">
-                                            <span class="post_cancel-label">Close</span>
-                                        </span>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- =========================== EDUCATION EDITOR ============================ -->
-                <div class="addition__box" id="education__addition">
-                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Education</span>
-                </div>
-                <div class="section__box--expand education__section" order="1">
-                    <div class="post_editor-container">
-                        <div class="post_editor-btn" role="button" >
-                            <div class="icon-container">
-                                <div class="remove__icon" onclick="removeSection(this)">
-                                    <i class="far fa-trash-alt w3-badge"></i>
-                                </div>
-                            </div>
-                            <div class="post_instruction-btn">Write something ...</div>
-                        </div>
-                        <div class="post_editor-expand" style="display: none;">
-                            <div class="editor-body">
-                                <div class="editor-body-container">
-                                    <p>
-                                        <label for="" class="required">
-                                            School/University Name
-                                            <span>*</span>
-                                        </label>
-                                        <input name="education_school_title" type="text" class="the-title education_school_title" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type your school/university name.</span>
-                                    </p>
-                                    <p>
-                                        <label class="required">
-                                            From
-                                            <span>*</span>
-                                        </label>
-                                        <input name="education_date_from" type="month"  class="the-title education_date_from" required="" value="">
-                                        <label class="required">
-                                            To
-                                            <span>*</span>
-                                        </label>
-                                        <input name="education_date_to" type="month"  class="the-title education_date_to" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type duration time.</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Location
-                                        </label>
-                                        <input name="education_location" type="text" class="the-title education_location" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type location.</span>
-                                    </p>
-                                    <div class="editor-textarea-box">
-                                        <div class="editor_title-textarea">Write details here ...</div>
-                                        <div class="post_content_editor-textarea education_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
-                                        <div class="content_editor_unfocus-line"></div>
-                                        <div class="content_editor_focus-line"></div>
-                                    </div>
-                                    <div class="editor-toolbar" role="toolbar">
-                                        <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
-                                            <div class="hidden_bold-label hidden-toolbar-label"></div>
-                                            <span class="text_bold-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
-                                            <div class="hidden_italic-label hidden-toolbar-label"></div>
-                                            <span class="text_italic-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
-                                            <div class="hidden_underline-label hidden-toolbar-label"></div>
-                                            <span class="text_underline-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
-                                            <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
-                                            <span class="text_bulleted_list-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
-                                            <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
-                                            <span class="text_remove_formatting-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="editor-footer">
-                                <div class="post_action-nav">
-                                    <div class="cancel_post-tab" role="button">
-                                        <div class="hiden_cancel_post-btn"></div>
-                                        <span class="cancel_post-btn">
-                                            <span class="post_cancel-label">Close</span>
-                                        </span>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- =========================== HOBBIES EDITOR ============================ -->
-                <div class="addition__box" id="hobby__addition">
-                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Hobbies And Interests</span>
-                </div>
-                <div class="section__box--expand hobby__section" order="1">      
-                    <div class="post_editor-container">
-                        <div class="post_editor-btn" role="button">
-                            <div class="icon-container">
-                                <div class="remove__icon" onclick="removeSection(this)">
-                                    <i class="far fa-trash-alt w3-badge"></i>
-                                </div>
-                            </div>
-                            <div class="post_instruction-btn">Write something ...</div>
-                        </div>
-                        <div class="post_editor-expand" style="display: none;">
-                            <div class="editor-body">
-                                <div class="editor-body-container">
-                                    <p>
-                                        <label class="required">
-                                            Hobby
-                                            <span>*</span>
-                                        </label>
-                                        <input name="hobby_title" type="text" class="the-title hobby_title" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type your hobby.</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="editor-footer">
-                                <div class="post_action-nav">
-                                    <div class="cancel_post-tab" role="button">
-                                        <div class="hiden_cancel_post-btn"></div>
-                                        <span class="cancel_post-btn">
-                                            <span class="post_cancel-label">Close</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- =========================== AWARDS EDITOR ============================ -->
-                <div class="addition__box" id="award__addition">
-                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Awards</span>
-                </div>
-                <div class="section__box--expand award__section" order="1">
-                    <div class="post_editor-container">
-                        <div class="post_editor-btn" role="button" >
-                            <div class="icon-container">
-                                <div class="remove__icon" onclick="removeSection(this)">
-                                    <i class="far fa-trash-alt w3-badge"></i>
-                                </div>
-                            </div>
-                            <div class="post_instruction-btn">Write something ...</div>
-                        </div>
-                        <div class="post_editor-expand" style="display: none;">
-                            <div class="editor-body">
-                                <div class="editor-body-container">
-                                    <p>
-                                        <label for="" class="required">
-                                            Award Name
-                                            <span>*</span>
-                                        </label>
-                                        <input name="award_title" type="text" class="the-title award_title" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type your award.</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Year
-                                        </label>
-                                        <input name="award_year" type="text" class="the-title award_year" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type the year when you get this award.</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Place
-                                        </label>
-                                        <input name="award_place" type="text" class="the-title award_place" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type the place you gain.</span>
-                                    </p>
-                                    <div class="editor-textarea-box">
-                                        <div class="editor_title-textarea">Write details here ...</div>
-                                        <div class="post_content_editor-textarea award_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
-                                        <div class="content_editor_unfocus-line"></div>
-                                        <div class="content_editor_focus-line"></div>
-                                    </div>
-                                    <div class="editor-toolbar" role="toolbar">
-                                        <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
-                                            <div class="hidden_bold-label hidden-toolbar-label"></div>
-                                            <span class="text_bold-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
-                                            <div class="hidden_italic-label hidden-toolbar-label"></div>
-                                            <span class="text_italic-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
-                                            <div class="hidden_underline-label hidden-toolbar-label"></div>
-                                            <span class="text_underline-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
-                                            <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
-                                            <span class="text_bulleted_list-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
-                                            <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
-                                            <span class="text_remove_formatting-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="editor-footer">
-                                <div class="post_action-nav">
-                                    <div class="cancel_post-tab" role="button">
-                                        <div class="hiden_cancel_post-btn"></div>
-                                        <span class="cancel_post-btn">
-                                            <span class="post_cancel-label">Close</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- =========================== CERTIFICATES EDITOR ============================ -->
-                <div class="addition__box" id="certificate__addition">
-                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>Certificates</span>
-                </div>
-                <div class="section__box--expand certificate__section" order="1">
-                    <div class="post_editor-container">
-                        <div class="post_editor-btn" role="button" >
-                            <div class="icon-container">
-                                <div class="remove__icon" onclick="removeSection(this)">
-                                    <i class="far fa-trash-alt w3-badge"></i>
-                                </div>
-                            </div>
-                            <div class="post_instruction-btn">Write something ...</div>
-                        </div>
-                        <div class="post_editor-expand" style="display: none;">
-                            <div class="editor-body">
-                                <div class="editor-body-container">
-                                    <p>
-                                        <label for="" class="required">
-                                            Certificate Title
-                                            <span>*</span>
-                                        </label>
-                                        <input name="certificate_title" type="text" class="the-title certificate_title" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type your certificate.</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Year
-                                        </label>
-                                        <input name="certificate_year" type="text" class="the-title certificate_year" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type the year when you get this certificate.</span>
-                                    </p>
-                                    <div class="editor-textarea-box">
-                                        <div class="editor_title-textarea">Write details here ...</div>
-                                        <div class="post_content_editor-textarea certificate_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
-                                        <div class="content_editor_unfocus-line"></div>
-                                        <div class="content_editor_focus-line"></div>
-                                    </div>
-                                    <div class="editor-toolbar" role="toolbar">
-                                        <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
-                                            <div class="hidden_bold-label hidden-toolbar-label"></div>
-                                            <span class="text_bold-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
-                                            <div class="hidden_italic-label hidden-toolbar-label"></div>
-                                            <span class="text_italic-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
-                                            <div class="hidden_underline-label hidden-toolbar-label"></div>
-                                            <span class="text_underline-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
-                                            <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
-                                            <span class="text_bulleted_list-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
-                                            <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
-                                            <span class="text_remove_formatting-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="editor-footer">
-                                <div class="post_action-nav">
-                                    <div class="cancel_post-tab" role="button">
-                                        <div class="hiden_cancel_post-btn"></div>
-                                        <span class="cancel_post-btn">
-                                            <span class="post_cancel-label">Close</span>
-                                        </span>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- =========================== REFERENCES EDITOR ============================ -->
-                <div class="addition__box" id="reference__addition">
-                    <span style="cursor: pointer;"><i class="fas fa-plus"></i>References</span>
-                </div>
-                <div class="section__box--expand reference__section" order="1">
-                    <div class="post_editor-container">
-                        <div class="post_editor-btn" role="button" >
-                            <div class="icon-container">
-                                <div class="remove__icon" onclick="removeSection(this)">
-                                    <i class="far fa-trash-alt w3-badge"></i>
-                                </div>
-                            </div>
-                            <div class="post_instruction-btn">Write something ...</div>
-                        </div>
-                        <div class="post_editor-expand" style="display: none;">
-                            <div class="editor-body">
-                                <div class="editor-body-container">
-                                    <p>
-                                        <label for="" class="required">
-                                            Reference Called Name
-                                            <span>*</span>
-                                        </label>
-                                        <input name="reference_called_name" type="text" class="the-title reference_called_name" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type your reference.</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Reference Job Position
-                                        </label>
-                                        <input name="reference_job_position" type="text" class="the-title reference_job_position" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type the job position of that reference.</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Reference Email
-                                        </label>
-                                        <input name="reference_email" type="text" class="the-title reference_email" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type the reference's email.</span>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Reference Phone Number
-                                        </label>
-                                        <input name="reference_phone_number" type="text" class="the-title reference_phone_number" required="" value="">
-                                        <span class="infocenter-qform-desc">Please type the reference's phone number.</span>
-                                    </p>
-                                    <div class="editor-textarea-box">
-                                        <div class="editor_title-textarea">Write details here ...</div>
-                                        <div class="post_content_editor-textarea reference_desc" role="textbox" aria-multiline="true" contenteditable="true"></div>
-                                        <div class="content_editor_unfocus-line"></div>
-                                        <div class="content_editor_focus-line"></div>
-                                    </div>
-                                    <div class="editor-toolbar" role="toolbar">
-                                        <div role="button" class="bold-btn toolbar-btn" aria-label="Bold" tabindex="0" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bold">
-                                            <div class="hidden_bold-label hidden-toolbar-label"></div>
-                                            <span class="text_bold-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_bold</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="italic-btn toolbar-btn" aria-label="Italic" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Italic">
-                                            <div class="hidden_italic-label hidden-toolbar-label"></div>
-                                            <span class="text_italic-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_italic</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="underline-btn toolbar-btn" aria-label="Underline" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Underline">
-                                            <div class="hidden_underline-label hidden-toolbar-label"></div>
-                                            <span class="text_underline-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_underlined</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="bulleted_list-btn toolbar-btn" aria-label="Bulleted list" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Bulleted list">
-                                            <div class="hidden_bulleted_list-label hidden-toolbar-label"></div>
-                                            <span class="text_bulleted_list-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_list_bulleted</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div role="button" class="remove_formatting-btn toolbar-btn" aria-label="Remove formatting" tabindex="-1" data-toggle="tooltip" title="" aria-pressed="false" data-toggleable="" data-tooltip-position="top" data-tooltip-vertical-offset="12" data-tooltip-horizontal-offset="0" data-original-title="Remove formatting">
-                                            <div class="hidden_remove_formatting-label hidden-toolbar-label"></div>
-                                            <span class="text_remove_formatting-label text-toolbar-label">
-                                                <span class="toolbar-btn-icon">
-                                                    <span class="text-toolbar-btn-icon material-icon" aria-hidden="true">format_clear</span>
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="editor-footer">
-                                <div class="post_action-nav">
-                                    <div class="cancel_post-tab" role="button">
-                                        <div class="hiden_cancel_post-btn"></div>
-                                        <span class="cancel_post-btn">
-                                            <span class="post_cancel-label">Close</span>
-                                        </span>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        </article>
+                    </section>
                 </div>
                 <input id="export" onclick="generatePDF()" type="submit" name="download" value="Download Your CV" class="button download__btn">
+                <input id="pdfpreview" onclick="previewPDF()" type="submit" name="download" value="Preview Your CV" class="button download__btn">
+                
                 <div id="hidden_export" style="margin-bottom: 20px;"></div>
-            </div>    
+            </div>   
     <div class="col-8 cv__layout--right col-md-8 cv " > 
             <div class="page__counter">
                 <input type="text" class="page__index toolbar__input" value="1" readonly>
@@ -1047,20 +282,9 @@
                                         </div>
                                         <div class="ce-settings">
                                             <div class="ce-settings__default-zone">
-                                                <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="ce-settings__button ce-settings__button--delete">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-                                                        <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                                <div class="ce-settings__button ce-settings__button--add">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
                                                     </svg>
                                                 </div>
                                             </div>
@@ -1128,20 +352,9 @@
                                         </div>
                                         <div class="ce-settings">
                                             <div class="ce-settings__default-zone">
-                                                <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="ce-settings__button ce-settings__button--delete">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-                                                        <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                                <div class="ce-settings__button ce-settings__button--add">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
                                                     </svg>
                                                 </div>
                                             </div>
@@ -1179,20 +392,9 @@
                                         </div>
                                         <div class="ce-settings">
                                             <div class="ce-settings__default-zone">
-                                                <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="ce-settings__button ce-settings__button--delete">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-                                                        <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                                <div class="ce-settings__button ce-settings__button--add">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
                                                     </svg>
                                                 </div>
                                             </div>
@@ -1229,20 +431,9 @@
                                     </div>
                                     <div class="ce-settings">
                                         <div class="ce-settings__default-zone">
-                                            <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-                                                </svg>
-                                            </div>
-                                            <div class="ce-settings__button ce-settings__button--delete">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-                                                    <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-                                                </svg>
-                                            </div>
-                                            <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                            <div class="ce-settings__button ce-settings__button--add">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
                                                 </svg>
                                             </div>
                                         </div>
@@ -1298,20 +489,9 @@
                             </div>
                             <div class="ce-settings">
                                 <div class="ce-settings__default-zone">
-                                    <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="ce-settings__button ce-settings__button--delete">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-                                            <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                    <div class="ce-settings__button ce-settings__button--add">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
                                         </svg>
                                     </div>
                                 </div>
@@ -1357,20 +537,9 @@
                                     </div>
                                     <div class="ce-settings">
                                         <div class="ce-settings__default-zone">
-                                            <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-                                                </svg>
-                                            </div>
-                                            <div class="ce-settings__button ce-settings__button--delete">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-                                                    <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-                                                </svg>
-                                            </div>
-                                            <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                            <div class="ce-settings__button ce-settings__button--add">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
                                                 </svg>
                                             </div>
                                         </div>
@@ -1414,20 +583,9 @@
                                     </div>
                                     <div class="ce-settings">
                                         <div class="ce-settings__default-zone">
-                                            <div class="ce-settings__button ce-tune-move-up" onclick="changeOrderUp(this)">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-                                                </svg>
-                                            </div>
-                                            <div class="ce-settings__button ce-settings__button--delete">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-                                                    <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-                                                </svg>
-                                            </div>
-                                            <div class="ce-settings__button ce-tune-move-down" onclick="changeOrderDown(this)">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                            <div class="ce-settings__button ce-settings__button--add">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
                                                 </svg>
                                             </div>
                                         </div>
@@ -1458,15 +616,42 @@
                         </div>
                         
                      <div class="resume_item resume_hobby">
-                       <div class="title">
-                            <p class="bold">Hobby</p>
-                          </div>
-                        <ul>
-                          <li><i class="fas fa-book"></i></li>
-                          <li><i class="fas fa-gamepad"></i></li>
-                          <li><i class="fas fa-music"></i></li>
-                          <li><i class="fab fa-pagelines"></i></li>
-                       </ul>
+                        <div class="cv__section__box cv__hobby__box hobby__section">
+                            <div class="cv__section__title--underline">
+                                <span class="section__title--uppercase">
+                                    Hobbie
+                                </span>
+                                <div class="ce-toolbar__actions">
+                                    <div class="ce-toolbar__actions-buttons" onclick="displaySetting(this)">
+                                        <span class="ce-toolbar__settings-btn">
+                                            <svg class="icon icon--dots bi bi-three-dots" width="8px" height="8px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div class="ce-settings">
+                                        <div class="ce-settings__default-zone">
+                                            <div class="ce-settings__button ce-settings__button--add">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cv__lists cv__hobby__lists">
+                                <ul class="cv__list cv__hobby__list box_0">
+                                    <li  class="cv__item cv__list__item cv__hobby__item row">
+                                        <span class="timeline__circle list__bullet"></span>
+                                        <div class="cv__hobby col-11 cv__textbox single" spellcheck="false" contenteditable="true" data-max-length="100">MUSIC</div>                                                        
+                                    </li>
+                                </ul>
+                                <ul class="cv__list cv__hobby__list box_1">
+                                </ul>
+                            </div>
+                        </div>
+
                      </div>
                    </div>
                  </div>
@@ -1476,38 +661,48 @@
     </div>
     <iframe id="pdf-preview" src="" frameborder="0"></iframe>
     </div>
+
+    <!-- APP JS -->
     <script src="./assets/js/main.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!-- Entire bundle -->
     <!-- HTML2PDF -->
     <script src="./assets/js/html2pdf.bundle.min.js"></script>
     <!-- CONTENTEDITABLE MAX LENGTH -->
     <script src="https://unpkg.com/maxlength-contenteditable@1.0.1/dist/maxlength-contenteditable.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta/lib/draggable.min.js"></script>
     <!-- CROPPERJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
     <!-- OWL CAROUSEL  -->
     <!-- <script src="./OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script> -->
     <!-- TINY CLOUD <TEXT EDITOR> -->
     <script src="https://cdn.tiny.cloud/1/vt3tz08mocq4n78vstlh4vhog3zhr0xwaa8ft8oh2gtc3af9/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <!-- OWL CAROUSEL  -->
-    <!-- <script src="./OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script> -->
     <script>
         window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))
         maxlengthContentEditableModule.maxlengthContentEditable();
-        
-        const containerSelector = '#GridLayout .BlockLayout';
-        const dropZone = document.querySelectorAll(containerSelector);
-        // hi
-        const swappable = new Draggable.Swappable(dropZone, {
-            draggable: '.Block--isDraggable',
-            mirror: {
-                appendTo: containerSelector,
-                constrainDimensions: true,
-            }
-            // plugins: [Plugins.ResizeMirror],
+        $(function() {
+            $( '#layout--left, #layout--right' ).sortable({
+                connectWith: ".BlockWrapper__col",
+                stop: function(){
+
+                    $('#layout--left').find('.section__box--expand').each((index, el)=>{
+                        var className = $(el).attr('class').split(' ')[1]
+                        console.log(className)
+
+                        $('#cv').find('.'+className).each((i, e)=>{
+                            $('.cv__aboutme--left').append(e)
+                        })
+                    })
+                    $('#layout--right').find('.section__box--expand').each((index, el)=>{
+                        var className = $(el).attr('class').split(' ')[1]
+                        $('#cv').find('.'+className).each((i, e)=>{
+                            $('.cv__aboutme--right').append(e)
+                        })
+                    })
+                }
+            }).disableSelection();
         });
-        
-        
+
         var editorConfig = {
             selector: '.cv__textbox, .section__title--uppercase',
             menubar: false,
@@ -1528,7 +723,10 @@
         };
 
         tinymce.init(editorConfig);
-
+        // $('.cv__textbox').click(()=>{
+        //     tinymce.init(editorConfig);
+        //     console.log('change')
+        // })
         const pdfOptions = {
             margin: [0, 0, 0, -0.1],
             // pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
@@ -1539,23 +737,12 @@
             
             // pageBreak: {mode: ['avoid-all', 'css']}
         };
-
         function generatePDF(){
             $('#cv').css('zoom', '1')
             $('.zoom__box').val('100%')
-            var options = {
-                margin: [0, 0, 0, -0.1],
-                // pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
-                filename:'myCV.pdf',
-                image: { type: 'jpeg', quality: 1 },
-                html2canvas:{letterRendering: true,  scale: 6, useCORS: true},
-                jsPDF: {format: 'a4', orientation: 'portrait' }
-                // pageBreak: {mode: ['avoid-all', 'css']}
-            };
-            console.log('generate')
             var element = document.getElementById('cv')
 
-            var worker = html2pdf().set(options).from(element).save();
+            var worker = html2pdf().set(pdfOptions).from(element).save();
 
         }
 
