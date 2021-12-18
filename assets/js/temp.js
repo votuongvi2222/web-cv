@@ -647,7 +647,7 @@ var colorChoices = {
   
     $('body').on('DOMSubtreeModified', function(){
   
-      if($('.cv__body').height() > currentCvHeight) {
+      if($('.cv__body').height() >= currentCvHeight) {
   
         currentCvHeight += defaultCvHeight;
   
@@ -655,14 +655,14 @@ var colorChoices = {
         isOver = true;
         isReturn = false;
         // console.log(currentCvHeight)
-      }else if($('.cv__body').height() <= currentCvHeight - defaultCvHeight){
+      }else if($('.cv__body').height() < currentCvHeight - defaultCvHeight){
         isReturn = true;
         isOver = false;
         currentCvHeight -= defaultCvHeight
         console.log('return')
   
         $('#cv').css({'height':currentCvHeight})
-      }else if($('.cv__body').height() < defaultCvHeight) {
+      }else if($('.cv__body').height() <= defaultCvHeight) {
         currentCvHeight = defaultCvHeight;
         isOver = false;
         isReturn = false;
