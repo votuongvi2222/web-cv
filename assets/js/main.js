@@ -1331,7 +1331,7 @@ function changeOrderDown(el){
 }
 
 
-let socialIconic = document.getElementById("cv_socials");
+var socialIconic = document.getElementById("cv_socials");
 if(window.addEventListener) {
 //    // Normal browsers
     socialIconic.addEventListener('DOMSubtreeModified', contentIconicChanged, false);
@@ -1375,7 +1375,7 @@ function contentIconicChanged() {
   }
 }
 
-let emailIconic = document.getElementById("cv_websites");
+var emailIconic = document.getElementById("cv_websites");
 if(window.addEventListener) {
   //    // Normal browsers
       emailIconic.addEventListener('DOMSubtreeModified', emailIconicChanged, false);
