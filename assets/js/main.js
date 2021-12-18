@@ -1329,3 +1329,92 @@ function changeOrderDown(el){
     $(editedSection).css('order', currOrder + 1)
   }
 }
+
+
+let socialIconic = document.getElementById("cv_socials");
+if(window.addEventListener) {
+//    // Normal browsers
+    socialIconic.addEventListener('DOMSubtreeModified', contentIconicChanged, false);
+} else{
+  if(window.attachEvent) {
+//       // IE
+      socialIconic.attachEvent('DOMSubtreeModified', contentIconicChanged);
+  }
+}
+
+function contentIconicChanged() {
+  let url = $("#cv_socials").text();
+  var facebook = /facebook.com/;
+  let insta = /instagram.com/
+  let github = /github.com/
+  let twitter = /twitter.com/
+  let linkedin = /linkedin.com/
+  if(facebook.test(url)) {
+    $(".social_iconic").children("i").remove();
+    $(".social_iconic").append("<i class='fab fa-facebook'></i>")
+  }
+  else if(insta.test(url)) {
+    $(".social_iconic").children("i").remove();
+    $(".social_iconic").append("<i class='fab fa-instagram'></i>")
+  }
+  else if(github.test(url)) {
+    $(".social_iconic").children("i").remove();
+    $(".social_iconic").append("<i class='fab fa-github'></i>")
+  }
+  else if(twitter.test(url)) {
+    $(".social_iconic").children("i").remove();
+    $(".social_iconic").append("<i class='fab fa-twitter'></i>")
+  }
+  else if(linkedin.test(url)) {
+    $(".social_iconic").children("i").remove();
+    $(".social_iconic").append("<i class='fab fa-linkedin'></i>")
+  }
+  else{
+    $(".social_iconic").children("i").remove();
+    $(".social_iconic").append("<i class='fas fa-hashtag'></i>")
+  }
+}
+
+let emailIconic = document.getElementById("cv_websites");
+if(window.addEventListener) {
+  //    // Normal browsers
+      emailIconic.addEventListener('DOMSubtreeModified', emailIconicChanged, false);
+  } else{
+  if(window.attachEvent) {
+  //       // IE
+        emailIconic.attachEvent('DOMSubtreeModified', emailIconicChanged);
+  }
+}
+
+function emailIconicChanged() {
+  let url = $("#cv_websites").text();
+  var facebook = /facebook.com/;
+  let insta = /instagram.com/
+  let github = /github/
+  let twitter = /twitter.com/
+  let linkedin = /linkedin.com/
+  if(facebook.test(url)) {
+    $(".website_iconic").children("i").remove();
+    $(".website_iconic").append("<i class='fab fa-facebook'></i>")
+  }
+  else if(insta.test(url)) {
+    $(".website_iconic").children("i").remove();
+    $(".website_iconic").append("<i class='fab fa-instagram'></i>")
+  }
+  else if(github.test(url)) {
+    $(".website_iconic").children("i").remove();
+    $(".website_iconic").append("<i class='fab fa-github'></i>")
+  }
+  else if(twitter.test(url)) {
+    $(".website_iconic").children("i").remove();
+    $(".website_iconic").append("<i class='fab fa-twitter'></i>")
+  }
+  else if(linkedin.test(url)) {
+    $(".website_iconic").children("i").remove();
+    $(".website_iconic").append("<i class='fab fa-linkedin'></i>")
+  }
+  else{
+    $(".website_iconic").children("i").remove();
+    $(".website_iconic").append("<i class='fas fa-globe'></i>")
+  }
+}
